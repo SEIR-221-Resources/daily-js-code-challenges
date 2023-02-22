@@ -14,7 +14,7 @@ sayHello() //=> Hello!
 // Your solution for 00-sayHello (example) here:
 // test change
 
-function()
+
 function sayHello() {
   return 'Hello!'
 }
@@ -36,8 +36,12 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne(number){
+  return number + 1
+}
 
-
+console.log(addOne(2))
+console.log(addOne(77))
 
 
 /*-----------------------------------------------------------------
@@ -59,8 +63,19 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
-
+function addTwoNumbers(number1, number2){
+  const onlyNumbers1 = number1
+  const onlyNumbers2 = number2
+  
+  if(typeof(onlyNumbers1) === "string" || typeof(onlyNumbers1) === "string"){
+    return "NaN"
+  }else{
+    return onlyNumbers1 + onlyNumbers2
+  }
+}
+console.log(addTwoNumbers(1, 1))
+console.log(addTwoNumbers(2, 2))
+console.log(addTwoNumbers('Zak is awesome', 1))
 
 
 /*-----------------------------------------------------------------
