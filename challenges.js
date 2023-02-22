@@ -57,9 +57,13 @@ addTwoNumbers('Hello', 5) //=> NaN
 // Your solution for 02-addTwoNumbers here:
 
 function addTwoNumbers(x, y) {
-  return x + y
+  if (isNaN(x) || isNaN(y)) {
+    return NaN
+  } else {
+    return x + y
+  }
 }
-console.log(addTwoNumbers(-5, 6))
+console.log(addTwoNumbers(5, 2))
 
 
 /*-----------------------------------------------------------------
