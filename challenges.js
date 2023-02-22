@@ -34,9 +34,10 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-
-
-
+function addOne(number) {
+  return number + 1;
+}
+addOne(5);
 
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -50,6 +51,7 @@ If either argument is not a Number, return the value of NaN.
 
 Examples:
 
+
 addTwoNumbers(5, 10) //=> 15
 addTwoNumbers(10, -2) //=> 8
 addTwoNumbers(0, 0) //=> 0
@@ -58,7 +60,14 @@ addTwoNumbers('Hello', 5) //=> NaN
 // Your solution for 02-addTwoNumbers here:
 
 
+function addTwoNumbers(num1, num2) {
+  if ( num1 !== '' || num2 !== '') {
+    return NaN;
+  }
+  return num1 + num2;
+}
 
+addTwoNumbers(2, 3);
 
 
 /*-----------------------------------------------------------------
