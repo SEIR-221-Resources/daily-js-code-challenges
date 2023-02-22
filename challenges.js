@@ -34,8 +34,9 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-
-
+function addOne(num) {
+  return num += 1
+}
 
 
 /*-----------------------------------------------------------------
@@ -57,8 +58,9 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
-
+function addTwoNumbers(num1, num2) {
+  return Number(num1 + num2)
+}
 
 
 /*-----------------------------------------------------------------
