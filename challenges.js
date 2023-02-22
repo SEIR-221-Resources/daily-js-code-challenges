@@ -60,7 +60,18 @@ addTwoNumbers('Hello', 5) //=> NaN
 // Your solution for 02-addTwoNumbers here:
 
 
+function addTwoNumbers(num1, num2) {
+  if (typeof(num1) !== 'number' || typeof(num2) !== 'number') {
+    return NaN
+  } else {
+    return num1 + num2
+  }
+}
 
+console.log(addTwoNumbers(5, 10)) //=> 15
+console.log(addTwoNumbers(10, -2)) //=> 8
+console.log(addTwoNumbers(0, 0)) //=> 0
+console.log(addTwoNumbers('Hello', 5)) //=> NaN
 
 
 /*-----------------------------------------------------------------
