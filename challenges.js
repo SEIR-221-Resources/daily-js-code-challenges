@@ -12,7 +12,9 @@ Examples:
 sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
+// test change
 
+function()
 function sayHello() {
   return 'Hello!'
 }
