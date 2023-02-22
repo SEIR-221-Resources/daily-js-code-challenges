@@ -34,6 +34,11 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne(x){
+  return x +1;
+}
+
+
 
 
 
@@ -41,7 +46,7 @@ addOne(-5) //=> -4
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
 
-Difficulty: Basic  
+Difficulty: Basic
 
 Prompt:
 
@@ -57,14 +62,20 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
+function addTwoNumbers (x , y){
+  if(typeof x === 'number' && typeof b === 'number'){
+  return x + y;
+}else{
+  return NaN;
+}
+}
 
 
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
 
-Difficulty: Basic  
+Difficulty: Basic
 
 Prompt:
 
@@ -165,7 +176,7 @@ Prompt:
 
 Examples:
 
-reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
+reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
@@ -365,7 +376,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -384,7 +395,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -489,7 +500,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -513,7 +524,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
@@ -807,5 +818,3 @@ totalTaskTime( [2, 2, 3, 3, 4, 4], 2 ) //=> 9
 totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
-
-
