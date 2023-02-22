@@ -33,11 +33,10 @@ addOne(1) //=> 2
 addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
-
-
-
-
-
+ function addOne(x) {
+  return x + 1
+ }
+ console.log(addOne(-5))
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
 
@@ -57,8 +56,10 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
-
+function addTwoNumbers(x, y) {
+  return x + y
+}
+console.log(addTwoNumbers(-5, 6))
 
 
 /*-----------------------------------------------------------------
