@@ -90,9 +90,21 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
+function sumNumbers(arr){
+  if (arr === undefined){
+  return 0;}else{
+let sum = 0;
+arr.forEach(function(n) {
+  sum += n;
+});
+return sum;
 
-
-
+  }
+}
+console.log(sumNumbers([10]))
+console.log(sumNumbers([5, 10]))
+console.log(sumNumbers([2, 10, -5]))
+console.log(sumNumbers([]))
 
 
 /*-----------------------------------------------------------------
