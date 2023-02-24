@@ -34,6 +34,11 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne (number) {
+return (number + 1)
+}
+
+console.log('problem 1: expecting 2', addOne(1))
 
 
 
