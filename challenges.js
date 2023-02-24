@@ -34,8 +34,12 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne (number) {
+      return number + 1
+}
 
-
+console.log("problem 1: expecting 2", addOne(1))
+console.log("problem 1: expecting -4",addOne(72))
 
 
 /*-----------------------------------------------------------------
@@ -57,7 +61,13 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
+function addTwoNumbers(num1, num2){
 
+    return num1 + num2
+
+}
+
+console.log("15 >>",)
 
 
 
