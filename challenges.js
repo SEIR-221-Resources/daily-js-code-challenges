@@ -80,14 +80,13 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
-function sumNumbers(arr) {
+function sumNumbers(nums) {
   let sum = 0;
-  for (let i = 0; i < nums.length; i++) {
+  for(let i = 0; i < nums.length; i++) {
     sum += nums[i];
   }
   return sum;
 }
-console.log(sumNumbers(4,5,7));
 /*-----------------------------------------------------------------
 Challenge: 04-addList
 
@@ -106,7 +105,13 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-
+function addList() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
 /*-----------------------------------------------------------------
 Challenge: 05-computeRemainder
 
