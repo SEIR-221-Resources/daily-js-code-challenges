@@ -144,7 +144,11 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-
+function computeRemainder(num1, num2){
+  if (num2 == 0) return Infinity
+  let remainder = num1 - (num2 * Math.floor(num1 / num2))
+  return remainder
+}
 
 
 
