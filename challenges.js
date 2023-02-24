@@ -68,12 +68,6 @@ function addTwoNumbers(num1, num2) {
   }
 }
 
-console.log(addTwoNumbers(5, 10)) //=> 15
-console.log(addTwoNumbers(10, -2)) //=> 8
-console.log(addTwoNumbers(0, 0)) //=> 0
-console.log(addTwoNumbers('Hello', 5)) //=> NaN
-
-
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
 
@@ -93,7 +87,13 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
+const sumNumbers = function(numbers) {
+  let sum = 0
+  for (let i=0; i<numbers.length; i++) {
+      sum = sum + numbers[i]
+  }
+  return sum
+}
 
 
 
