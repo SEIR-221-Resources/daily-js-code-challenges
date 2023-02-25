@@ -33,8 +33,8 @@ addOne(1) //=> 2
 addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
-function addOne (x){
- return x + 1;
+function addOne(x) {
+  return x + 1;
 }
 console.log(addOne(5))
 
@@ -58,13 +58,21 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
+
 function addTwoNumbers(num1, num2) {
-return num1 + num2;
+  // is num1 and num2 a number? return sum
+  // is num1 or num2 not a number? return NaN
+  // if(num1 && num2 === typeof)
+  // console.log(typeof (num1 + num2))
+
+  if (typeof (num1 + num2) === "number") {
+    return num1 + num2;
+  } else {
+    return NaN
+  }
+
+
 }
-console.log(addTwoNumbers(1,2))
-
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
@@ -84,9 +92,24 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
-function sumNumbers (array) {
+function sumNumbers(array) {
+  let sum = 0;
+  array.forEach(function (currentNum) {
+    sum += currentNum;
+  })
+  return sum;
 
+  // if (array.length === 0) {
+  //   return 0;
+  // } else {
+  //   for (let i = 0; i < array.length; i++) {
+  //     sum += array[i];
+  //     console.log({sum});
+  //   }
+  //   return sum;
+  // }
 }
+
 
 
 
@@ -110,7 +133,7 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList () {
+function addList() {
 
 }
 
@@ -174,7 +197,7 @@ Prompt:
 
 Examples:
 
-reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
+reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
@@ -374,7 +397,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -393,7 +416,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -498,7 +521,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -522,7 +545,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
