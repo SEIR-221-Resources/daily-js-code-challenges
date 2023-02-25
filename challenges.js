@@ -33,8 +33,10 @@ addOne(1) //=> 2
 addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
-
-
+function addOne (x){
+ return x + 1;
+}
+console.log(addOne(5))
 
 
 
@@ -56,7 +58,10 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
-
+function addTwoNumbers(num1, num2) {
+return num1 + num2;
+}
+console.log(addTwoNumbers(1,2))
 
 
 
@@ -79,7 +84,9 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
+function sumNumbers (array) {
 
+}
 
 
 
@@ -103,7 +110,9 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+function addList () {
 
+}
 
 
 
