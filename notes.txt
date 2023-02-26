@@ -2,8 +2,8 @@ isNaN() returns a boolean based on whether something is a number or not where tr
 
 the arguments object is a local variable available within all non-arrow functions. it contains the values of the arguments passed into the function. this object can function like an array because it's entries are referenced via indices(arguments[1]), it has the length propertty(arguments.length) and is iterable.
 
-JS recognizes Infinity, used as Infinity though it behaves differently from mathematical infinity
+JS recognizes Infinity, used as Infinity - though it behaves differently from mathematical infinity
 
-
-methods can be attatched to the end of one of other to executed in sequence such as
+methods can be attatched to the end of one of other to be executed in sequence such as
 str.split("").reverse().join("");
+
