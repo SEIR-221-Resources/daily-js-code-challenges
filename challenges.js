@@ -6,16 +6,17 @@ Difficulty: Basic
 Prompt:
 
 Write a function called sayHello that returns the string "Hello!".
-
+function sayHello()
+console.log(sayHello)
 Examples:
 
 sayHello() //=> Hello!
 -----------------------------------------------------------------*/
-// Your solution for 00-sayHello (example) here:
+// // Your solution for 00-sayHello (example) here:
 
-function sayHello() {
-  return 'Hello!'
-}
+// function sayHello() {
+//   return 'Hello!'
+// }
 
 
 /*-----------------------------------------------------------------
@@ -34,8 +35,11 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne(number) {
+   return number +1 
 
-
+}
+console.log('problem 1: exspecting 2', addOne(1))
 
 
 /*-----------------------------------------------------------------
@@ -57,8 +61,8 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
-
+// function addTwoNumbers (num1, num2)
+// return num1 + num2
 
 
 /*-----------------------------------------------------------------
@@ -81,7 +85,10 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 
+function sumNumbers(arr) {
+Let sum = 0
 
+}
 
 
 /*-----------------------------------------------------------------
