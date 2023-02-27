@@ -159,7 +159,26 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+function computerRemainder(num1, num2){
+  if (num2 === 0){
+     return Infinity;
+  }else{
+    //psrseInt parses a string argument and returns an integer of the specific radix 
+    let quotient = parseInt(num1/ num2);
+    let product = quotient * num2;
+    return num1 - product;
 
+  }
+}
+//  if (num2 === 0){
+//   return Infinity;
+//  }else{
+//  return num1 % num2;
+// }
+
+console.log(computerRemainder(10,2));
+console.log(computerRemainder(4,0));
+console.log(computerRemainder(10.5,3));
 
 
 
