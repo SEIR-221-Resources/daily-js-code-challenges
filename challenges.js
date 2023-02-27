@@ -13,9 +13,9 @@ sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
 
-function sayHello() {
-  return 'Hello!'
-}
+// function sayHello() {
+//   return 'Hello!'
+// }
 
 
 /*-----------------------------------------------------------------
@@ -34,9 +34,9 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(num) {
-  return num+1;
-}
+// function addOne(num) {
+//   return num+1;
+// }
 
 
 
@@ -59,9 +59,9 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-function addTwoNumbers(num1, num2) {
-  return num1+num2;
-}
+// function addTwoNumbers(num1, num2) {
+//   return num1+num2;
+// }
 
 
 
@@ -84,19 +84,19 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-function sumNumbers(arr) {
-  let sum = 0;
+// function sumNumbers(arr) {
+//   let sum = 0;
 
-  if(arr.length === 0){
-    return 0;
-  }
-  else {
-    for(let i=0; i<arr.length; i++){
-      sum += arr[i];
-    }
-    return sum;
-  }  
-}
+//   if(arr.length === 0){
+//     return 0;
+//   }
+//   else {
+//     for(let i=0; i<arr.length; i++){
+//       sum += arr[i];
+//     }
+//     return sum;
+//   }  
+// }
 
 
 
@@ -118,18 +118,18 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-function addList() {
-  let sum = 0;
-  if(arguments.length === 0){
-    return 0
-  }
-  else{
-    for(let i = 0; i < arguments.length; i++){
-      sum += arguments[i]
-    }
-    return sum
-  }
-}
+// function addList() {
+//   let sum = 0;
+//   if(arguments.length === 0){
+//     return 0
+//   }
+//   else{
+//     for(let i = 0; i < arguments.length; i++){
+//       sum += arguments[i]
+//     }
+//     return sum
+//   }
+// }
 
 
 
@@ -153,6 +153,16 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
+
+function computeRemainder(num, divisor){
+  if(divisor === 0){
+    return Infinity;
+  }else {
+    return (num % divisor);
+  }
+}
+console.log(computeRemainder(10.5, 3))
+
 
 
 
