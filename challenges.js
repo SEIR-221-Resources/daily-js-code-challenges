@@ -40,8 +40,8 @@ function addOne(number){
   return number + 1
 }
 
-console.log(addOne(2))
-console.log(addOne(77))
+// console.log(addOne(2))
+// console.log(addOne(77))
 
 
 /*-----------------------------------------------------------------
@@ -73,9 +73,9 @@ function addTwoNumbers(number1, number2){
     return onlyNumbers1 + onlyNumbers2
   }
 }
-console.log(addTwoNumbers(1, 1))
-console.log(addTwoNumbers(2, 2))
-console.log(addTwoNumbers('Zak is awesome', 1))
+// console.log(addTwoNumbers(1, 1))
+// console.log(addTwoNumbers(2, 2))
+// console.log(addTwoNumbers('Zak is awesome', 1))
 
 
 /*-----------------------------------------------------------------
@@ -97,7 +97,7 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
+function sumNumbers
 
 
 
@@ -144,6 +144,19 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+function computeRemainder(val1, val2){
+  const dividend = val1
+  const divisor = val2
+
+  if (val2 === 0){
+    return Infinity
+  }else{return(dividend % divisor)}
+
+  
+  
+}
+
+console.log(computeRemainder(10.5, 3))
 
 
 
