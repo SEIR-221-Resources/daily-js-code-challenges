@@ -91,8 +91,15 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+function sumNumbers (myArray) {
+  var sum = 0;
+  for (i=0; i < myArray.length; i++) {
+      sum += myArray[i];
+  }
+  return console.log(sum)
+}
 
-
+sumNumbers([0])
 
 
 /*-----------------------------------------------------------------
@@ -114,7 +121,15 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+function addList (int) {
+  var sum = 0;
+  for (i=0; i < int.length; i++) {
+      sum += int[i];
+  }
+  return console.log(sum)
+}
 
+addList([7,-12])
 
 
 
