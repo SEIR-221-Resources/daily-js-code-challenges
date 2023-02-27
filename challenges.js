@@ -62,7 +62,13 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
+function addTwoNumbers (n1, n2) {
+  if (n1 || n2 !== 'number') {
+    return n1 + n2;
+  } else {
+    return NaN;
+  }
+}
 
 
 
@@ -85,7 +91,11 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
+function sumNumbers([1, 2, 3, 4]) {
+  if ('numbers') {
+    return sumNumbers[i]
+  }
+}
 
 
 
@@ -107,7 +117,11 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-
+function addList(numbers) {
+  let i =0; 
+  for (i = 0; i < numbers; i++);
+  return addList.numbers.lenght[i];
+}
 
 
 
