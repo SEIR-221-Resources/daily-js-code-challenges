@@ -97,7 +97,7 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-function sumNumbers
+
 
 
 
@@ -156,7 +156,7 @@ function computeRemainder(val1, val2){
   
 }
 
-console.log(computeRemainder(10.5, 3))
+// console.log(computeRemainder(10.5, 3))
 
 
 
@@ -180,8 +180,18 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2){
+  if (num1 > num2){
+    return "First argument must be less than second."
+  }
+  const arrayOfNumbers = []
+  for (let i=num1; i<num2; i++){
+    arrayOfNumbers.push(i)
+  }
+  return arrayOfNumbers
+}
 
-
+// console.log(range(1, 10))
 
 
 /*-----------------------------------------------------------------
