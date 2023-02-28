@@ -182,9 +182,6 @@ function range(int1, int2){
   return arr
 }
 
-
-
-
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
