@@ -147,9 +147,17 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+function computeRemainder (num1, num2) {
+  if (num2 === 0) {
+    return Infinity
+  } else {
+    let quotient = num1/num2
+    let difference = quotient - Math.floor(quotient)
+    return difference * num2
+  }
+}
 
-
-
+console.log(computeRemainder(10.5, 3))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
