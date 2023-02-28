@@ -154,14 +154,14 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder(num, divisor){
-  if(divisor === 0){
-    return Infinity;
-  }else {
-    return (num % divisor);
-  }
-}
-console.log(computeRemainder(10.5, 3))
+// function computeRemainder(num, divisor){
+//   if(divisor === 0){
+//     return Infinity;
+//   }else {
+//     return (num % divisor);
+//   }
+// }
+// console.log(computeRemainder(10.5, 3))
 
 
 
@@ -187,7 +187,20 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-
+function range(num1, num2) {
+  if(num1 > num2){
+    return "First argument must be less than second"
+  }
+  else{
+    let rangeArray = []
+    while(num1!=num2){
+      rangeArray.push(num1)
+      num1++
+    }
+    return rangeArray
+  }
+}
+console.log(range(5,2))
 
 
 
