@@ -163,7 +163,7 @@ function computerRemainder(num1, num2){
   if (num2 === 0){
      return Infinity;
   }else{
-    //psrseInt parses a string argument and returns an integer of the specific radix 
+    //psrseInt parses a string argument and returns an integer of the specific radix
     let quotient = parseInt(num1/ num2);
     let product = quotient * num2;
     return num1 - product;
@@ -200,6 +200,21 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
+
+function range (num1, num2){
+  if(num1 > num2){
+    return "First argument must be less than second"
+  }
+  const arrayOfNumbers =[]
+  for(let i=num1; i< num2; i++){
+  arrayOfNumbers.push(i)
+  }
+  return arrayOfNumbers
+}
+console.log(range(1,4)) //=> [1,2,3]
+console.log(range(-2, 3)) //=> [-2,-1,0,1,2]
+console.log(range(1,1)) //=> []
+console.log(range(5,2)) //=> "First argument must be less than second"
 
 
 
