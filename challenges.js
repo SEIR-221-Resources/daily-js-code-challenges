@@ -36,7 +36,7 @@ addOne(-5) //=> -4
 function addOne(x) {
   return x + 1;
 }
-console.log(addOne(5))
+// console.log(addOne(5))
 
 
 
@@ -165,7 +165,7 @@ function computeRemainder(num1, num2) {
     return num1 % num2;
   }
 }
-console.log(computeRemainder(5, 5))
+// console.log(computeRemainder(5, 5))
 
 
 
@@ -215,7 +215,18 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
+//write a function
+//accept one argument that is a string 
+function reverseUpcaseString(str){
+  return str.split("").reverse().join("").toUpperCase(); 
+}
+reverseUpcaseString("SEI Rocks!")
 
+//return string with uppercase and reversed order characters
+// function reverseUpcaseString(string){
+// let string = string.reverse
+// }
+console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 
