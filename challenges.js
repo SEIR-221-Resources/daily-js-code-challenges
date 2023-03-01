@@ -1,3 +1,4 @@
+
 /*-----------------------------------------------------------------
 Challenge: 00-sayHello (example)
 
@@ -91,11 +92,11 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-function sumNumbers([1, 2, 3, 4]) {
-  if ('numbers') {
-    return sumNumbers[i]
-  }
-}
+// function sumNumbers([1, 2, 3, 4]) {
+//   if ('numbers') {
+//     return sumNumbers[i]
+//   }
+// }
 
 
 
@@ -117,11 +118,11 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-function addList(numbers) {
-  let i =0; 
-  for (i = 0; i < numbers; i++);
-  return addList.numbers.lenght[i];
-}
+//function addList(numbers) {
+//   let i =0; 
+//   for (i = 0; i < numbers; i++);
+//   return addList.numbers.lenght[i];
+// }
 
 
 
@@ -146,7 +147,14 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+// function computerRemainder (num1, num2) {
+//   if(num2 ==== 0) {
+//   return Infinity
+//   }
+// console.log(num1 % num2)
+// }
 
+// computerRemainder('155' 10, 2)
 
 
 
@@ -169,8 +177,15 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2) {
+  let nums = []
+  for (let i = 0; i < num2; i++);
+  nums.push(i)
 
 
+  return nums 
+} 
+// console.log(range(num1, num2))
 
 
 /*-----------------------------------------------------------------
@@ -186,8 +201,18 @@ Examples:
 
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
-// Your solution for 07-reverseUpcaseString here:
 
+
+// Your solution for 07-reverseUpcaseString here:
+function reverseUpcaseString (str){
+  let string = str.split("")
+  string.reverse()
+let newString = string.join("").toUpperCase()
+
+console.log(newString)
+return newString
+  }
+  console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 
