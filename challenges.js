@@ -14,9 +14,10 @@ sayHello() //=> Hello!
 // Your solution for 00-sayHello (example) here:
 
 function sayHello() {
-  return 'Hello!'
+  return "Hello!";
 }
 
+console.log(sayHello()); // Output: Hello!
 
 /*-----------------------------------------------------------------
 Challenge: 01-addOne
@@ -34,9 +35,10 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne (number) {
-      return number + 1
+function addOne(number) {
+  return number + 1;
 }
+
 
 console.log("problem 1: expecting 2", addOne(1))
 console.log("problem 1: expecting -4",addOne(72))
@@ -61,10 +63,12 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-function addTwoNumbers(num1, num2){
-
-    return num1 + num2
-
+function addTwoNumbers(a, b) {
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a + b;
+  } else {
+    return NaN;
+  }
 }
 
 console.log("15 >>",)
@@ -90,7 +94,13 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
+function sumNumbers(nums) {
+  var sum = 0;
+  for(var i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  }
+  return sum;
+}
 
 
 
@@ -117,6 +127,14 @@ add(7,-12) //=> -5
 
 
 
+
+
+
+
+
+
+
+
 /*-----------------------------------------------------------------
 Challenge: 05-computeRemainder
 
@@ -138,8 +156,20 @@ computeRemainder(10.5, 3) //=> 1.5
 // Your solution for 05-computeRemainder:
 
 
+function computeRemainder (num1, num2){
+         // dividend -> top number (divend)
+         // divsor -> lower number (divides)
+         if (num2 === 0 ) {
+          return Infinity
+         }
+          console.log( num1 % num2 )
+         // return -> division of two numbers (num1/num2)
+         //"how do I calaculate a remainder, js" - % (modulus) ->
+         // return -> division of two numbers (num1/num2)
+         return num1 % num2
+}
 
-
+console.log(computeRemainder(4,0))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -159,11 +189,20 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
+function range(beg, end){
+  let num1 = [];
+  if(beg <= end){
+    for(let i=beg;i<end;i++){
+      num1.push(i);
+    }
 
+    return num1
+  } else {
+    return "First argument must be less than second"
+  }
+}
 
-
-
-
+console.log(range(-2,5));
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -179,8 +218,15 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+function reverseUpcaseString(str){
+  let string = str.split("")
+  string.reverse()
+let newString = string.join("").toUpperCase()
 
-
+  console.log(newString)
+  return newString
+} 
+console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 /*-----------------------------------------------------------------
