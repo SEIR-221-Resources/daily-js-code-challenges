@@ -17,7 +17,6 @@ function sayHello() {
   return 'Hello!'
 }
 
-
 /*-----------------------------------------------------------------
 Challenge: 01-addOne
 
@@ -36,6 +35,7 @@ addOne(-5) //=> -4
  function addOne(x) {
   return x + 1
  }
+
  console.log(addOne(-5))
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -63,6 +63,7 @@ function addTwoNumbers(x, y) {
     return x + y
   }
 }
+
 console.log(addTwoNumbers(5, 2))
 
 
@@ -202,8 +203,15 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
+function reverseUpcaseString(str) {
+  const arrStr = str.split('')
+  const revStr = arrStr.reverse()
+  const joinStr = revStr.join('')
+  const upStr = joinStr.toUpperCase()
+  console.log(upStr)
+}
 
-
+reverseUpcaseString('Adam')
 
 
 
