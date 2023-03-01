@@ -35,11 +35,11 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(number) {
-   return number +1 
+// function addOne(number) {
+//    return number +1 
 
-}
-console.log('problem 1: exspecting 2', addOne(1))
+// }
+// console.log('problem 1: exspecting 2', addOne(1))
 
 
 /*-----------------------------------------------------------------
@@ -85,10 +85,10 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 
-function sumNumbers(arr) {
-Let sum = 0
+// function sumNumbers(arr) {
+// Let sum = 0
 
-}
+// }
 
 
 /*-----------------------------------------------------------------
@@ -177,7 +177,15 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 // Your solution for 07-reverseUpcaseString here:
 
 
+function reverseUpcaseString (str){
+  let string = str.split("")
+  string.reverse()
+  let newString = string.join("").toUpperCase()
+console.log(newString)
+return newString
+}
 
+console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 /*-----------------------------------------------------------------
