@@ -234,7 +234,17 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
+//return string with CHARACTERS, REVERSE CHARACTERS, CONVERT TO UPPERCASE
+// turn string into an array iterate over each letter in reverse then change to uppercase
+function reverseUpcaseString(string){
+  let results = '';
+  for(let i = 0; i < string.length; i++){
+  results = string.charAt(i).toUpperCase() + results;
+  }
+  return results;
 
+}
+console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 
