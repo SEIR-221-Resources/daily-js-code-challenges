@@ -189,7 +189,7 @@ range(5,2) //=> "First argument must be less than second"
 // Your solution for 06-range here:
 
 function range(x, y) {
- if (x > y) {
+  if (x > y) {
     return "First argument must be less than second"
   }
   let numbers = [];
@@ -197,6 +197,7 @@ function range(x, y) {
     numbers.push(i);
   }
   return numbers;
+  // console.log(numbers)
 }
 
 
@@ -217,16 +218,16 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 // Your solution for 07-reverseUpcaseString here:
 //write a function
 //accept one argument that is a string 
-function reverseUpcaseString(str){
-  return str.split("").reverse().join("").toUpperCase(); 
+function reverseUpcaseString(str) {
+  return str.split("").reverse().join("").toUpperCase();
 }
-reverseUpcaseString("SEI Rocks!")
+reverseUpcaseString("SEI Rocks!");
 
 //return string with uppercase and reversed order characters
 // function reverseUpcaseString(string){
 // let string = string.reverse
 // }
-console.log(reverseUpcaseString("SEI Rocks!"))
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 
@@ -247,6 +248,40 @@ removeEnds('SEI Rocks!'); //=> "DI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
+// write function 
+// accepts one argument that is a string
+//returns the string with the first and last characters removed
+// if string is less than 3 return an empty string
+
+// const newString = function removeEnds(str){
+//   if(newString.length < 3){
+//     console.log("is this fucking working?")
+// }
+// }
+// const string = removeEnds(str){
+  
+
+//   } else {
+//     console.log('SEI Rocks!')
+//   }
+// }
+function removeEnds(str) {
+  // console.log(str.length)
+  if (str.length < 3) {
+    return ("")
+  } else {
+    return (str.substring(1, str.length-1))
+    // console.log(str.replace(str.length - 1, ""))
+    // (str)
+  //   const removed = (removeEnds(str).splice(0, 1))
+  //   return removed
+  }
+}
+// removeEnds('SEI Rocks!'); //=> "DI Rocks"
+// removeEnds('a'); //=> "" (empty string)
+// console.log(removeEnds('SEI Rocks!'));
+
+
 
 
 
