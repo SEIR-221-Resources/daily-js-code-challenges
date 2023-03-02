@@ -221,10 +221,8 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 function removeEnds(str){
-  if (str.length < 3) return "";
-  let str1 = str.replace(str[0], '');
-  return str1.replace(str1[str1.length-1],'');
-
+  if(str.length<3) return "";
+  return str.slice(1, str.length-1);
 }
 
 
