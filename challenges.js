@@ -36,7 +36,8 @@ addOne(-5) //=> -4
   return x + 1
  }
 
- console.log(addOne(-5))
+//  console.log(addOne(-5))
+
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
 
@@ -64,8 +65,7 @@ function addTwoNumbers(x, y) {
   }
 }
 
-console.log(addTwoNumbers(5, 2))
-
+// console.log(addTwoNumbers(5, 2))
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
@@ -93,8 +93,7 @@ function sumNumbers(array) {
   return sum
 }
 
-console.log(sumNumbers([1, 2, 3]))
-
+// console.log(sumNumbers([1, 2, 3]))
 
 /*-----------------------------------------------------------------
 Challenge: 04-addList
@@ -123,8 +122,7 @@ function addList() {
   return sum
 }
 
-console.log(addList(10, 20.25, 35))
-
+// console.log(addList(10, 20.25, 35))
 
 /*-----------------------------------------------------------------
 Challenge: 05-computeRemainder
@@ -155,8 +153,7 @@ function computeRemainder(x, y) {
   }
 }
 
-console.log(computeRemainder(13,0))
-
+// console.log(computeRemainder(13,0))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -184,11 +181,12 @@ function range(x, y) {
     for (let i = x; i < y - 1; i++) {
       arr.push(x += 1)
     }
-    return arr
   }
+  return arr
 }
 
-console.log(range(-2, 2))
+console.log(range(5, 20))
+
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -208,12 +206,10 @@ function reverseUpcaseString(str) {
   const revStr = arrStr.reverse()
   const joinStr = revStr.join('')
   const upStr = joinStr.toUpperCase()
-  console.log(upStr)
+  return upStr
 }
 
-reverseUpcaseString('Adam')
-
-
+// console.log(reverseUpcaseString('This is a reversed and capitalized string'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
