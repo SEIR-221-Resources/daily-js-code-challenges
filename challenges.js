@@ -188,7 +188,7 @@ function range(num1,num2) {
 }
 return arrayOfNumbers
 }
-console.log(range(1,10))
+
 
 
 
@@ -207,9 +207,14 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-
-
-
+function reverseUpcaseString (str){
+  let arr = str.split("")
+  let array = arr.reverse("")
+  let joinArray = array.join("").toUpperCase()
+  return joinArray
+  
+}
+console.log(reverseUpcaseString('camp'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
