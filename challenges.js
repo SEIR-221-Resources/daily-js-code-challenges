@@ -157,7 +157,10 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
-
+//function range(beg,end){
+  //let num1 = []
+  //if(beg <= end) for (let one = beg;) (i<end, i++)(num1.push(1));
+//}
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -172,7 +175,12 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-
+function reverseUpcaseString(str) {
+  let string = str.split("")
+  string.reverse()
+  let newString = string.join("").toUpperCase()
+  console.log(newString);
+}
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
 
