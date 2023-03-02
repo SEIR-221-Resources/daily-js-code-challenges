@@ -221,8 +221,13 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
-
-
+function removeEnds(str) {
+  let shortenedString = ''
+  for (let i = 1; i < str.length - 1; i++) {
+    shortenedString += str[i]
+  }
+  return shortenedString
+}
 
 
 /*-----------------------------------------------------------------
