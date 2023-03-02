@@ -218,15 +218,15 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-function reverseUpcaseString(str) {
-  const strArray = str.split("")
-  let revArray = []
-  for(let i = strArray.length-1; i >= 0; i--){
-    revArray.push(str[i])
-  }
-  return revArray.join("").toUpperCase()
-}
-console.log(reverseUpcaseString("SEI Rocks!"))
+// function reverseUpcaseString(str) {
+//   const strArray = str.split("")
+//   let revArray = []
+//   for(let i = strArray.length-1; i >= 0; i--){
+//     revArray.push(str[i])
+//   }
+//   return revArray.join("").toUpperCase()
+// }
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 
@@ -248,8 +248,19 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(str) {
+  let finalStr = ""
+  let finalStrArr = []
+  const strArray = str.split("")
+  for(let i = 1; i < strArray.length-1; i++){
+    finalStrArr.push(strArray[i])
+  }
+  finalStr  = finalStrArr.join("")
+  return finalStr
+}
 
-
+console.log(removeEnds('SEI Rocks!'))
+console.log(removeEnds('a'))
 
 
 /*-----------------------------------------------------------------
