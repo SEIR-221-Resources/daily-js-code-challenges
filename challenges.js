@@ -174,14 +174,15 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 function range(x, y) {
-  let arr = [x]
+  let arr = []
   if (x > y) {
     return 'First argument must be less than second'
   } else {
-    for (let i = x; i < y - 1; i++) {
-      arr.push(x += 1)
+    for (let i = x; i < y; i++) {
+      arr.push(i)
     }
   }
+  console.log(arr)
   return arr
 }
 
