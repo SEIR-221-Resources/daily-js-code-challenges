@@ -61,7 +61,7 @@ addTwoNumbers('Hello', 5) //=> NaN
 
 
 function addTwoNumbers(num1, num2) {
-  if (typeof(num1) !== 'number' || typeof(num2) !== 'number') {
+  if (typeof (num1) !== 'number' || typeof (num2) !== 'number') {
     return NaN
   } else {
     return num1 + num2
@@ -87,10 +87,10 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-const sumNumbers = function(numbers) {
+const sumNumbers = function (numbers) {
   let sum = 0
-  for (let i=0; i<numbers.length; i++) {
-      sum = sum + numbers[i]
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i]
   }
   return sum
 }
@@ -119,8 +119,8 @@ add(7,-12) //=> -5
 
 function addList() {
   let sum = 0
-  for (let i=0; i<arguments.length; i++) {
-      sum = sum + arguments[i]
+  for (let i = 0; i < arguments.length; i++) {
+    sum = sum + arguments[i]
   }
   return sum
 }
@@ -147,11 +147,11 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder (num1, num2) {
+function computeRemainder(num1, num2) {
   if (num2 === 0) {
     return Infinity
   } else {
-    let quotient = num1/num2
+    let quotient = num1 / num2
     let difference = quotient - Math.floor(quotient)
     return difference * num2
   }
@@ -189,7 +189,7 @@ function range(num1, num2) {
   return arrayOfNumbers
 }
 
-console.log(range(1,10))
+console.log(range(1, 10))
 
 
 /*-----------------------------------------------------------------
@@ -231,8 +231,25 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(string) {
+  if (string.length < 3) {
+    return ''
+  } else {
+    let splitString = string.split("")
+    let newStringArray = []
+    splitString.forEach((character, idx) => {
+      if (idx === 0 || idx === (string.length - 1)) {
+      } else {
+        newStringArray.push(character)
+      }
+    });
+    let joinedArray = newStringArray.join("")
+    return joinedArray
+  }
+}
 
 
+console.log(removeEnds('SEI ROCKS!'))
 
 
 /*-----------------------------------------------------------------
@@ -406,7 +423,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -425,7 +442,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -530,7 +547,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -554,7 +571,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
