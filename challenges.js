@@ -186,7 +186,7 @@ function range(x, y) {
   return arr
 }
 
-console.log(range(5, 20))
+// console.log(range(5, 20))
 
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
@@ -203,14 +203,14 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 function reverseUpcaseString(str) {
-  const arrStr = str.split('')
-  const revStr = arrStr.reverse()
-  const joinStr = revStr.join('')
-  const upStr = joinStr.toUpperCase()
-  return upStr
+  let results = ''
+  for (let i = 0; i < str.length; i++) {
+    results = str[i].toUpperCase() + results
+  }
+  return results
 }
 
-// console.log(reverseUpcaseString('This is a reversed and capitalized string'))
+console.log(reverseUpcaseString('This is a reversed and capitalized string'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -229,9 +229,15 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+const removeEnds = str => {
+  let results = ''
+  for (let i = 1; i < str.length - 1; i++) {
+    results = results + str.charAt(i)
+  }
+  return results
+}
 
-
-
+// console.log(removeEnds('Hi'))
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
