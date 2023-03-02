@@ -6,3 +6,11 @@ JS recognizes Infinity, used as Infinity - though it behaves differently from ma
 
 methods can be attatched to the end of one of other to be executed in sequence such as
 str.split("").reverse().join("");
+
+how the hell does this work
+const inventNames = inventors.map(({year, passed, ...last}) => last)
+
+Output was list = [
+    {first: "wahtever", last: "whatever"},
+    ....
+]
