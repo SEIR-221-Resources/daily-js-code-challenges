@@ -214,7 +214,7 @@ function reverseUpcaseString (str){
   return joinArray
   
 }
-console.log(reverseUpcaseString('camp'))
+//console.log(reverseUpcaseString('camp'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -233,8 +233,12 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(str) {
+  if (str.length < 3) return ""
+  return str.substr(1, str.length - 2);
 
-
+}
+console.log(removeEnds('fart'))
 
 
 /*-----------------------------------------------------------------
