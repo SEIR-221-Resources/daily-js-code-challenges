@@ -13,11 +13,11 @@ sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
 
-function sayHello() {
-  return "Hello!";
-}
+// function sayHello() {
+//   return "Hello!";
+// }
 
-console.log(sayHello()); // Output: Hello!
+// console.log(sayHello()); // Output: Hello!
 
 /*-----------------------------------------------------------------
 Challenge: 01-addOne
@@ -35,13 +35,13 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(number) {
-  return number + 1;
-}
+// function addOne(number) {
+//   return number + 1;
+// }
 
 
-console.log("problem 1: expecting 2", addOne(1))
-console.log("problem 1: expecting -4",addOne(72))
+// console.log("problem 1: expecting 2", addOne(1))
+// console.log("problem 1: expecting -4", addOne(72))
 
 
 /*-----------------------------------------------------------------
@@ -63,15 +63,15 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-function addTwoNumbers(a, b) {
-  if (typeof a === 'number' && typeof b === 'number') {
-    return a + b;
-  } else {
-    return NaN;
-  }
-}
+// function addTwoNumbers(a, b) {
+//   if (typeof a === 'number' && typeof b === 'number') {
+//     return a + b;
+//   } else {
+//     return NaN;
+//   }
+// }
 
-console.log("15 >>",)
+// console.log("15 >>",)
 
 
 
@@ -94,13 +94,13 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-function sumNumbers(nums) {
-  var sum = 0;
-  for(var i = 0; i < nums.length; i++) {
-    sum += nums[i];
-  }
-  return sum;
-}
+// function sumNumbers(nums) {
+//   var sum = 0;
+//   for (var i = 0; i < nums.length; i++) {
+//     sum += nums[i];
+//   }
+//   return sum;
+// }
 
 
 
@@ -156,20 +156,20 @@ computeRemainder(10.5, 3) //=> 1.5
 // Your solution for 05-computeRemainder:
 
 
-function computeRemainder (num1, num2){
-         // dividend -> top number (divend)
-         // divsor -> lower number (divides)
-         if (num2 === 0 ) {
-          return Infinity
-         }
-          console.log( num1 % num2 )
-         // return -> division of two numbers (num1/num2)
-         //"how do I calaculate a remainder, js" - % (modulus) ->
-         // return -> division of two numbers (num1/num2)
-         return num1 % num2
-}
+// function computeRemainder(num1, num2) {
+//   // dividend -> top number (divend)
+//   // divsor -> lower number (divides)
+//   if (num2 === 0) {
+//     return Infinity
+//   }
+//   console.log(num1 % num2)
+//   // return -> division of two numbers (num1/num2)
+//   //"how do I calaculate a remainder, js" - % (modulus) ->
+//   // return -> division of two numbers (num1/num2)
+//   return num1 % num2
+// }
 
-console.log(computeRemainder(4,0))
+// console.log(computeRemainder(4, 0))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -189,20 +189,21 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
-function range(beg, end){
-  let num1 = [];
-  if(beg <= end){
-    for(let i=beg;i<end;i++){
-      num1.push(i);
-    }
 
-    return num1
-  } else {
-    return "First argument must be less than second"
-  }
-}
+// function range(beg, end) {
+//   let num1 = [];
+//   if (beg <= end) {
+//     for (let i = beg; i < end; i++) {
+//       num1.push(i);
+//     }
 
-console.log(range(-2,5));
+//     return num1
+//   } else {
+//     return "First argument must be less than second"
+//   }
+// }
+
+// console.log(range(-2, 5));
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -218,15 +219,15 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-function reverseUpcaseString(str){
-  let string = str.split("")
-  string.reverse()
-let newString = string.join("").toUpperCase()
+// function reverseUpcaseString(str) {
+//   let string = str.split("")
+//   string.reverse()
+//   let newString = string.join("").toUpperCase()
 
-  console.log(newString)
-  return newString
-} 
-console.log(reverseUpcaseString("SEI Rocks!"))
+//   console.log(newString)
+//   return newString
+// }
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 /*-----------------------------------------------------------------
@@ -241,14 +242,31 @@ Prompt:
 
 Examples:
 
-removeEnds('SEI Rocks!'); //=> "DI Rocks"
+removeEnds('SEI Rocks!'); //=> "EI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+// function removeEnds(str) {
+//   if (str.length < 3) {
+//     return "";
+//   } else {
+//     return str.substring(1, str.length - 1);
+//   }
+// }
 
+function removeEnds(str) {
+  if (str.length < 3) {
+    return ""
+  } else {
+    let shorter = str.replace(str[0],'')
+    shorter = shorter.replace(str[str.length-1],'')
+      console.log(shorter)
+  }
 
+}
 
+removeEnds('SEI Rocks!')
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
@@ -421,7 +439,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -440,7 +458,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -545,7 +563,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -569,7 +587,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
