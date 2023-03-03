@@ -316,7 +316,28 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
+function formatWithPadding(num, str, len){
+  let newArray = []
+  let returnString = ""
+  const numToStr = num.toString()
+  const numStrArray = numToStr.split("")
+  
+  if(numStrArray.length >= len){
+    returnString = numToStr
+  }
+  else{
+    for(let i=0; i < len-numStrArray.length; i++){
+      newArray.push(str)
+    }
+    newArray.push(num)
+    returnString = newArray.join("")
+  }
+  return returnString
+}
 
+console.log(formatWithPadding(123, '0', 5))
+console.log(formatWithPadding(42, '*', 10))
+console.log(formatWithPadding(1234, '*', 3))
 
 
 
