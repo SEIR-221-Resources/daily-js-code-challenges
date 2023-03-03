@@ -265,7 +265,15 @@ removeEnds('SEI Rocks!'); //=> "DI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
+function removeEnds(str) {
+  if (str.length< 3) return '';
+  return str.substr(1, str.length-2)
 
+
+}
+removeEnds('SEI ROCKS');
+
+console.log(removeEnds('SEI ROCKS'));
 
 
 
@@ -289,8 +297,24 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+function charCount(str){
+  let charsArray = str.split('')
+  let charObject = {}
+  charsArray .forEach((char)=>{
+    if(charObject[char]){
+      charObject[char]+= 1
+    }else{
+        charObject[char]=1
+      }
+    })
+    return charObject
+  }
 
 
+
+
+
+console.log(charCount('hello'))
 
 
 /*-----------------------------------------------------------------
