@@ -210,7 +210,7 @@ function reverseUpcaseString(str) {
   return results
 }
 
-console.log(reverseUpcaseString('This is a reversed and capitalized string'))
+// console.log(reverseUpcaseString('This is a reversed and capitalized string'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -258,8 +258,15 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+const charCount = str => {
+  const reduceStr = str.split('').reduce((acc, count) => {
+    acc[count] = acc[count] ? acc[count] + 1 : 1
+    return acc
+  }, {})
+  return reduceStr
+}
 
-
+// console.log(charCount('Today is fantastic!'))
 
 
 /*-----------------------------------------------------------------
