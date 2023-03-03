@@ -284,7 +284,7 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 function charCount(str){
   let strArray = str.split("")
   let returnObject = strArray.reduce((acc,strArr) => {
-    acc[strArr] = acc[strArr]? acc[strArr]+1 : 1
+    acc[strArr] = acc[strArr]? acc[strArr]+ 1: 1
     return acc
   }, {})
   return returnObject
@@ -363,8 +363,40 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(str){
+  let result = false;
+  let strArray = str.split("")
+  let filteredArray = []
+ 
+  if(strArray.length === 1 || strArray.length === 0){
+    result = true
+  }
+  else{
+          for(let i = 0; i<strArray.length; i++){
+            if(strArray[i] !== " "){
+              filteredArray.push(strArray[i])
+            }
+          }
+        
+          for(let i = 0; i < (filteredArray.length/2); i++){
+            if(filteredArray[i].toUpperCase() === filteredArray[filteredArray.length-1-i].toUpperCase()){
+              result = true
+            }
+            else{
+              result = false
+              break
+            }
+          }
 
+  }
+  
+  return result
+}
 
+console.log(isPalindrome('SEI Rocks'))
+console.log(isPalindrome('rotor'))
+console.log(isPalindrome('A nut for a jar of tuna'))
+console.log(isPalindrome(''))
 
 
 /*-----------------------------------------------------------------
