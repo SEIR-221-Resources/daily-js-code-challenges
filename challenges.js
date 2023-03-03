@@ -157,11 +157,13 @@ function computeRemainder(num1, num2){
   if (num2 === 0){
     return Infinity
   } else {
-    return (Math.floor(num1/num2))
+    let division = (Math.floor(num1/num2))
+    let total = division * num2
+    return num1 - total
   }
 }
 
-console.log(computeRemainder(4,0))
+console.log(computeRemainder(10,2))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -182,11 +184,20 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(start, finish) {
+  if (start > finish) return 'First argument must be less than second';
+  
+  var range = [];
+  for (var n = start; n < finish; n++) {
+    range.push(n);
+  }
+  
+  return range;
+}
+console.log(range(1,4))
 
 
-
-
-/*-----------------------------------------------------------------
+  /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
 Difficulty: Basic
