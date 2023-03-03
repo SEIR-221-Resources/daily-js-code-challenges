@@ -254,7 +254,32 @@ function charCount(str){
   return tally;
 }
 
+/*
+function charCount(str){
+  let arr = str.split("");
+  let answer = {}
+  for (const char of arr){
+    answer[char] = answer[char] ? answer[char] + 1: 1;
+  }
+  return answer
+}
+*/
+/*
+function charCount(str){
+  let arr = str.split("");
+  let answer = {};
 
+  for (const char of arr){
+    if (`${char}` in answer){
+      answer[char]++;
+    } else {
+      answer[char] = 1;
+    }
+  }
+  
+  return answer
+}
+*/
 
 
 /*-----------------------------------------------------------------
