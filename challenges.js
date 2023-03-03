@@ -271,7 +271,21 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+function charCount(string) {
+  let newArray = string.split("")
+  let countedObject = {}
+  newArray.forEach((character) => {
+    if (countedObject[character]) {
+      countedObject[character] += 1
+    } else {
+      countedObject[character] = 1
+    }
+  })
+  
+  return countedObject
+}
 
+console.log(charCount('hello'))
 
 
 
