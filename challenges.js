@@ -79,7 +79,7 @@ function addTwoNumbers(number1, number2){
 
 
 /*-----------------------------------------------------------------
-Challenge: 03-sumNumbers
+Challenge: 03-sumNumbers DONE 
 
 Difficulty: Basic  
 
@@ -98,6 +98,14 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 
+const sumNumbers = (array) => {
+  if(array.length === 0){
+    return 0
+  } else{ return array.reduce((acc, num) => acc + num) }
+ 
+}
+
+// console.log(sumNumbers([2, 10, -5]))
 
 
 
@@ -120,7 +128,13 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+const addList = ((...args) => {
+  if(args.length === 0){
+    return 0
+  } else{ return args.reduce((acc, num) => acc + num) }
+})
 
+// console.log(addList(1, 1, -2))
 
 
 
@@ -209,8 +223,16 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+const reverseUpcaseString = (str) => {
+  const stringToArray = str.split('')
+  // console.log(stringToArray)
+  const stringArray = stringToArray
+  reversedArray = stringArray.reverse()
+  return reversedArray.map(letter => letter.toUpperCase())
 
+}
 
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 /*-----------------------------------------------------------------
@@ -230,12 +252,24 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+const removeEnds = (str) => {
+  const stringToArray = str.split('')
+  if(stringToArray.length < 3){
+    return ""
+  }
+  stringToArray.splice(0, 1)
+  stringToArray.splice(-1, 1)
+  return stringToArray.join('')
 
+}
 
-
+console.log(removeEnds("SEI Rocks"))
 
 /*-----------------------------------------------------------------
-Challenge: 09-charCount
+
+IN PROGRESS!!!!!!!!!
+
+Challenge: 09-charCount 
 
 Difficulty: Basic
 
@@ -253,9 +287,15 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-
-
-
+// char count = (str) => {
+//   const strToArray = str.splice('')
+//   class Symbol{
+//     constructor(symbol){
+//       this.symbol = symbol
+//     }
+//   }
+//   let 
+// }
 
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
