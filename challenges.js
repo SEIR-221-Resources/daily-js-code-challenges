@@ -281,8 +281,11 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-
-
+function formatWithPadding(int, char, strLen) {
+  let string = `${int}`
+  string = string.padStart(strLen, char)
+  return string
+}
 
 
 /*-----------------------------------------------------------------
