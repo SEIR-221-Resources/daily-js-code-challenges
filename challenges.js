@@ -338,7 +338,14 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
+function formatWithPadding(int, char, targetLength){
+  return int.toFixed(0).padStart(targetLength, char)
+  }
+//I looked up how a multi arg function and padding string to get this answer, I did not know it of the top of my head 
 
+console.log(formatWithPadding(123, '0', 5))
+console.log(formatWithPadding(42, '*', 10))
+console.log(formatWithPadding(1234, '*', 3))
 
 
 
