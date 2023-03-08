@@ -309,8 +309,21 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
-
-
+function isPalindrome(str) {
+  str = str.toLowerCase()
+  let array = str.split(' ')
+  str = array.join('')
+  let firstHalf = ''
+  let secondHalf = ''
+  const halfStrLen = Math.floor(str.length / 2)
+  for (i = 0; i < halfStrLen; i++) {
+    firstHalf += str[i]
+  }
+  for (i = str.length - 1; i > halfStrLen; i--) {
+    secondHalf += str[i]
+  }
+  return firstHalf === secondHalf ? true : false
+}
 
 
 /*-----------------------------------------------------------------
