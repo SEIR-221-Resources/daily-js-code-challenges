@@ -281,7 +281,7 @@ function charCount(string) {
       countedObject[character] = 1
     }
   })
-  
+
   return countedObject
 }
 
@@ -311,8 +311,19 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+function formatWithPadding(number, character, length) {
+  let stringFromNumber = `${number}`
+  if (stringFromNumber.length >= length) {
+    return stringFromNumber
+  } else {
+    let paddedString = character.repeat(length - stringFromNumber.length) + stringFromNumber
+    return paddedString
+  }
 
+  
+}
 
+console.log(formatWithPadding(42, '*', 10))
 
 
 /*-----------------------------------------------------------------
