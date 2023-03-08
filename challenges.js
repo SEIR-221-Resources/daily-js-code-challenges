@@ -303,10 +303,11 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
-
-
-
-
+function formatWithPadding(num1, str, num2){
+  let output = num1.toString();
+  if (output.length >= num2) return output
+  return str.repeat(num2 - output.length) + output;
+}
 
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
