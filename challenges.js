@@ -377,8 +377,16 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-
-
+function mumble(str) {
+  let newStr = ''
+  for (let i = 0; i < str.length; i++) {
+    for (let idx = 0; idx < i + 1; idx++) {
+      newStr += str[i]
+    } newStr += '-'
+  } 
+  newStr = newStr.slice(0, -1)
+  return newStr
+}
 
 
 /*-----------------------------------------------------------------
