@@ -290,9 +290,17 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
+const formatWithPadding = (x, char, y) => {
+  if (Number.isInteger(x) === false || Number.isInteger(y) === false) return
+  if (char.length > 1) return
+  let str = x.toString()
+  while (str.length < y) {
+    str = char + str
+  }
+  return str
+}
 
-
-
+console.log(formatWithPadding(1234, '*', 3))
 
 
 /*-----------------------------------------------------------------
