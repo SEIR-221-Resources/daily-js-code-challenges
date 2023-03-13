@@ -61,16 +61,16 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-function addTwoNumbers(int1,int2) {
+function addTwoNumbers(int1, int2) {
   if (typeof int1 === "number" && typeof int2 === "number") {
-  sum = int1 + int2
-  return console.log(sum)
-} else {
-  return console.log(NaN)
-}
+    sum = int1 + int2
+    return console.log(sum)
+  } else {
+    return console.log(NaN)
+  }
 }
 
-addTwoNumbers(0,5)
+addTwoNumbers(0, 5)
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
@@ -91,10 +91,10 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-function sumNumbers (myArray) {
+function sumNumbers(myArray) {
   var sum = 0;
-  for (i=0; i < myArray.length; i++) {
-      sum += myArray[i];
+  for (i = 0; i < myArray.length; i++) {
+    sum += myArray[i];
   }
   return console.log(sum)
 }
@@ -121,15 +121,15 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList (int) {
+function addList(int) {
   var sum = 0;
-  for (i=0; i < int.length; i++) {
-      sum += int[i];
+  for (i = 0; i < int.length; i++) {
+    sum += int[i];
   }
   return console.log(sum)
 }
 
-addList([7,-12])
+addList([7, -12])
 
 
 
@@ -153,17 +153,17 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder(num1, num2){
-  if (num2 === 0){
+function computeRemainder(num1, num2) {
+  if (num2 === 0) {
     return Infinity
   } else {
-    let division = (Math.floor(num1/num2))
+    let division = (Math.floor(num1 / num2))
     let total = division * num2
     return num1 - total
   }
 }
 
-console.log(computeRemainder(10,2))
+console.log(computeRemainder(10, 2))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -186,18 +186,18 @@ range(5,2) //=> "First argument must be less than second"
 
 function range(start, finish) {
   if (start > finish) return 'First argument must be less than second';
-  
+
   var range = [];
   for (var n = start; n < finish; n++) {
     range.push(n);
   }
-  
+
   return range;
 }
-console.log(range(1,4))
+console.log(range(1, 4))
 
 
-  /*-----------------------------------------------------------------
+/*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
 Difficulty: Basic
@@ -212,9 +212,15 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+function reverseUpcaseString(str) {
+  let reverseString = ''
+  for (i = 0; i < str.length; i++) {
+    reverseString = str[i].toUpperCase() + reverseString;
+  }
+  return reverseString;
+}
 
-
-
+console.log(reverseUpcaseString('SEI Rocks!'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -233,9 +239,15 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(str) {
+  if(str.length >= 3){
+    return str.substr(1, str.length - 2)
+  } else {
+    return str = ""
+  }
+}
 
-
-
+console.log(removeEnds('SEI Rocks!'))
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
@@ -256,9 +268,20 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+function charCount(str) {
+  let string = {}
+  for (i = 0; i < str.length; i++) {
+    let char = str[i]
+    if (string[char]) {
+      string[char]++;
+    } else {
+      string[char] = 1;
+    }
+  } 
+  return string;
+}
 
-
-
+console.log(charCount('hello'))
 
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
@@ -282,8 +305,15 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+function formatWithPadding(int, char, length){
+  let result = int.toFixed(0);
+  while (result.length < length) {
+    result = char + result;
+  }
+  return result
+}
 
-
+console.log(formatWithPadding(123, '0', 5))
 
 
 /*-----------------------------------------------------------------
@@ -408,7 +438,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -427,7 +457,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -532,7 +562,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -556,7 +586,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
