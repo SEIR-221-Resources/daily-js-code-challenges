@@ -420,9 +420,27 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
+function hammingDistance(str1, str2){
+  let str1Arr = str1.split("")
+  let str2Arr = str2.split("")
+  let dist = 0
+  if(str1Arr.length !== str2Arr.length){
+    return 'NaN'
+  }
+  else{
+    for(let i = 0; i<str1Arr.length; i++){
+      if(str1Arr[i] !== str2Arr[i]){
+        dist++
+      }
+    }
+    return dist
+  }
+}
 
-
-
+console.log(hammingDistance('abc', 'abc'))
+console.log(hammingDistance('a1c', 'a2c'))
+console.log(hammingDistance('!!!!', '****'))
+console.log(hammingDistance('abc', 'ab'))
 
 
 /*-----------------------------------------------------------------
