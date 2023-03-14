@@ -313,16 +313,11 @@ function isPalindrome(str) {
   str = str.toLowerCase()
   let array = str.split(' ')
   str = array.join('')
-  let firstHalf = ''
-  let secondHalf = ''
-  const halfStrLen = Math.floor(str.length / 2)
-  for (i = 0; i < halfStrLen; i++) {
-    firstHalf += str[i]
+  let reverseStr = ''
+  for (i = str.length - 1; i >= 0; i--) {
+    reverseStr += str[i]
   }
-  for (i = str.length - 1; i > halfStrLen; i--) {
-    secondHalf += str[i]
-  }
-  return firstHalf === secondHalf ? true : false
+  return str === reverseStr ? true : false
 }
 
 
