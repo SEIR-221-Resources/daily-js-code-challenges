@@ -341,7 +341,7 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 function formatWithPadding(int, char, targetLength){
   return int.toFixed(0).padStart(targetLength, char)
   }
-//I looked up how a multi arg function and padding string to get this answer, I did not know it of the top of my head 
+//I looked up how a multi arg function and padding string to get this answer, I did not know it of the top of my head
 
 console.log(formatWithPadding(123, '0', 5))
 console.log(formatWithPadding(42, '*', 10))
@@ -370,7 +370,37 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
+function isPalindrome(str){
+// do something with the str to check if its a palindrome
+//chack if the word is the same reverse as it is incoming
+//how de we revers a string
+let reverse = str.split('').reverse().filter(c =>c!==" ").join('').toLowerCase()
+let forward = str.split('').filter(c =>c!==" ").join('').toLowerCase()
+console.log(reverse, "||", forward)
+if (reverse === forward){
+  return true
+}
 
+return false
+
+}
+// function isPalindrome(string){
+//   string = string.split('').filter(c =>c!==" ").join('').toLowerCase()
+
+// let length = string.length
+
+//   for (let i =0; i < length / 2; i++){
+//     if(string[i] !== string[length-1 -i]){
+//       return false
+//     }
+//     return true
+//   }
+// }
+
+console.log('true',isPalindrome('rotor'))
+console.log('false',isPalindrome('SEI ROCKS!'))
+console.log('true',isPalindrome('A nut for a jar of tuna'))
+console.log('true', isPalindrome(''))
 
 
 
