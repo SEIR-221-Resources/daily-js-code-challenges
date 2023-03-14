@@ -320,7 +320,7 @@ function formatWithPadding(number, character, length) {
     return paddedString
   }
 
-  
+
 }
 
 console.log(formatWithPadding(42, '*', 10))
@@ -347,7 +347,19 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(string) {
+  let collapsedString = string.split(" ").join("").toUpperCase()
+  let reversedString = ''
+  for (let i = collapsedString.length - 1; i >= 0; i--) {
 
+    reversedString += collapsedString[i]
+    
+  }
+  return reversedString === collapsedString
+}
+
+
+console.log(isPalindrome('A nut for a jar of tuna')); //=> true
 
 
 
