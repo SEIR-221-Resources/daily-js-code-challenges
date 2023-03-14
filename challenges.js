@@ -259,7 +259,7 @@ removeEnds('a'); //=> "" (empty string)
 // }
 // }
 // const string = removeEnds(str){
-  
+
 
 //   } else {
 //     console.log('SEI Rocks!')
@@ -270,11 +270,11 @@ function removeEnds(str) {
   if (str.length < 3) {
     return ("")
   } else {
-    return (str.substring(1, str.length-1))
+    return (str.substring(1, str.length - 1))
     // console.log(str.replace(str.length - 1, ""))
     // (str)
-  //   const removed = (removeEnds(str).splice(0, 1))
-  //   return removed
+    //   const removed = (removeEnds(str).splice(0, 1))
+    //   return removed
   }
 }
 // removeEnds('SEI Rocks!'); //=> "DI Rocks"
@@ -305,8 +305,12 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
+//function charCount
 
-
+function charCount(str) {
+  //return an object 
+  return
+}
 
 
 
@@ -356,11 +360,22 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
+function isPalindrome(str) {
+  let lowerCaseString = str.toLowerCase().split(" ").join("");
+  let stringInReverse = lowerCaseString.split("").reverse().join("");
+  if (str.length === 0 || str.length === 1) {
+    return true;
+  } else if (stringInReverse === lowerCaseString) {
+    return true
+  } else {
+    return false
+  }
+}
 
-
-
-
-
+console.log(isPalindrome('SEI Rocks'));
+console.log(isPalindrome('rotor'));
+console.log(isPalindrome('A nut for a jar of tuna'));
+console.log(isPalindrome(''));
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
 
