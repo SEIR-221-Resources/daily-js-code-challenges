@@ -462,10 +462,28 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
-
-
-
-
+function mumble(str){
+  let strArray = str.split("")
+  let resultString = ""
+  for(let i=0; i<strArray.length; i++){
+    if(i !== strArray.length-1){
+      for(let j = 0; j<= i; j++){
+        resultString += strArray[i]
+      }
+      resultString+='-'
+    }
+    else {
+      for(let j = 0; j<= i; j++){
+        resultString += strArray[i]
+      }
+    }
+  }
+  return resultString
+}
+console.log(mumble('X'))
+console.log(mumble('abc'))
+console.log(mumble('121'))
+console.log(mumble('!A 2'))
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
