@@ -372,10 +372,10 @@ function isPalindrome(str) {
   }
 }
 
-console.log(isPalindrome('SEI Rocks'));
-console.log(isPalindrome('rotor'));
-console.log(isPalindrome('A nut for a jar of tuna'));
-console.log(isPalindrome(''));
+// console.log(isPalindrome('SEI Rocks'));
+// console.log(isPalindrome('rotor'));
+// console.log(isPalindrome('A nut for a jar of tuna'));
+// console.log(isPalindrome(''));
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
 
@@ -397,9 +397,26 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
+function hammingDistance(str1, str2) {
+  //compare string lengths and return NaN if they aren't the same 
+  if (str1.length !== str2.length) {
+    return NaN
+  } else {
+    let count = 0
+    //loop through string - compare each character
+    for (let i = 0; i < str1.length; i++) {
+      if (str1.charAt(i) !== str2.charAt(i)) {
+        count++
+      }
+    }
+    return count // count of mismatched characters in the same position
+  }
+}
 
-
-
+// console.log(hammingDistance('abc', 'abc')); //=> 0
+// console.log(hammingDistance('a1c', 'a2c')); //=> 1
+// console.log(hammingDistance('!!!!', '****')); //=> 4
+// console.log(hammingDistance('abc', 'ab')); //=> NaN
 
 
 /*-----------------------------------------------------------------
@@ -443,10 +460,22 @@ fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
 fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
+function fromPairs(arr) {
+  let obj = {}
+  for (let i = 0; i < arr.length; i++) {
+    const [key, value] = arr[i]
+    obj[key] = value
+    // obj[arr[i][0]] = arr[i][1]
+
+  }
+  return obj
+}
+
+// console.log(fromPairs([['a', 1], ['b', 2], ['c', 3]]))
 
 
-
-
+//const [key,value] = arr[i]
+// obj[key] = value; 
 
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
