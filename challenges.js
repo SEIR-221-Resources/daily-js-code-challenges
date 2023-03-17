@@ -39,7 +39,7 @@ function addOne(num) {
   console.log(sum)
 }
 
-addOne(1)
+// addOne(1)
 
 
 /*-----------------------------------------------------------------
@@ -70,7 +70,7 @@ function addTwoNumbers(int1, int2) {
   }
 }
 
-addTwoNumbers(0, 5)
+// addTwoNumbers(0, 5)
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
@@ -99,7 +99,7 @@ function sumNumbers(myArray) {
   return console.log(sum)
 }
 
-sumNumbers([0])
+// sumNumbers([0])
 
 
 /*-----------------------------------------------------------------
@@ -129,7 +129,7 @@ function addList(int) {
   return console.log(sum)
 }
 
-addList([7, -12])
+// addList([7, -12])
 
 
 
@@ -163,7 +163,7 @@ function computeRemainder(num1, num2) {
   }
 }
 
-console.log(computeRemainder(10, 2))
+// console.log(computeRemainder(10, 2))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -194,7 +194,7 @@ function range(start, finish) {
 
   return range;
 }
-console.log(range(1, 4))
+// console.log(range(1, 4))
 
 
 /*-----------------------------------------------------------------
@@ -220,7 +220,7 @@ function reverseUpcaseString(str) {
   return reverseString;
 }
 
-console.log(reverseUpcaseString('SEI Rocks!'))
+// console.log(reverseUpcaseString('SEI Rocks!'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -247,7 +247,7 @@ function removeEnds(str) {
   }
 }
 
-console.log(removeEnds('SEI Rocks!'))
+// console.log(removeEnds('SEI Rocks!'))
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
@@ -281,7 +281,7 @@ function charCount(str) {
   return string;
 }
 
-console.log(charCount('hello'))
+// console.log(charCount('hello'))
 
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
@@ -313,7 +313,7 @@ function formatWithPadding(int, char, length){
   return result
 }
 
-console.log(formatWithPadding(123, '0', 5))
+// console.log(formatWithPadding(123, '0', 5))
 
 
 /*-----------------------------------------------------------------
@@ -337,7 +337,18 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome (str) {
+  let reverseStr = ''
+  str = str.toLowercase().replace(reverseStr, "")
+  for (i = 0; i < str.length/2; i++) {
+    if(str[i] != str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
 
+// console.log(isPalindrome('SEI Rocks!'))
 
 
 
@@ -409,8 +420,15 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(arr){
+  let obj= {}
+  for(let i=0; i <arr.length; i++) {
+    obj[arr[i][0]] = arr[i][1] 
+  }
+  return obj
+}
 
-
+console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
 
 
 /*-----------------------------------------------------------------
