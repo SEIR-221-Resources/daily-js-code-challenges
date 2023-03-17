@@ -502,7 +502,15 @@ fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
 fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
-
+function fromPairs(nestedArr){
+  let returnObject = {}
+  for(let i=0; i<nestedArr.length; i++){
+    returnObject[nestedArr[i][0]] = nestedArr[i][1]
+  }
+  return returnObject
+}
+console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
+console.log(fromPairs([ ['name', 'Sam'], ['age', 24], ['name', 'Sally'] ]))
 
 
 
