@@ -263,7 +263,7 @@ const removeEnds = (str) => {
 
 }
 
-console.log(removeEnds("SEI Rocks"))
+// console.log(removeEnds("SEI Rocks"))
 
 /*-----------------------------------------------------------------
 
@@ -287,18 +287,24 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-// char count = (str) => {
-//   const strToArray = str.splice('')
-//   class Symbol{
-//     constructor(symbol){
-//       this.symbol = symbol
-//     }
-//   }
-//   let 
-// }
+charCount = (str) => {
+  const charArray = str.split('')
+  const charObj = charArray.reduce((acc, char) => {
+    acc[char] = 0
+    return acc
+  }, {} )
+  charArray.forEach(element => {
+    charObj[element] ++
+  });
+  return charObj
+}
+
+
+// console.log(charCount('hello'))
+// console.log(charCount('Today is fantastic!'))
 
 /*-----------------------------------------------------------------
-Challenge: 10-formatWithPadding
+Challenge: 10-formatWithPadding     
 
 Difficulty: Basic
 
@@ -319,7 +325,10 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+// const formatWithPadding = (output, padding, length) => {
+//   const array = []
 
+// }
 
 
 
@@ -344,8 +353,19 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+// Matthew suggestion: Loop over string, do string.length -1 and append 
 
+// const isPalindrome = string => {
+// let text = "racecar"
+// const textArray = text.split('')
+// let textReverse = textArray.reverse
+// textArray.forEach(){
 
+// }
+
+// }
+
+// console.log(isPalindrome('racecar'))
 
 
 /*-----------------------------------------------------------------
