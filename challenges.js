@@ -361,7 +361,17 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
+function hammingDistance(str1, str2){
+  if(str1.length != str2.length) return NaN
+  
+  let count = 0;
 
+  for(let i = 0; i< str2.length; i++){
+    if(str1[i] != str2[i])count++
+  }
+
+  return count;
+}
 
 
 
@@ -385,10 +395,29 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
+function mumble(str){
+
+  function rMumble(n=0){
+
+    return (n == str.length) ? "" :  "-" + str[n].repeat(n+1) + rMumble(n+1);
+
+  }
+  return rMumble().substring(1);
+}
 
 
+/* Non-recursive solution
+function mumble(str){
+  let arr =[];
+  let arr2 = str.split("")
 
-
+  for (let i = 0; i < arr2.length; i++){
+    arr.push(arr2[i].repeat(i+1))
+    if (i < arr2.length-1) arr.push('-')
+  }
+  return arr.join('')
+}
+*/
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
