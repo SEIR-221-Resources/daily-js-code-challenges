@@ -17,7 +17,6 @@ function sayHello() {
   return 'Hello!'
 }
 
-
 /*-----------------------------------------------------------------
 Challenge: 01-addOne
 
@@ -37,8 +36,6 @@ function addOne(x) {
   return x + 1;
 }
 // console.log(addOne(5))
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -167,8 +164,6 @@ function computeRemainder(num1, num2) {
 }
 // console.log(computeRemainder(5, 5))
 
-
-
 /*-----------------------------------------------------------------
 Challenge: 06-range
 
@@ -200,8 +195,6 @@ function range(x, y) {
   // console.log(numbers)
 }
 
-
-
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -229,9 +222,6 @@ reverseUpcaseString("SEI Rocks!");
 // }
 // console.log(reverseUpcaseString("SEI Rocks!"))
 
-
-
-
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
 
@@ -255,7 +245,7 @@ removeEnds('a'); //=> "" (empty string)
 
 // const newString = function removeEnds(str){
 //   if(newString.length < 3){
-//     console.log("is this fucking working?")
+//     console.log("is this  working?")
 // }
 // }
 // const string = removeEnds(str){
@@ -281,12 +271,6 @@ function removeEnds(str) {
 // removeEnds('a'); //=> "" (empty string)
 // console.log(removeEnds('SEI Rocks!'));
 
-
-
-
-
-
-
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
 
@@ -311,8 +295,6 @@ function charCount(str) {
   //return an object 
   return
 }
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
@@ -376,6 +358,7 @@ function isPalindrome(str) {
 // console.log(isPalindrome('rotor'));
 // console.log(isPalindrome('A nut for a jar of tuna'));
 // console.log(isPalindrome(''));
+
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
 
@@ -418,7 +401,6 @@ function hammingDistance(str1, str2) {
 // console.log(hammingDistance('!!!!', '****')); //=> 4
 // console.log(hammingDistance('abc', 'ab')); //=> NaN
 
-
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
 
@@ -438,9 +420,21 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
+function mumble(str) {
+  //loop through string to get access to each character
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    let valuePos = i + 1;
+    for (let j = 0; j < valuePos; j++) {
+      newStr = newStr + str[i]
+    }
+    if (valuePos !== str.length) {
+      newStr = newStr + '-';
 
-
-
+    }
+  }
+  return newStr
+}
 
 
 /*-----------------------------------------------------------------
