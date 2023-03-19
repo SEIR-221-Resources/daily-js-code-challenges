@@ -433,7 +433,7 @@ function hammingDistance(str1, str2){
   let distance= 0
   for (let i =0; i<str1.length; i += 1){
     if (str1.charAt(i) !== str2.charAt(i)){
-      distance ++ 
+      distance ++
     }
   }
   return distance
@@ -467,7 +467,21 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
-
+function mumble(str){
+//   //return string--name a variable and set to empty string
+  //iterate through each charater in the string
+  //repeate each character(CharAt) based on its index in the sring --position 0 does not repeat , pos 1 repeates once, pos 2 repeates twice,
+  //each repeated section seperate by -
+  let result =''
+  for( let i =0; i < str.length; i++){
+    result += ((i || '') && '-') + str.charAt(i).repeat(i + 1);
+  }
+return result
+}
+console.log(mumble('X')) //=> 'X'
+console.log(mumble('abc')) //=> 'a-bb-ccc'
+console.log(mumble('121')) //=> '1-22-111'
+console.log(mumble('!A 2')) //=> '!-AA-   -2222'
 
 
 
@@ -490,7 +504,15 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(arr){
+  //creates object
+  let object = {}
+  arr.forEach(function(keyValuePair){
+    object[keyValuePair[0]] = keyValuePair[1]
+  })
+  return object
 
+}
 
 
 
@@ -512,9 +534,14 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects(target, ...objects){
+  return Object.assign(target, ...objects)
+}
+//if found this solution via google on javascripttutorial.net/object/javascript-merger-objects/
 
-
-
+console.log(mergeObjects({}, {a: 1}))
+console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
+console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}))
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
