@@ -489,9 +489,17 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects() {
+  // merge each object into first object 
+  // return first object with correct key:value pairs 
+  let allObjects = arguments[0]
+  for (let i = 0; i < arguments.length; i++) {
+    // get access to first argument/object 
+    Object.assign(allObjects, arguments[i])
 
-
-
+  }
+  return allObjects
+}
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
