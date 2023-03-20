@@ -532,8 +532,23 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
+function mergeObjects(){
+  let finalObj = arguments[0]
+  for(let arg = 0; arg<arguments.length; ++arg){
+    let keysToAdd = Object.keys(arguments[arg])
+    let valuesToAdd = Object.values(arguments[arg])
 
+    for(let i=0; i<keysToAdd.length; i++){
+      finalObj[keysToAdd[i]] = valuesToAdd[i]
+    }
 
+  }
+  return finalObj
+}
+
+console.log(mergeObjects({}, {a: 1}))
+console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
+console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}))
 
 
 
