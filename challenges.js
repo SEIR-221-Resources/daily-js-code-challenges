@@ -500,9 +500,14 @@ findHighestPriced([
 //=> { sku: 'b2', price: 50 }
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
+function findHighestPriced(arr){
+  let max = {price: 0};
+  arr.forEach((obj) => {
+    if (obj.price > max.price) max = obj;
+  })
 
-
-
+  return max
+}
 
 
 /*-----------------------------------------------------------------
