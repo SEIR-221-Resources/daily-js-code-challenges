@@ -293,7 +293,7 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 
 function charCount(str) {
   //return an object 
-  return
+  return { count }
 }
 
 /*-----------------------------------------------------------------
@@ -501,6 +501,9 @@ function mergeObjects() {
   return allObjects
 }
 
+
+
+
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
@@ -535,9 +538,34 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+// complete challenge w/ out array methods for loop - while loop - loop through - find highest value - set object at current index to the variable and then 
+function findHighestPriced(arr) {
+  let highestPriced = arr[0]
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].price > highestPriced.price) {
+      highestPriced = arr[i]
+    }
+  }
+  console.log(highestPriced)
+  return highestPriced
+
+}
+// let highestPriced = 0;
+// arr.forEach(obj => {
+//   if (obj.price > highestPriced){
+//     highestPriced = obj.price
+//   }
+
+// })
+// let index = arr.findIndex(obj => {
+//   if (obj.price = highestPriced)
+
+// })
+//loop over each object - get access to  price property
+// console.log(highestPriced)
 
 
-
+// }
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
