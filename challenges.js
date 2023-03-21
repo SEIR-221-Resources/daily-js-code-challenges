@@ -300,7 +300,7 @@ const formatWithPadding = (x, char, y) => {
   return str
 }
 
-console.log(formatWithPadding(1234, '*', 3))
+// console.log(formatWithPadding(1234, '*', 3))
 
 
 /*-----------------------------------------------------------------
@@ -396,7 +396,17 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(arr) {
+  let output = {}
+  arr.forEach(el => {
+    let key = el[0]
+    let value = el[1]
+    output[key] = value
+  })
+  return output
+}
 
+// console.log(fromPairs([ ['name', 'Sam'], ['age', 24], ['name', 'Sally'] ]) )
 
 
 
