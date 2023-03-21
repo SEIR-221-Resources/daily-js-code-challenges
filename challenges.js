@@ -472,11 +472,11 @@ function mumble(str){
   //iterate through each charater in the string
   //repeate each character(CharAt) based on its index in the sring --position 0 does not repeat , pos 1 repeates once, pos 2 repeates twice,
   //each repeated section seperate by -
-  let result =''
+  let output =[]
   for( let i =0; i < str.length; i++){
-    result += ((i || '') && '-') + str.charAt(i).repeat(i + 1);
-  }
-return result
+    output.push(str[i].repeat(i+1))
+}
+return output.join('-')
 }
 console.log(mumble('X')) //=> 'X'
 console.log(mumble('abc')) //=> 'a-bb-ccc'
@@ -505,15 +505,17 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 // Your solution for 14-fromPairs here:
 
 function fromPairs(arr){
-  //creates object
+  //creates empty object
   let object = {}
-  arr.forEach(function(keyValuePair){
-    object[keyValuePair[0]] = keyValuePair[1]
+  //itterate through the array and for each key value pair at index 0 we will pass to the object and set it to the key value pair at index 1
+  arr.forEach(function(pair){
+    object[pair[0]] = pair[1]
   })
   return object
 
 }
-
+console.log(fromPairs([['a', 1], ['b', 2], ['c', 3] ]))
+console.log(fromPairs([ ['name', 'Sam'], ['age', 24], ['name', 'Sally'] ]))
 
 
 /*-----------------------------------------------------------------
