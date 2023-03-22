@@ -363,7 +363,16 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
+function hammingDistance(str1, str2) {
+  if (str1.length !== str2.length) return NaN;
+  let match = 0;
+  for (let i = 0; i < str1.length; i++) {
+    if (str1.charAt(i) !== str2.charAt(i)) match++;
+  }
+  return match;
+}
 
+// console.log(hammingDistance('abc', 'ab'))
 
 
 
@@ -387,8 +396,15 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+function mumble(str) {
+  let output = []
+  for (let i = 0; i < str.length; i++) {
+    output.push(str[i].repeat(i+1))
+  }
+  return output.join('-')
+}
 
-
+// console.log(mumble('!A 2'))
 
 
 /*-----------------------------------------------------------------
@@ -441,7 +457,16 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects(firstObj, ...objects) {
+  objects.forEach(function(obj) {
+    for(let key in obj) {
+      firstObj[key] = obj[key]
+    }
+  });
+  return firstObj
+}
 
+// console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}))
 
 
 
