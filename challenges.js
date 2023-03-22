@@ -473,8 +473,8 @@ findHighestPriced([
 
 function findHighestPriced(arr) {
   let highestPriced = arr[0]
-  for (let i=1; i < arr.length; i++) {
-    if (arr[i]. price > highestPriced.price) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].price > highestPriced.price) {
       highestPriced = arr[i]
     }
   }
@@ -509,8 +509,13 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
-
-
+function mapArray(arr, func) {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(func(arr[i], i))
+  }
+  return newArr
+}
 
 
 /*-----------------------------------------------------------------
