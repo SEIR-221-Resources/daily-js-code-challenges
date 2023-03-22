@@ -593,7 +593,17 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
+function mapArray(arr, func) {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(func(arr[i], i))
+  }
+  // iterate over first arg
+  //every iteration invoke second arg
+  // arr  arr[i]
 
+  return newArr
+}
 
 
 
