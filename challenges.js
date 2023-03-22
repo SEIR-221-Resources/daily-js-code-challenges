@@ -414,9 +414,14 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+const mumble = str => {
+  let output = []
+  for(let i=0; i<str.length; i++){
+    output.push(str[i].repeat(i+1))
+  }
+}
 
-
-
+console.log(mumble('abc'))
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
@@ -436,6 +441,16 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(arr){
+  let output = {}
+  arr.forEach(el=>{
+    let [key, value] = el
+    output[key] = value
+  })
+  return output
+}
+
+console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) )
 
 
 
