@@ -636,9 +636,20 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+function mapArray(arr, func){
+  let result = []
+  arr.map((el, idx)=>{
+    result.push(func(el, idx))
+  })
+  return result
+}
+console.log(mapArray( [1, 2, 3], function(n) {
+  return n * 2;
+} ))
 
-
-
+console.log(mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
+  return `${i + 1} - ${f}`;
+} ))
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
