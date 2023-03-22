@@ -440,9 +440,6 @@ function fromPairs(arr){
   return Object.fromEntries(arr)
 }
 
-
-
-
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
 
@@ -500,6 +497,7 @@ findHighestPriced([
 //=> { sku: 'b2', price: 50 }
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
+/*
 function findHighestPriced(arr){
   let max = {price: 0};
   arr.forEach((obj) => {
@@ -507,6 +505,11 @@ function findHighestPriced(arr){
   })
 
   return max
+}
+*/
+
+function findHighestPriced(arr){
+  
 }
 
 
@@ -536,7 +539,14 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
+function mapArray(arr, cbFunct){
+  let newArr = [];
+  for(let i=0;i<arr.length;i++){
+    newArr.push(cbFunct(arr[i], i))
+  }
 
+  return newArr
+}
 
 
 
