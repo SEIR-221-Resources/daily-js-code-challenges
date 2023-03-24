@@ -497,7 +497,7 @@ findHighestPriced([
 //=> { sku: 'b2', price: 50 }
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
-/*
+
 function findHighestPriced(arr){
   let max = {price: 0};
   arr.forEach((obj) => {
@@ -506,11 +506,8 @@ function findHighestPriced(arr){
 
   return max
 }
-*/
 
-function findHighestPriced(arr){
-  
-}
+
 
 
 /*-----------------------------------------------------------------
@@ -584,9 +581,16 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 //=> {"Yes": 2, "No": 1, "Maybe": 1}
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
+function reduceArray(arr, cb, acc){
+  let placeholder = acc;
 
+  for(let i = 0;i<arr.length;i++){
+    let currValue = arr[i]
+    placeholder = cb(placeholder, currValue, i)
+  }
 
-
+  return placeholder
+}
 
 
 /*-----------------------------------------------------------------
@@ -615,7 +619,9 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
+function flatten(arr){
 
+}
 
 
 
