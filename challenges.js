@@ -685,9 +685,30 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
-
-
+// function reduceArray(arr, func, acc){
+//   arr.forEach((el, idx)=>{
+//     if(idx === 0)acc=idx
+//       acc= func(acc, el, idx)      
+//   })
+//   return acc
+// }
+function reduceArray(arr, func, acc){
+  let x = acc;
+  arr.forEach((el, idx) => {
+      x = func(x, el, idx)
+  })
+ return x
+}
+console.log(reduceArray( [1, 2, 3], function(acc, n) {
+  return acc + n;
+}, 0))
+console.log(reduceArray( [1, 2, 3], function(acc, n, i) {
+  return acc + n + i;
+}, 0))
+console.log(reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
+  acc[v] = acc[v] ? acc[v] + 1 : 1;
+  return acc;
+}, {} ))
 
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
