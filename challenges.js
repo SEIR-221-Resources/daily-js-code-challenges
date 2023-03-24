@@ -581,15 +581,24 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 //=> {"Yes": 2, "No": 1, "Maybe": 1}
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
+// function reduceArray(arr, cb, acc){
+//   let placeholder = acc;
+
+//   for(let i = 0;i<arr.length;i++){
+//     placeholder = cb(placeholder, arr[i], i)
+//   }
+
+//   return placeholder
+// }
+
 function reduceArray(arr, cb, acc){
-  let placeholder = acc;
-
-  for(let i = 0;i<arr.length;i++){
-    placeholder = cb(placeholder, arr[i], i)
-  }
-
-  return placeholder
+  arr.forEach((item, idx) => {
+      acc = cb(acc, item, idx)
+  })
+  
+  return acc
 }
+
 
 
 /*-----------------------------------------------------------------
@@ -618,11 +627,14 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
-function flatten(arr){
+function flatten(arr, newArr = [], n = 0){
+  if (arr.length == 0) return
 
+  let arr1 = arr.shift()
+  newArr.push(arr1)
 }
 
-
+//console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']]))
 
 
 /*-----------------------------------------------------------------
