@@ -585,8 +585,7 @@ function reduceArray(arr, cb, acc){
   let placeholder = acc;
 
   for(let i = 0;i<arr.length;i++){
-    let currValue = arr[i]
-    placeholder = cb(placeholder, currValue, i)
+    placeholder = cb(placeholder, arr[i], i)
   }
 
   return placeholder
