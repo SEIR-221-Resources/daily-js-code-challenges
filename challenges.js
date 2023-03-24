@@ -685,19 +685,11 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-// function reduceArray(arr, func, acc){
-//   arr.forEach((el, idx)=>{
-//     if(idx === 0)acc=idx
-//       acc= func(acc, el, idx)      
-//   })
-//   return acc
-// }
 function reduceArray(arr, func, acc){
-  let x = acc;
-  arr.forEach((el, idx) => {
-      x = func(x, el, idx)
+  arr.forEach((el, idx)=>{
+    acc= func(acc, el, idx)      
   })
- return x
+  return acc
 }
 console.log(reduceArray( [1, 2, 3], function(acc, n) {
   return acc + n;
@@ -736,8 +728,17 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
-
-
+let result = []
+function flatten(arr){
+  if(!Array.isArray(arr))result.push(arr)
+  else
+  arr.forEach(el=>{
+    flatten(el)
+  })
+  return result
+}
+// console.log(flatten( [1, [2, 3]] ))
+console.log(flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] ))
 
 
 
