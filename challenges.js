@@ -325,11 +325,19 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-// const formatWithPadding = (output, padding, length) => {
-//   const array = []
+const formatWithPadding = (number, padding, totalLength) => {
+ let strNumber = number.toString()
+ if (strNumber.length > totalLength){return strNumber}
+  while(strNumber.length < totalLength){
+    strNumber = padding + strNumber
+  }
+  return strNumber
+ 
+ }
+ 
 
-// }
 
+// console.log(formatWithPadding(42, '*', 10))
 
 
 /*-----------------------------------------------------------------
@@ -355,17 +363,18 @@ isPalindrome(''); //=> true
 
 // Matthew suggestion: Loop over string, do string.length -1 and append 
 
-// const isPalindrome = string => {
-// let text = "racecar"
-// const textArray = text.split('')
-// let textReverse = textArray.reverse
-// textArray.forEach(){
+const isPalindrome = string => {
+string = string.toLowerCase().replace(/\s/g, "")
+const reversedString = string.toLowerCase().replace(/\s/g, "").split('').reverse().join('')
+// console.log(reversedString)
+if(string === reversedString){
+  return true
+} else{
+  return false
+}
+}
 
-// }
-
-// }
-
-// console.log(isPalindrome('racecar'))
+// console.log(isPalindrome('A nut for a jar of tuna'))
 
 
 /*-----------------------------------------------------------------
@@ -389,6 +398,7 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
+
 
 
 
@@ -421,7 +431,7 @@ const mumble = str => {
   }
 }
 
-console.log(mumble('abc'))
+// console.log(mumble('abc'))
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
@@ -450,7 +460,7 @@ function fromPairs(arr){
   return output
 }
 
-console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) )
+// console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) )
 
 
 
@@ -542,6 +552,22 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+// function mapArray(arr, cbFunc)
+
+function cbFunc(){
+  array = [1, 2, 3]
+  newArray = []
+  for(i=0, i < array.length; i++;){
+    array[i] ++
+    console.log(array[i])
+    return newArray.push(array[i])
+  }
+  return newArray
+}
+
+// console.log(cbFunc())
+
+
 
 
 
@@ -580,6 +606,15 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
+
+
+
+// function reduceArray(array, cbFunc, startVal){
+//   for(i=0; i<array.length; i++){
+//     //perform cbfunc on array[i]
+//     // cache output of cbFunc in startVal
+//     // on next iteration, output of cbFunc should be added to the existing value of startVal
+//   }
 
 
 
