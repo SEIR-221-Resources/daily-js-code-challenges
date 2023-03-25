@@ -629,10 +629,23 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
-
 function flatten(arr){
   return arr.flat(7)
 }
+
+/* Recursive solution also testing concat() array method
+function flatten(arr){
+  let output = arr.reduce((acc, currVal) => {
+    return acc.concat(currVal)
+  }, []);
+
+  for (item of output){
+    if(Array.isArray(item)) output = flatten(output)
+  }
+
+  return output
+}
+*/
 
 // This actually works lmaooooo 
 // function flatten(arr){
@@ -654,7 +667,6 @@ function flatten(arr){
 //   return newArr
 // }
 
-console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']]))
 
 
 /*-----------------------------------------------------------------
