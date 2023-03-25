@@ -552,8 +552,15 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
-
+function reduceArray(arr, func, acc) {
+  let idx = 0
+  while (idx < arr.length) {
+    console.log(acc)
+    acc = func(acc, arr[idx], idx)
+    idx ++
+  }
+  return acc
+}
 
 
 /*-----------------------------------------------------------------
