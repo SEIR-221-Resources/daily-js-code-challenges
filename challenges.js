@@ -640,9 +640,20 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
+function mapArray(singleArray, callBack){
+  let newArray=[]
+callBack= function(num){
+    return num*num
+  }
+for (i=0; i<singleArray.lenght; i++){
+  newArray.push(callBack(singleArray[i]))
+}
+return newArray
+}
 
 
 
+console.log(mapArray([1, 2, 3]))
 
 
 /*-----------------------------------------------------------------
@@ -678,7 +689,17 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 //=> {"Yes": 2, "No": 1, "Maybe": 1}
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
+let array= [1, 2, 3, 4, 5, 6]
+function reduceArray(array, cb, initialValue){
 
+  let bucket = initialValue
+  for (let i= 0; i< array.length; i+= 1){
+    bucket = cb.call(undefined, bucket, array[i], i, array)
+  }
+return bucket
+
+}
+console.log(array)
 
 
 
@@ -710,8 +731,22 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+function flatten(ary){
+  let holder= []
+  for(let i =0; i< ary.length; i++){
+    if(Array.isArray(ary[i])){
+      holder= holder.concat(flatten(ary[i]))
+      console.log(holder)
+    }else{
+      holder.push(ary[i])
+    }
+  }
+return holder
+}
 
 
+console.log(flatten([1, [2, 3]] ))
+console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']] ))
 
 
 /*-----------------------------------------------------------------
@@ -734,8 +769,26 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(n){
+  if(n===1){
+    return false;
+
+  }else if(n===2){
+    return true
+  }else{
+    for(let i=2; i<n; i++){
+      if(n % i ===0){
+      return false
+      }
+    }
+return true;
+  }
+}
 
 
+console.log(isPrime(45))
+console.log(isPrime(22))
+console.log(isPrime(37))
 
 
 /*-----------------------------------------------------------------
