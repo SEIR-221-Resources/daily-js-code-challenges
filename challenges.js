@@ -633,6 +633,9 @@ function flatten(arr){
   return arr.flat(7)
 }
 
+
+
+
 /* Recursive solution also testing concat() array method
 function flatten(arr){
   let output = arr.reduce((acc, currVal) => {
@@ -646,6 +649,9 @@ function flatten(arr){
   return output
 }
 */
+
+
+
 
 // This actually works lmaooooo 
 // function flatten(arr){
@@ -669,6 +675,9 @@ function flatten(arr){
 
 
 
+
+
+
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
 
@@ -688,6 +697,17 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
+function isPrime(num){
+  if (typeof num != "number" || num % 1 != 0) return false
+  if (num < 2) return false
+
+ 
+  for(let i=2;i<num;i++){
+    if(num%i == 0) return false;
+  }
+
+  return true
+}
 
 
 
