@@ -12,6 +12,8 @@ Examples:
 sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
+// test change
+
 
 function sayHello() {
   return 'Hello!'
@@ -34,8 +36,12 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne(number){
+  return number + 1
+}
 
-
+// console.log(addOne(2))
+// console.log(addOne(77))
 
 
 /*-----------------------------------------------------------------
@@ -57,12 +63,23 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
-
+function addTwoNumbers(number1, number2){
+  const onlyNumbers1 = number1
+  const onlyNumbers2 = number2
+  
+  if(typeof(onlyNumbers1) === "string" || typeof(onlyNumbers1) === "string"){
+    return "NaN"
+  }else{
+    return onlyNumbers1 + onlyNumbers2
+  }
+}
+// console.log(addTwoNumbers(1, 1))
+// console.log(addTwoNumbers(2, 2))
+// console.log(addTwoNumbers('Zak is awesome', 1))
 
 
 /*-----------------------------------------------------------------
-Challenge: 03-sumNumbers
+Challenge: 03-sumNumbers DONE 
 
 Difficulty: Basic  
 
@@ -81,6 +98,14 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 
+const sumNumbers = (array) => {
+  if(array.length === 0){
+    return 0
+  } else{ return array.reduce((acc, num) => acc + num) }
+ 
+}
+
+// console.log(sumNumbers([2, 10, -5]))
 
 
 
@@ -103,7 +128,13 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+const addList = ((...args) => {
+  if(args.length === 0){
+    return 0
+  } else{ return args.reduce((acc, num) => acc + num) }
+})
 
+// console.log(addList(1, 1, -2))
 
 
 
@@ -127,6 +158,19 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+function computeRemainder(val1, val2){
+  const dividend = val1
+  const divisor = val2
+
+  if (val2 === 0){
+    return Infinity
+  }else{return(dividend % divisor)}
+
+  
+  
+}
+
+// console.log(computeRemainder(10.5, 3))
 
 
 
@@ -150,8 +194,18 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2){
+  if (num1 > num2){
+    return "First argument must be less than second."
+  }
+  const arrayOfNumbers = []
+  for (let i=num1; i<num2; i++){
+    arrayOfNumbers.push(i)
+  }
+  return arrayOfNumbers
+}
 
-
+// console.log(range(1, 10))
 
 
 /*-----------------------------------------------------------------
@@ -169,8 +223,16 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+const reverseUpcaseString = (str) => {
+  const stringToArray = str.split('')
+  // console.log(stringToArray)
+  const stringArray = stringToArray
+  reversedArray = stringArray.reverse()
+  return reversedArray.map(letter => letter.toUpperCase())
 
+}
 
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 /*-----------------------------------------------------------------
@@ -190,12 +252,24 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+const removeEnds = (str) => {
+  const stringToArray = str.split('')
+  if(stringToArray.length < 3){
+    return ""
+  }
+  stringToArray.splice(0, 1)
+  stringToArray.splice(-1, 1)
+  return stringToArray.join('')
 
+}
 
-
+// console.log(removeEnds("SEI Rocks"))
 
 /*-----------------------------------------------------------------
-Challenge: 09-charCount
+
+IN PROGRESS!!!!!!!!!
+
+Challenge: 09-charCount 
 
 Difficulty: Basic
 
@@ -213,12 +287,24 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+charCount = (str) => {
+  const charArray = str.split('')
+  const charObj = charArray.reduce((acc, char) => {
+    acc[char] = 0
+    return acc
+  }, {} )
+  charArray.forEach(element => {
+    charObj[element] ++
+  });
+  return charObj
+}
 
 
-
+// console.log(charCount('hello'))
+// console.log(charCount('Today is fantastic!'))
 
 /*-----------------------------------------------------------------
-Challenge: 10-formatWithPadding
+Challenge: 10-formatWithPadding     
 
 Difficulty: Basic
 
@@ -239,8 +325,19 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+const formatWithPadding = (number, padding, totalLength) => {
+ let strNumber = number.toString()
+ if (strNumber.length > totalLength){return strNumber}
+  while(strNumber.length < totalLength){
+    strNumber = padding + strNumber
+  }
+  return strNumber
+ 
+ }
+ 
 
 
+// console.log(formatWithPadding(42, '*', 10))
 
 
 /*-----------------------------------------------------------------
@@ -264,8 +361,20 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+// Matthew suggestion: Loop over string, do string.length -1 and append 
 
+const isPalindrome = string => {
+string = string.toLowerCase().replace(/\s/g, "")
+const reversedString = string.toLowerCase().replace(/\s/g, "").split('').reverse().join('')
+// console.log(reversedString)
+if(string === reversedString){
+  return true
+} else{
+  return false
+}
+}
 
+// console.log(isPalindrome('A nut for a jar of tuna'))
 
 
 /*-----------------------------------------------------------------
@@ -294,6 +403,7 @@ hammingDistance('abc', 'ab'); //=> NaN
 
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
 
@@ -314,9 +424,14 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+const mumble = str => {
+  let output = []
+  for(let i=0; i<str.length; i++){
+    output.push(str[i].repeat(i+1))
+  }
+}
 
-
-
+// console.log(mumble('abc'))
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
@@ -336,6 +451,16 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(arr){
+  let output = {}
+  arr.forEach(el=>{
+    let [key, value] = el
+    output[key] = value
+  })
+  return output
+}
+
+// console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) )
 
 
 
@@ -427,6 +552,22 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+// function mapArray(arr, cbFunc)
+
+function cbFunc(){
+  array = [1, 2, 3]
+  newArray = []
+  for(i=0, i < array.length; i++;){
+    array[i] ++
+    console.log(array[i])
+    return newArray.push(array[i])
+  }
+  return newArray
+}
+
+// console.log(cbFunc())
+
+
 
 
 
@@ -465,6 +606,15 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
+
+
+
+// function reduceArray(array, cbFunc, startVal){
+//   for(i=0; i<array.length; i++){
+//     //perform cbfunc on array[i]
+//     // cache output of cbFunc in startVal
+//     // on next iteration, output of cbFunc should be added to the existing value of startVal
+//   }
 
 
 
