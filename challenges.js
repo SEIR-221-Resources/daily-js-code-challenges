@@ -673,9 +673,18 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-
-
-
+function flatten(arr) {
+  let i = 0;
+  let result = []
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      result = result.concat(flatten(arr[i]));
+    } else {
+      result.push(arr[i])
+    }
+  }
+  return result
+}
 
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
