@@ -14,9 +14,9 @@ sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // // Your solution for 00-sayHello (example) here:
 
-// function sayHello() {
-//   return 'Hello!'
-// }
+function sayHello() {
+  return 'Hello!'
+}
 
 
 /*-----------------------------------------------------------------
@@ -35,13 +35,14 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-// function addOne(number) {
-//    return number +1 
+function addOne(number) {
+   return number +1 
 
-// }
-// console.log('problem 1: exspecting 2', addOne(1))
+}
+console.log("problem 1: exspecting 2", addOne(1))
+console.log("problem 1: expecting -4", addOne(-5))
 
-
+  
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
 
@@ -61,8 +62,18 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-// function addTwoNumbers (num1, num2)
-// return num1 + num2
+addTwoNumbers('Hello', 5) //=> NaN
+// Write a function called addTwoNumbers that accepts two numeric arguments. //
+function addTwoNumbers(num1, num2) {
+  // If eith one of these variables (num1, num2) is not a number than return NaN //
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+    return NaN;
+  }
+  // Defining Sum //
+  const sum = (num1 + num2);
+  //Returning the Sum of Num1 + Num2 //
+  return (sum)
+}
 
 
 /*-----------------------------------------------------------------
@@ -85,10 +96,23 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 
-// function sumNumbers(arr) {
-// Let sum = 0
+sumNumbers([10])
+// Write a function called sumNumbers that accepts a single array of numbers. // 
+function sumNumbers(numbers) {
+  // Initialized Sum //
+  let sum = 0;
+  // Excuted For Loop to iterate through the array of numbers. // 
+  for (let index = 0; index < numbers.length; index++) {
+    // Implemented addition assignmnet operator to add number at each index and assunged to varible sum. //
+    sum += numbers[index]
+  }
+  // Return Sum //
+  return(sum)
+}
 
-// }
+
+
+
 
 
 /*-----------------------------------------------------------------
@@ -110,7 +134,10 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-
+function addList(num1, num2) {
+  return num1 + num2
+}
+addList()
 
 
 
@@ -134,7 +161,15 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+function computeRemainder (num1, num2){
 
+  if (num2 === 0 ) {
+    return Infinity
+  }
+}
+  return num1 % num2
+
+console.log(computeRemainder(4,0))
 
 
 
@@ -157,7 +192,14 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-
+function range(num1, num2) {
+  let nums = []
+  for (let i = 0; i < num2; i++);
+  nums.push(i)
+  
+  return nums
+}
+console.log(range(num1, num2))
 
 
 
@@ -185,7 +227,7 @@ console.log(newString)
 return newString
 }
 
-console.log(reverseUpcaseString("SEI Rocks!"))
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 /*-----------------------------------------------------------------
@@ -200,13 +242,23 @@ Prompt:
 
 Examples:
 
-removeEnds('SEI Rocks!'); //=> "DI Rocks"
+removeEnds('SEI Rocks!'); //=> "EI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(str){
+  if(str.length<3){return ""}
+  else {
+  let shorter = str.replace(str[0],'M')
+  shorter = shorter.replace(str[str.length-1],'M')
+  return shorter
+  }
 
 
+// }
+
+// console.log(removeEnds('abcdefg'))
 
 
 /*-----------------------------------------------------------------
@@ -227,6 +279,14 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
+
+function charCount(str){
+  let count = {}
+  console.log = (str.split(""))
+for (let i=0;i<str.length;i)
+    return count
+  }
+
 
 
 
@@ -254,8 +314,16 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+function formatWithPadding(num, str, num2){
+  let output = num+"";
+  if(output.length > length){
+    return
+  } else {
+    return str.repeat(length-outpout.length) + output
+  }
+}
 
-
+formatWithPadding(123, '0', 5)
 
 
 /*-----------------------------------------------------------------
@@ -279,7 +347,17 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
-
+function isPalindrome(string) {
+  let collapsedString = string.split(" ").join("").toUpperCase()
+  console.log(collapsedString)
+  let resvesedString = ''
+  for (let i = collapsedString.length -1; i >= 0; i--) {
+    reversedString == collapsedString[i]
+    console.log(resvesedString)
+  }
+  return reversedString === collapsedString
+}
+console.log(isPalindrome('A nut for a jar of tuna'))
 
 
 
@@ -351,7 +429,15 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-
+function fromPairs(){
+  // create an object from an array of (arrays)
+  let output = {}
+  array.forEach(el=>{
+      console.log(el$)
+      output[ el[0]] = el[1]
+  })
+  return output
+}
 
 
 
@@ -372,6 +458,20 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
+mergeObjects({ a: 1, b: 2, c: 3 }, { d: 4 });  //=> {a: 1, b: 2, c: 3, d: 4}
+// Creating a declarative fuction that accepts two accepts objects as input params //
+function mergeObjects(targetObj, ...sourceObjs) {
+  // forEach method will iterate over source objects/perform a specific action //
+  sourceObjs.forEach((sourceObj) => {
+    // use built in object (.keys method) that will be attached to the object //
+    Object.keys(sourceObj).forEach((key) => {
+      // if the key object is == to source object, then the target object will be returned //
+      targetObj[key] = sourceObj[key];
+    });
+  });
+  return targetObj;
+}
+
 
 
 
@@ -410,8 +510,29 @@ findHighestPriced([
 //=> { sku: 'b2', price: 50 }
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
-
-
+// //
+function findHighestPriced(arrayOfPrices) {
+  // Initializing two variables with default values for comparison later //
+  let highestPrice = -Infinity
+  // 
+  let highestPriceObject = null
+  // 1st argument(initialization) is the starting position. 2nd arguement(condition) to be evaluated in order for the 4 loop to be executed "i is less than arrayOfPieces."" 3rd arguement(increment operator) that will execute after every interation//
+  for (let i = 0; i < arrayOfPrices.length; i++) {
+    // Setting each currentObject within the array of objects //
+    const currentObject = arrayOfPrices[i]
+    // Using dot notation to access the price property of the current object //
+    const curentPrice = currentObject.price
+    // If statement will compare the current price to the highest price. //
+    if (currentPrice > highestPrice) {
+      // Highest price will be assigned to the current price //
+      highestPrice = currentPrice
+      // Highest price oject will be assinged as the current object if object price is higher //
+      highestPriceObject = currentObject
+    }
+  }
+  //Returning highest priced object after all iterations performed //
+  return (highestPriceObject)
+}
 
 
 
@@ -441,7 +562,22 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
-
+// Write a function named mapArray that accepts two arguments: a single array and a callback function. //
+function mapArray(arr, callback) {
+  // Initializing newArray to use later//
+  const newArr = []
+  // For Loop //
+  for (let idx = 0; idx < arr.length; idx++) {
+    // Defining each element to = each index of the array //
+    const element = arr[idx];
+    // Creating a new variable to capture result. Invoking the callback function (2nd arg), passing to it as arguments, the current element and its index. //
+    const result = callback(element, idx)
+    // Pushed result of the callback function into the newArray //  
+    newArr.push(result)
+  }
+  // Returning new array //
+  return (newArr)
+}
 
 
 
@@ -480,7 +616,8 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
+// const array = [8, 88, 888, 8888]
+// array.reduce()
 
 
 
@@ -504,7 +641,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -528,7 +665,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
