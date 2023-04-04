@@ -353,7 +353,7 @@ function isPalindrome(string) {
   for (let i = collapsedString.length - 1; i >= 0; i--) {
 
     reversedString += collapsedString[i]
-    
+
   }
   return reversedString === collapsedString
 }
@@ -385,14 +385,14 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
-function hammingDistance (str1, str2) {
+function hammingDistance(str1, str2) {
   if (str1.length !== str2.length) {
     return NaN
   } else {
     let count = 0
-    for (let i=0; i < str1.length; i++) {
-      if (str1[i] !== str2[i]){
-        count ++
+    for (let i = 0; i < str1.length; i++) {
+      if (str1[i] !== str2[i]) {
+        count++
       }
     }
     return count
@@ -422,11 +422,11 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-function mumble (string) {
+function mumble(string) {
   let stringArray = string.split("")
   let mumbled = []
-  for (let i=0; i < stringArray.length; i++) {
-    let newString = stringArray[i].repeat(i+1)
+  for (let i = 0; i < stringArray.length; i++) {
+    let newString = stringArray[i].repeat(i + 1)
     if (i !== stringArray.length - 1) {
       newString += '-'
     }
@@ -459,7 +459,7 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-function fromPairs(array){
+function fromPairs(array) {
   let output = {}
   array.forEach(pair => {
     output[pair[0]] = pair[1]
@@ -468,7 +468,7 @@ function fromPairs(array){
 
 }
 
-console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
+console.log(fromPairs([['a', 1], ['b', 2], ['c', 3]]))
 
 
 /*-----------------------------------------------------------------
@@ -489,8 +489,16 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects(obj1, obj2){
+  for (let prop in obj2){
+    obj1[prop] = obj2[prop]
+  }
+  return obj1
+}
 
 
+
+console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
 
 
 /*-----------------------------------------------------------------
@@ -527,9 +535,26 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(array){
+  let highPricedIndex
+  let price = 0
+  for (let i=0; i<array.length; i++){
+    if (array[i].price > price){
+      price = array[i].price
+      highPricedIndex = i
+    }
+  }
+  return array[highPricedIndex]
+}
 
+console.log(findHighestPriced([
+  { sku: 'a1', price: 25 },
+  { sku: 'b2', price: 50 },
+  { sku: 'c3', price: 50 },
+  { sku: 'd4', price: 10 }
+])
 
-
+)
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -558,9 +583,18 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+function mapArray(array, cb) {
+  let output = []
+  for (let i = 0; i < array.length; i++) {
+    output.push(cb(array[i]))
+  }
+  return output
+}
 
+const arg1 = [1, 2, 3]
+const arg2 = function (n) { return n * 2 }
 
-
+console.log(mapArray(arg1, arg2))
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
@@ -596,7 +630,18 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
+function reduceArray(array, cb, acc){
+  for (let i=0; i<array.length; i++){
+    acc = cb(acc, array[i], i)
+  }
+  return acc
+}
 
+console.log(reduceArray( [1, 2, 3], function(acc, n) {
+  return acc + n;
+}, 0)
+
+)
 
 
 
@@ -626,9 +671,25 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
+function flatten(input){
+  let flattened = []
+  // loop over the array one item at a time
+  input.forEach(item => {
+    //check if that item is an array or not
+    if (item.constructor === Array){
+      // if it is, flatten tha array to ensure there is nothing nested within it, then add it onto the end of the current output array
+      let subFlattened = flatten(item)
+      flattened = flattened.concat(subFlattened)
+      // if that item isn't an array, add that value to the flattened array
+    } else {
+      flattened.push(item)
+    }
+  })
+  return flattened
 
+}
 
-
+console.log(flatten(( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] )))
 
 
 /*-----------------------------------------------------------------
@@ -651,6 +712,16 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(number) {
+  for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+
+console.log(isPrime(4))
 
 
 
