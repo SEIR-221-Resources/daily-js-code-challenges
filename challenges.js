@@ -504,9 +504,26 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+test = [
+  { sku: 'a1', price: 25 },
+  { sku: 'b2', price: 50 },
+  { sku: 'c3', price: 50 },
+  { sku: 'd4', price: 10 }
+]
 
+function findHighestPriced(arr) {
+  let highestPrice = 0
+  let result
+  arr.forEach(function(obj) {
+    if (obj.price > highestPrice) {
+      highestPrice = obj.price
+      result = obj
+    }
+  });
+  return result;
+}
 
-
+console.log(findHighestPriced(test))
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -604,8 +621,19 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+function flatten(arr) {
+  const holder =[]
+  for (let i=0; i < arr.length; i++) {
+    if(Array.isArray(arr[i]) === true) {
+      
+    } else {
+      holder.push(arr[i])
+    }
+  }
+  console.log(holder)
+}
 
-
+// flatten([1, [2, 3], 3, 5, [7]])
 
 
 /*-----------------------------------------------------------------
