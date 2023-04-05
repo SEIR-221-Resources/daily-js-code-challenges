@@ -374,7 +374,15 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
-
+function hammingDistance(str1,str2){
+  if (str1.length === str2.length){
+    for(let i = 0; i<str1.length; i++){
+       
+    }
+  } else {
+    return NaN
+  }
+}
 
 
 
@@ -398,7 +406,14 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+function mumble(string){
+  var result = '';
+  for (var i = 0; i < str.length; i++) {
 
+    result += ((i || '') && '-') + str.charAt(i).repeat(i + 1);
+  }
+  return result;
+}
 
 
 
@@ -428,7 +443,7 @@ function fromPairs(arr){
   return obj
 }
 
-console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
+// console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
 
 
 /*-----------------------------------------------------------------
@@ -449,9 +464,16 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects(target, ...objects) {
+  objects.forEach(function (obj) {
+    for (var key in obj) {
+      target[key] = obj[key];
+    }
+  });
+  return target;
+}
 
-
-
+// console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
@@ -487,9 +509,24 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(arr){
+  let highestPrice = 0
+  let i = 1
+  while (i <arr.length){
+    if (arr[i].price > highestPrice.price){
+      highestPrice = arr[i]
+    }
+    i+1
+  }
+   return highestPrice
+}
 
-
-
+// console.log(findHighestPriced([
+//   { sku: 'a1', price: 25 },
+//   { sku: 'b2', price: 50 },
+//   { sku: 'c3', price: 50 },
+//   { sku: 'd4', price: 10 }
+// ]));
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -518,10 +555,17 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+function mapArray(arr, cb) {
+  var newArr = [];
+  arr.forEach(function (el, idx) {
+    newArr.push(cb(el, idx));
+  });
+  return newArr;
+}
 
-
-
-
+console.log(mapArray( [1, 2, 3], function(n) {
+  return n * 2;
+} ))
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
 
@@ -557,9 +601,17 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 // Your solution for 18-reduceArray here:
 
 
+function reduceArray(arr, cb, initAcc) {
+  var acc = initAcc;
+  arr.forEach(function (el, idx) {
+    acc = cb(acc, el, idx);
+  });
+  return acc;
+}
 
-
-
+// console.log(reduceArray( [1, 2, 3], function(acc, n) {
+//   return acc + n;
+// }, 0))
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
 
@@ -587,9 +639,22 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+function flatten(arr){
+  let i = 0
+  let result = []
+  for(let i = 0; i<arr.length; i++){
+    if (Array.isArray(arr[i])){
+      result = result.concat(flatten(arr[i]))
+    } else {
+      result.push(arr[i])
+   
+    }
+  }
 
+  return result
+}
 
-
+console.log(flatten( [1, [2, 3]] ))
 
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
@@ -611,7 +676,15 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(n) {
+  if (n < 2 || !Number.isInteger(n)) return false;
+  for (var i = 2; i <= n / 2; i++) {
+    if (Number.isInteger(n / i)) return false;
+  }
+  return true;
+}
 
+// console.log(isPrime(2))
 
 
 
