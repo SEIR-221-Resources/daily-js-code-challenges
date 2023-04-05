@@ -523,7 +523,7 @@ function findHighestPriced(arr) {
   return result;
 }
 
-console.log(findHighestPriced(test))
+// console.log(findHighestPriced(test))
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -552,9 +552,17 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+function mapArray(arr, cb) {
+  newArr = []
+  arr.forEach(function(el, idx) {
+    newArr.push(cb(el, idx))
+  })
+  return newArr
+}
 
-
-
+// console.log(mapArray(['rose', 'tulip', 'daisy'], function(f, i) {
+//   return `${i + 1} - ${f}`;
+// } ))
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
@@ -590,9 +598,17 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
+function reduceArray(arr, cb, init) {
+  var acc = init;
+  arr.forEach(function(el, idx) {
+    acc = cb(acc, el, idx);
+  });
+  return acc;
+}
 
-
-
+console.log(reduceArray([1, 2, 3], function(acc, n) {
+  return acc + n;
+}, 0))
 
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
