@@ -606,9 +606,9 @@ function reduceArray(arr, cb, init) {
   return acc;
 }
 
-console.log(reduceArray([1, 2, 3], function(acc, n) {
-  return acc + n;
-}, 0))
+// console.log(reduceArray([1, 2, 3], function(acc, n) {
+//   return acc + n;
+// }, 0))
 
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
@@ -638,18 +638,18 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 // Your solution for 19-flatten here:
 
 function flatten(arr) {
-  const holder =[]
-  for (let i=0; i < arr.length; i++) {
-    if(Array.isArray(arr[i]) === true) {
-      
+  let newArr = []
+  arr.forEach(function(el) {
+    if (Array.isArray(el)) {
+      newArr = newArr.concat(flatten(el))
     } else {
-      holder.push(arr[i])
+      newArr.push(el)
     }
-  }
-  console.log(holder)
+  })
+  return newArr
 }
 
-// flatten([1, [2, 3], 3, 5, [7]])
+// console.log(flatten([1, [2, 3], 3, 5, [7]]))
 
 
 /*-----------------------------------------------------------------
@@ -672,9 +672,15 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(n) {
+  if (n < 2 || !Number.isInteger(n)) return false;
+  for (var i = 2; i <= n / 2; i++) {
+    if (Number.isInteger(n / i)) return false;
+  }
+  return true;
+}
 
-
-
+console.log(isPrime(200))
 
 /*-----------------------------------------------------------------
 Challenge: 21-primeFactors
