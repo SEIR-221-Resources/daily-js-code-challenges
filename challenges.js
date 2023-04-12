@@ -804,7 +804,35 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-
+function primeFactors(num){
+  if(num <= 1 || !Number.isInteger(num)){
+    return []
+  }
+  else{
+    let divisor = 2
+    let factors = []
+    let pFactors = []
+    while(num >= 2){
+      if(num % divisor == 0){
+        factors.push(divisor)
+        num = num/divisor
+      }
+      else{
+        divisor++
+      }
+      
+    }
+    factors.forEach(n=>{if(isPrime(n)){pFactors.push(n)}})
+    return pFactors
+  }
+}
+console.log(primeFactors(2))
+console.log(primeFactors(3))
+console.log(primeFactors(4))
+console.log(primeFactors(18))
+console.log(primeFactors(29))
+console.log(primeFactors(105))
+console.log(primeFactors(200))
 
 
 
