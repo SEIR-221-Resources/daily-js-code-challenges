@@ -663,8 +663,34 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-
-
+function primeFactors(num) {
+  let array = []
+  let factors = []
+  if (num <= 1) {
+    return array
+  } 
+  else if (num % 1 !== 0) {
+    return array
+  }
+  for (let i = 2; i <= num/2; i++) {
+    if (num % i === 0) {
+      factors.push(i)
+    }
+  }
+  if (factors.length === 0) {
+    array.push(num)
+    return array
+  }
+  let idx = 0
+  while (num !== 1) {
+    if (num % factors[idx] === 0) {
+      num = num / factors[idx]
+      array.push(factors[idx])
+    } 
+    else idx +=1
+  }
+  return array
+}
 
 
 /*-----------------------------------------------------------------
