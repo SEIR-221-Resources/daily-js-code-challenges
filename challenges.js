@@ -99,10 +99,10 @@ return sum;
 
   }
 
-console.log(sumNumbers([10]))
-console.log(sumNumbers([5, 10]))
-console.log(sumNumbers([2, 10, -5]))
-console.log(sumNumbers([]))
+// console.log(sumNumbers([10]))
+// console.log(sumNumbers([5, 10]))
+// console.log(sumNumbers([2, 10, -5]))
+// console.log(sumNumbers([]))
 
 
 /*-----------------------------------------------------------------
@@ -130,10 +130,10 @@ function addList(){
     }
     return sum;
   }
-  console.log(addList(1))
-  console.log(addList(1, 50, 1.23))
-  console.log(addList(7, -12))
-  console.log(addList())
+  // console.log(addList(1))
+  // console.log(addList(1, 50, 1.23))
+  // console.log(addList(7, -12))
+  // console.log(addList())
 
 
 
@@ -176,9 +176,9 @@ function computerRemainder(num1, num2){
 //  return num1 % num2;
 // }
 
-console.log(computerRemainder(10,2));
-console.log(computerRemainder(4,0));
-console.log(computerRemainder(10.5,3));
+// console.log(computerRemainder(10,2));
+// console.log(computerRemainder(4,0));
+// console.log(computerRemainder(10.5,3));
 
 
 
@@ -211,10 +211,10 @@ function range (num1, num2){
   }
   return arrayOfNumbers
 }
-console.log(range(1,4)) //=> [1,2,3]
-console.log(range(-2, 3)) //=> [-2,-1,0,1,2]
-console.log(range(1,1)) //=> []
-console.log(range(5,2)) //=> "First argument must be less than second"
+// console.log(range(1,4)) //=> [1,2,3]
+// console.log(range(-2, 3)) //=> [-2,-1,0,1,2]
+// console.log(range(1,1)) //=> []
+// console.log(range(5,2)) //=> "First argument must be less than second"
 
 
 
@@ -244,7 +244,7 @@ function reverseUpcaseString(string){
   return results;
 
 }
-console.log(reverseUpcaseString("SEI Rocks!"))
+// console.log(reverseUpcaseString("SEI Rocks!"))
 
 
 
@@ -273,7 +273,7 @@ function removeEnds(str) {
 }
 removeEnds('SEI ROCKS');
 
-console.log(removeEnds('SEI ROCKS'));
+// console.log(removeEnds('SEI ROCKS'));
 
 
 
@@ -314,7 +314,7 @@ function charCount(str){
 
 
 
-console.log(charCount('hello'))
+// console.log(charCount('hello'))
 
 
 /*-----------------------------------------------------------------
@@ -343,9 +343,9 @@ function formatWithPadding(int, char, targetLength){
   }
 //I looked up how a multi arg function and padding string to get this answer, I did not know it of the top of my head
 
-console.log(formatWithPadding(123, '0', 5))
-console.log(formatWithPadding(42, '*', 10))
-console.log(formatWithPadding(1234, '*', 3))
+// console.log(formatWithPadding(123, '0', 5))
+// console.log(formatWithPadding(42, '*', 10))
+// console.log(formatWithPadding(1234, '*', 3))
 
 
 
@@ -397,10 +397,10 @@ return false
 //   }
 // }
 
-console.log('true',isPalindrome('rotor'))
-console.log('false',isPalindrome('SEI ROCKS!'))
-console.log('true',isPalindrome('A nut for a jar of tuna'))
-console.log('true', isPalindrome(''))
+// console.log('true',isPalindrome('rotor'))
+// console.log('false',isPalindrome('SEI ROCKS!'))
+// console.log('true',isPalindrome('A nut for a jar of tuna'))
+// console.log('true', isPalindrome(''))
 
 
 
@@ -439,11 +439,11 @@ function hammingDistance(str1, str2){
   return distance
 }
 
-console.log(hammingDistance('abc', 'abc'))
-console.log(hammingDistance('a1c', 'a2c'))
-console.log(hammingDistance('!!!!', '****'))
+// console.log(hammingDistance('abc', 'abc'))
+// console.log(hammingDistance('a1c', 'a2c'))
+// console.log(hammingDistance('!!!!', '****'))
 
-console.log(hammingDistance('abc', 'ab'))
+// console.log(hammingDistance('abc', 'ab'))
 
 
 
@@ -478,10 +478,10 @@ function mumble(str){
 }
 return output.join('-')
 }
-console.log(mumble('X')) //=> 'X'
-console.log(mumble('abc')) //=> 'a-bb-ccc'
-console.log(mumble('121')) //=> '1-22-111'
-console.log(mumble('!A 2')) //=> '!-AA-   -2222'
+// console.log(mumble('X')) //=> 'X'
+// console.log(mumble('abc')) //=> 'a-bb-ccc'
+// console.log(mumble('121')) //=> '1-22-111'
+// console.log(mumble('!A 2')) //=> '!-AA-   -2222'
 
 
 
@@ -514,8 +514,8 @@ function fromPairs(arr){
   return object
 
 }
-console.log(fromPairs([['a', 1], ['b', 2], ['c', 3] ]))
-console.log(fromPairs([ ['name', 'Sam'], ['age', 24], ['name', 'Sally'] ]))
+// console.log(fromPairs([['a', 1], ['b', 2], ['c', 3] ]))
+// console.log(fromPairs([ ['name', 'Sam'], ['age', 24], ['name', 'Sally'] ]))
 
 
 /*-----------------------------------------------------------------
@@ -541,9 +541,9 @@ function mergeObjects(target, ...objects){
 }
 //if found this solution via google on javascripttutorial.net/object/javascript-merger-objects/
 
-console.log(mergeObjects({}, {a: 1}))
-console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
-console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}))
+// console.log(mergeObjects({}, {a: 1}))
+// console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
+// console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}))
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
@@ -592,24 +592,24 @@ return highestPriceObj
 
 }
 
-console.log(findHighestPriced([
-  { sku: 'a1', price: 25 },
-  { sku: 'b2', price: 5 },
-  { sku: 'c3', price: 50 },
-  { sku: 'd4', price: 10 }
-]))
-console.log(findHighestPriced([
-  { sku: 'a1', price: 25 },
-  { sku: 'b2', price: 50 },
-  { sku: 'c3', price: 50 },
-  { sku: 'd4', price: 10 }
-]))
+// console.log(findHighestPriced([
+//   { sku: 'a1', price: 25 },
+//   { sku: 'b2', price: 5 },
+//   { sku: 'c3', price: 50 },
+//   { sku: 'd4', price: 10 }
+// ]))
+// console.log(findHighestPriced([
+//   { sku: 'a1', price: 25 },
+//   { sku: 'b2', price: 50 },
+//   { sku: 'c3', price: 50 },
+//   { sku: 'd4', price: 10 }
+// ]))
 
-console.log(findHighestPriced([
-  { sku: 'a1', price: 50 },
-  { sku: 'b2', price: 50 }
+// console.log(findHighestPriced([
+//   { sku: 'a1', price: 50 },
+//   { sku: 'b2', price: 50 }
 
-]))
+// ]))
 
 
 
@@ -653,7 +653,7 @@ return newArray
 
 
 
-console.log(mapArray([1, 2, 3]))
+// console.log(mapArray([1, 2, 3]))
 
 
 /*-----------------------------------------------------------------
@@ -699,7 +699,7 @@ function reduceArray(array, cb, initialValue){
 return bucket
 
 }
-console.log(array)
+// console.log(array)
 
 
 
@@ -736,17 +736,17 @@ function flatten(ary){
   for(let i =0; i< ary.length; i++){
     if(Array.isArray(ary[i])){
       holder= holder.concat(flatten(ary[i]))
-      console.log(holder)
+
     }else{
       holder.push(ary[i])
     }
-  }
+  }console.log('end of flatten call', holder)
 return holder
 }
 
 
-console.log(flatten([1, [2, 3]] ))
-console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']] ))
+// console.log(flatten([1, [2, 3]] ))
+// console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']] ))
 
 
 /*-----------------------------------------------------------------
@@ -786,9 +786,9 @@ return true;
 }
 
 
-console.log(isPrime(45))
-console.log(isPrime(22))
-console.log(isPrime(37))
+// console.log(isPrime(45))
+// console.log(isPrime(22))
+// console.log(isPrime(37))
 
 
 /*-----------------------------------------------------------------
@@ -815,7 +815,32 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
+function primeFactors(n){
+  //if a number is less than 1 or is not a whole number then return an empty array
+  let primeArry= []
+  if (n < 2 || !Number.isInteger(n)) return primeArry
+  //prime factors of a whole number are the prime numbers that when multiplied equal the whole number
+  //according to mathisfun.com to determine prime factors you should start by dividing the number by the smallest prime factor
+  let divisor = 2
+  while (n >= divisor * divisor) {
+    if(Number.isInteger(n / divisor)){
+      primeArry.push(divisor)
+      n = n / divisor
+    } else{
+      divisor++
+    }
+  }
+  primeArry.push(n)
+  return primeArry
+}
 
+console.log(primeFactors(2))
+console.log(primeFactors(3))
+console.log(primeFactors(4))
+console.log(primeFactors(18))
+console.log(primeFactors(29))
+console.log(primeFactors(105))
+console.log(primeFactors(200))
 
 
 
@@ -839,9 +864,25 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
+ function intersection(arr1, arr2){
+  let interArray=[]
+  if (arr1.length === 0 || arr2.length  === 0) return interArray
+  for (let i = 0; i<arr1.length -1; i++){
+    for(let j = 0; j<arr2.length -1; j++){
+      if(arr1[i] === arr2[j]){
+        interArray.push(arr1[i])
+      }
+    }
+
+  }
+  return interArray
 
 
+ }
 
+console.log(intersection(['a', 1], []))
+console.log(intersection(['a', 1], [true, 'a', 15]))
+console.log(intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]))
 
 
 /*-----------------------------------------------------------------
