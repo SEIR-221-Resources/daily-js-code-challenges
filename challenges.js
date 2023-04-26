@@ -32,9 +32,9 @@ addOne(1) //=> 2
 addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
- function addOne(x) {
+function addOne(x) {
   return x + 1
- }
+}
 
 //  console.log(addOne(-5))
 
@@ -399,7 +399,7 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 function mumble(str) {
   let output = []
   for (let i = 0; i < str.length; i++) {
-    output.push(str[i].repeat(i+1))
+    output.push(str[i].repeat(i + 1))
   }
   return output.join('-')
 }
@@ -458,8 +458,8 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 // Your solution for 15-mergeObjects here:
 
 function mergeObjects(firstObj, ...objects) {
-  objects.forEach(function(obj) {
-    for(let key in obj) {
+  objects.forEach(function (obj) {
+    for (let key in obj) {
       firstObj[key] = obj[key]
     }
   });
@@ -514,7 +514,7 @@ test = [
 function findHighestPriced(arr) {
   let highestPrice = 0
   let result
-  arr.forEach(function(obj) {
+  arr.forEach(function (obj) {
     if (obj.price > highestPrice) {
       highestPrice = obj.price
       result = obj
@@ -554,7 +554,7 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 
 function mapArray(arr, cb) {
   newArr = []
-  arr.forEach(function(el, idx) {
+  arr.forEach(function (el, idx) {
     newArr.push(cb(el, idx))
   })
   return newArr
@@ -600,7 +600,7 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 
 function reduceArray(arr, cb, init) {
   var acc = init;
-  arr.forEach(function(el, idx) {
+  arr.forEach(function (el, idx) {
     acc = cb(acc, el, idx);
   });
   return acc;
@@ -639,7 +639,7 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 
 function flatten(arr) {
   let newArr = []
-  arr.forEach(function(el) {
+  arr.forEach(function (el) {
     if (Array.isArray(el)) {
       newArr = newArr.concat(flatten(el))
     } else {
@@ -680,7 +680,7 @@ function isPrime(n) {
   return true;
 }
 
-console.log(isPrime(200))
+// console.log(isPrime(200))
 
 /*-----------------------------------------------------------------
 Challenge: 21-primeFactors
@@ -706,9 +706,29 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
+function primeFactors(n) {
+  // if n is les than 2 or is not an integer, return an empty array
+  if (n < 2 || !Number.isInteger(n)) return []
+  primeArr = []
+  for (let i = 2; i < n; i++) {
+    if (Number.isInteger(n / i)) {
+      primeArr.push(i)
+    }
+  }
 
+  // once I have the array with all the factors, iterate over that array and check if each element is prime
+  // if number is prime, check next number in array
+  // if number is not prime, split into prime numbers and push those numbers into the original array
+  // once all factors have been reduced to only prime factors, remove duplicates
+  // then, multiple all the elements within the array and divide n by that number
+  // finally, push that quotient into the prime factors array
 
+  // if there are no elements in the array, push n into the array 
+  if (primeArr.length === 0) primeArr.push(n)
+  return primeArr
+}
 
+// console.log(primeFactors(105))
 
 /*-----------------------------------------------------------------
 Challenge: 22-intersection
@@ -731,9 +751,20 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
+function intersection(arr1, arr2) {
+  let newArr = []
+  if (arr1.length === 0 || arr2.length === 0) return newArr
+  for (let i = 0; i < arr1.length - 1; i++) {
+    for (let j = 0; j < arr2.length - 1; j++) {
+      if (arr1[i] === arr2[j]) {
+        newArr.push(arr1[i])
+      }
+    }
+  }
+  return newArr
+}
 
-
-
+console.log(intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]))
 
 /*-----------------------------------------------------------------
 Challenge: 23-balancedBrackets
