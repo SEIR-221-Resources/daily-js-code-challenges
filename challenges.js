@@ -754,8 +754,28 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
+function primeFactors(int){
+  let primeArray = []
+  if(!Number.isInteger(int) || int <= 1){
+    return(primeArray)
+  }
+  //for (let i = 2; i < int; i++){
+// if (Number.isInteger(n / i){
+  // primeArray.push
+// })
+  // }
+  else if(int)
+  return(primeArray)
+}
 
 
+console.log(primeFactors(2)) //=> [2]
+console.log(primeFactors(3)) //=> [3]
+console.log(primeFactors(4)) //=> [2, 2]
+console.log(primeFactors(18)) //=> [2, 3, 3]
+console.log(primeFactors(29)) //=> [29]
+console.log(primeFactors(105)) //=> [3, 5, 7]
+console.log(primeFactors(200)) //=> [2, 2, 2, 5, 5]
 
 
 /*-----------------------------------------------------------------
@@ -778,7 +798,20 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
-
+function intersection(arr1, arr2){
+  let newArray = []
+  if (arr1.length === 0 || arr2.length === 0){
+    return newArray
+}
+for (i=0; i<arr1.length-1; i++){
+  for (let j = 0; j <arr2.length-1; j++){
+    if (arr1[i] === arr2[j]){
+      newArray.push(arr1[i])
+    }
+  }
+}
+return newArray
+}
 
 
 
