@@ -238,7 +238,7 @@ function removeEnds(str) {
   return str.substr(1, str.length - 2);
 
 }
-console.log(removeEnds('fart'))
+// console.log(removeEnds('fart'))
 
 
 /*-----------------------------------------------------------------
@@ -251,7 +251,7 @@ Prompt:
 - Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
 - The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
 - Upper and lower case characters should be counted separately.
-- Space characters should be count too.
+- Space characters should be counted too.
 
 Examples:
 
@@ -259,8 +259,19 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-
-
+function charCount(str) {
+  const count = {}
+  for (let i = 0; i < str.length; i++) {
+    const character = str.charAt(i)
+      if (count[character]) {
+        count[character]++;
+    } else {
+      count[character] = 1;
+      }
+      }
+    return count
+}
+// console.log(charCount("hello"))
 
 
 
@@ -310,7 +321,15 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-
+function isPalindrome(str){
+  let output = false
+  let reverse = str.split('').reverse().filter(c=>c!==" ").join('').toLowerCase()
+  let forward = str.split('').filter(c=>c!==" ").join('').toLowerCase()
+  if (reverse === str){
+    return true
+  }
+  return output
+}
 
 
 
@@ -361,7 +380,13 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-
+function mumble(str){
+  let output = []
+  for (let i =0; i<str.length;i++){
+    output.push(str[i].repeat(i+1))
+  }
+  return output.join('-')
+}
 
 
 
@@ -383,6 +408,15 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(){
+  //create an object from an array of nested arrays
+  let output = {}
+  arr.forEach(el => {
+    output[ el[0] ] = el[1]
+  })
+  
+  return output
+}
 
 
 
@@ -443,9 +477,21 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(arr){
+//return highest priced object form array
+let highestPrice = arr[0].price
+for (let i =0; i<arr.length; i++) {
+  if (arr[i].price > highestPrice){
+    console.log('current:', arr[0].price)
+    console.log('highest:', highestPrice)
+
+  }
+}
 
 
+}
 
+//console.log(findHighestPrice)
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -543,7 +589,24 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+function flatten(arr) {
+  var holder = []
+  for(let i = 0; i < arr.length; i++){
+    if(Array.isArray(arr[i])){
+      console.log(arr[1])
+      holder = holder.concat(flatten(arr[1]))
 
+    } else {
+      holder.push(arr[i])
+      //console.log(holder)
+
+    }
+  }
+  return holder
+}
+// possibly use while loop
+// can use recursion
+// flatten( [1, [2, 3]] )
 
 
 
@@ -567,7 +630,16 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(num){
+  for (let i = 2; i < num; i++ ){
+    if (num % i === 0){
+      return false
+    }
+  }
+  return true
+}
 
+isPrime(21)
 
 
 
@@ -594,7 +666,31 @@ primeFactors(105) //=> [3, 5, 7]
 primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
+// function isPrime(num){
+//   for (let i = 2; i < num; i++ ){
+//     if (num % i === 0){
+//       console.log(num)
+//       return false
+//     }
+//   }
+//   return true
+// }
 
+function primeFactors(num) {
+  let array = []
+  if (num <= 1) return array
+  let divisor = 2
+  while ( num >= 2 ) {
+    if (num % divisor === 0){
+      array.push(divisor)
+      num = num / divisor
+    } else divisor++
+  }
+  return array
+}
+
+
+primeFactors(29)
 
 
 
