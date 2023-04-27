@@ -639,7 +639,7 @@ function isPrime(num){
   return true
 }
 
-isPrime(21)
+// isPrime(21)
 
 
 
@@ -690,7 +690,7 @@ function primeFactors(num) {
 }
 
 
-primeFactors(29)
+// primeFactors(29)
 
 
 
@@ -716,6 +716,25 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
+function intersection(arr1,arr2){
+  // can contain a mixture of strings, numbers and booleans
+  // return a NEW array all elements in common
+  // return empty if no elements in common
+  // do not mutate
+  const outputArr = []
+  for (let i = 0; i < arr1.length; i++){
+    for (let j = 0; j < arr2.length; j++){
+      if (arr1[i] === arr2[j]){
+        outputArr.push([arr1[i]])
+        arr2.splice(j,i)
+        break
+      }
+    }
+  }
+ return outputArr
+}
+
+// intersection([1, 'a', 1, true, 1, 1], [true, 1, 'b', 1])
 
 
 
