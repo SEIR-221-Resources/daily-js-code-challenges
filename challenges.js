@@ -791,7 +791,7 @@ function intersection(arr1, arr2){
   return output
 }
 
-console.log(intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]))
+
 
 
 /*-----------------------------------------------------------------
