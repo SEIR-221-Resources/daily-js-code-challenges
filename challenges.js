@@ -856,8 +856,24 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
-
-
+function intersection(arr1, arr2){
+  let result = []
+  for(let idx1=0; idx1<arr1.length; idx1++){
+    for(let idx2=0; idx2<arr2.length; idx2++){
+      if(arr1[idx1]===arr2[idx2]){
+        result.push(arr1[idx1])
+        arr2.pop(idx2)
+        break
+      }     
+      
+    }
+    
+  }
+  return result
+}
+console.log(intersection(['a', 1], []))
+console.log(intersection(['a', 1], [true, 'a', 15]))
+console.log(intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]))
 
 
 
@@ -882,9 +898,32 @@ balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
+function balancedBrackets(str){
+  let strArray = str.split("")
+  const openBrackets = ['(', '[', '{']
+  const closeBrackets = [')', ']', '}']
+  
+  let result = false
+  strArray.forEach((x, i) => {
+    if(openBrackets.includes(x)){
+      if(closeBrackets.includes(strArray[i+1])){
+        if(openBrackets.indexOf(x) === closeBrackets.indexOf(strArray[i+1])){
+          result = true
+        }
+        else{
+          result= false        
+        }
+      }
+    }
+  })
+  return result
+}
 
-
-
+console.log(balancedBrackets( '()' )) // => true
+console.log(balancedBrackets( '(]' )) // => false
+console.log(balancedBrackets( '[{}]' )) // => true
+console.log(balancedBrackets( '[(])' )) // => false
+console.log(balancedBrackets( '[({}[])]' )) // => true
 
 
 /*-----------------------------------------------------------------
