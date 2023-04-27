@@ -908,6 +908,39 @@ balancedBrackets( '[({}[])]' ) // => true
 // Your solution for 23-balancedBrackets here:
 
 
+function balancedBrackets(string){
+  let arr = Array.from(string)
+  let matchArray =[]
+  for (let i =0; i<arr.length;i++){
+    if ('{[('.includes(arr[i])){
+      matchArray.push(arr[i])
+
+    }else{
+      if(!'[] {} ()'.includes(matchArray.pop() + arr[i])) return false
+    }
+
+  }
+return true
+
+//   for(let i =0; i<arr.length;i++){
+//     if (arr[i]==='(' && arr[i+1]===')'){
+//     i++
+//     return true
+//   }
+//   else if(arr[i]==='{' && arr[i+1]==='}'){
+//     i++
+//     return true
+//   }else if(arr[i]==='[' && arr[i+1]===']'){
+//     i++
+//     return true
+//   }
+// }
+}
+ console.log(balancedBrackets( '()' )) // => true
+ console.log(balancedBrackets( '(]' )) // => false
+ console.log(balancedBrackets( '[{}]' )) // => true
+ console.log(balancedBrackets( '[(])' ))// => false
+ console.log(balancedBrackets( '[({}[])]' )) // => true
 
 
 
@@ -915,6 +948,7 @@ balancedBrackets( '[({}[])]' ) // => true
 Challenge: 24-isWinningTicket
 
 Difficulty:  Intermediate
+
 
 Prompt:
 
