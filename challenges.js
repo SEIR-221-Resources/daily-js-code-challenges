@@ -34,7 +34,9 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-
+function addOne(number) {
+  return number + 1
+}
 
 
 
@@ -58,8 +60,13 @@ addTwoNumbers('Hello', 5) //=> NaN
 // Your solution for 02-addTwoNumbers here:
 
 
-
-
+function addTwoNumbers(num1, num2) {
+  if (typeof (num1) !== 'number' || typeof (num2) !== 'number') {
+    return NaN
+  } else {
+    return num1 + num2
+  }
+}
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
@@ -80,7 +87,13 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
+const sumNumbers = function (numbers) {
+  let sum = 0
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i]
+  }
+  return sum
+}
 
 
 
@@ -104,6 +117,13 @@ add(7,-12) //=> -5
 // Your solution for 04-addList here:
 
 
+function addList() {
+  let sum = 0
+  for (let i = 0; i < arguments.length; i++) {
+    sum = sum + arguments[i]
+  }
+  return sum
+}
 
 
 
@@ -127,7 +147,15 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-
+function computeRemainder(num1, num2) {
+  if (num2 === 0) {
+    return Infinity
+  } else {
+    let quotient = num1 / num2
+    let difference = quotient - Math.floor(quotient)
+    return difference * num2
+  }
+}
 
 
 
@@ -150,8 +178,18 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2) {
+  if (num1 > num2) {
+    return "First argument must be less than second."
+  }
+  const arrayOfNumbers = []
+  for (let i = num1; i < num2; i++) {
+    arrayOfNumbers.push(i)
+  }
+  return arrayOfNumbers
+}
 
-
+console.log(range(1, 10))
 
 
 /*-----------------------------------------------------------------
@@ -169,9 +207,12 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+function reverseUpcaseString(string) {
+  return string.split("").reverse().join("").toUpperCase()
 
+}
 
-
+console.log(reverseUpcaseString("SEI Rocks!"))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -190,8 +231,25 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(string) {
+  if (string.length < 3) {
+    return ''
+  } else {
+    let splitString = string.split("")
+    let newStringArray = []
+    splitString.forEach((character, idx) => {
+      if (idx === 0 || idx === (string.length - 1)) {
+      } else {
+        newStringArray.push(character)
+      }
+    });
+    let joinedArray = newStringArray.join("")
+    return joinedArray
+  }
+}
 
 
+console.log(removeEnds('SEI ROCKS!'))
 
 
 /*-----------------------------------------------------------------
@@ -213,7 +271,21 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+function charCount(string) {
+  let newArray = string.split("")
+  let countedObject = {}
+  newArray.forEach((character) => {
+    if (countedObject[character]) {
+      countedObject[character] += 1
+    } else {
+      countedObject[character] = 1
+    }
+  })
 
+  return countedObject
+}
+
+console.log(charCount('hello'))
 
 
 
@@ -239,8 +311,19 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+function formatWithPadding(number, character, length) {
+  let stringFromNumber = `${number}`
+  if (stringFromNumber.length >= length) {
+    return stringFromNumber
+  } else {
+    let paddedString = character.repeat(length - stringFromNumber.length) + stringFromNumber
+    return paddedString
+  }
 
 
+}
+
+console.log(formatWithPadding(42, '*', 10))
 
 
 /*-----------------------------------------------------------------
@@ -264,7 +347,19 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(string) {
+  let collapsedString = string.split(" ").join("").toUpperCase()
+  let reversedString = ''
+  for (let i = collapsedString.length - 1; i >= 0; i--) {
 
+    reversedString += collapsedString[i]
+
+  }
+  return reversedString === collapsedString
+}
+
+
+console.log(isPalindrome('A nut for a jar of tuna')); //=> true
 
 
 
@@ -290,8 +385,21 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
+function hammingDistance(str1, str2) {
+  if (str1.length !== str2.length) {
+    return NaN
+  } else {
+    let count = 0
+    for (let i = 0; i < str1.length; i++) {
+      if (str1[i] !== str2[i]) {
+        count++
+      }
+    }
+    return count
+  }
+}
 
-
+console.log(hammingDistance('abc', 'a2c'))
 
 
 /*-----------------------------------------------------------------
@@ -314,8 +422,23 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+function mumble(string) {
+  let stringArray = string.split("")
+  let mumbled = []
+  for (let i = 0; i < stringArray.length; i++) {
+    let newString = stringArray[i].repeat(i + 1)
+    if (i !== stringArray.length - 1) {
+      newString += '-'
+    }
+    mumbled.push(newString)
+  }
+  mumbled = mumbled.join("")
+  return mumbled
 
 
+}
+
+console.log(mumble('!A 2'))
 
 
 /*-----------------------------------------------------------------
@@ -336,8 +459,16 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs(array) {
+  let output = {}
+  array.forEach(pair => {
+    output[pair[0]] = pair[1]
+  })
+  return output
 
+}
 
+console.log(fromPairs([['a', 1], ['b', 2], ['c', 3]]))
 
 
 /*-----------------------------------------------------------------
@@ -358,14 +489,22 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects(obj1, obj2){
+  for (let prop in obj2){
+    obj1[prop] = obj2[prop]
+  }
+  return obj1
+}
 
 
+
+console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
 
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -384,7 +523,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -396,9 +535,26 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(array){
+  let highPricedIndex
+  let price = 0
+  for (let i=0; i<array.length; i++){
+    if (array[i].price > price){
+      price = array[i].price
+      highPricedIndex = i
+    }
+  }
+  return array[highPricedIndex]
+}
 
+console.log(findHighestPriced([
+  { sku: 'a1', price: 25 },
+  { sku: 'b2', price: 50 },
+  { sku: 'c3', price: 50 },
+  { sku: 'd4', price: 10 }
+])
 
-
+)
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -427,9 +583,18 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+function mapArray(array, cb) {
+  let output = []
+  for (let i = 0; i < array.length; i++) {
+    output.push(cb(array[i]))
+  }
+  return output
+}
 
+const arg1 = [1, 2, 3]
+const arg2 = function (n) { return n * 2 }
 
-
+console.log(mapArray(arg1, arg2))
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
@@ -465,7 +630,18 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
+function reduceArray(array, cb, acc){
+  for (let i=0; i<array.length; i++){
+    acc = cb(acc, array[i], i)
+  }
+  return acc
+}
 
+console.log(reduceArray( [1, 2, 3], function(acc, n) {
+  return acc + n;
+}, 0)
+
+)
 
 
 
@@ -489,15 +665,31 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
+function flatten(input){
+  let flattened = []
+  // loop over the array one item at a time
+  input.forEach(item => {
+    //check if that item is an array or not
+    if (item.constructor === Array){
+      // if it is, flatten tha array to ensure there is nothing nested within it, then add it onto the end of the current output array
+      let subFlattened = flatten(item)
+      flattened = flattened.concat(subFlattened)
+      // if that item isn't an array, add that value to the flattened array
+    } else {
+      flattened.push(item)
+    }
+  })
+  return flattened
 
+}
 
-
+console.log(flatten(( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] )))
 
 
 /*-----------------------------------------------------------------
@@ -513,13 +705,23 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(number) {
+  for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+
+console.log(isPrime(4))
 
 
 
