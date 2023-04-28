@@ -252,10 +252,10 @@ function removeEnds(str) {
   let finalStr = ""
   let finalStrArr = []
   const strArray = str.split("")
-  for(let i = 1; i < strArray.length-1; i++){
+  for (let i = 1; i < strArray.length - 1; i++) {
     finalStrArr.push(strArray[i])
   }
-  finalStr  = finalStrArr.join("")
+  finalStr = finalStrArr.join("")
   return finalStr
 }
 
@@ -281,10 +281,10 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-function charCount(str){
+function charCount(str) {
   let strArray = str.split("")
-  let returnObject = strArray.reduce((acc,strArr) => {
-    acc[strArr] = acc[strArr]? acc[strArr]+ 1: 1
+  let returnObject = strArray.reduce((acc, strArr) => {
+    acc[strArr] = acc[strArr] ? acc[strArr] + 1 : 1
     return acc
   }, {})
   return returnObject
@@ -316,17 +316,17 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
-function formatWithPadding(num, str, len){
+function formatWithPadding(num, str, len) {
   let newArray = []
   let returnString = ""
   const numToStr = num.toString()
   const numStrArray = numToStr.split("")
-  
-  if(numStrArray.length >= len){
+
+  if (numStrArray.length >= len) {
     returnString = numToStr
   }
-  else{
-    for(let i=0; i < len-numStrArray.length; i++){
+  else {
+    for (let i = 0; i < len - numStrArray.length; i++) {
       newArray.push(str)
     }
     newArray.push(num)
@@ -363,33 +363,33 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
-function isPalindrome(str){
+function isPalindrome(str) {
   let result = false;
   let strArray = str.split("")
   let filteredArray = []
- 
-  if(strArray.length === 1 || strArray.length === 0){
+
+  if (strArray.length === 1 || strArray.length === 0) {
     result = true
   }
-  else{
-          for(let i = 0; i<strArray.length; i++){
-            if(strArray[i] !== " "){
-              filteredArray.push(strArray[i])
-            }
-          }
-        
-          for(let i = 0; i < (filteredArray.length/2); i++){
-            if(filteredArray[i].toUpperCase() === filteredArray[filteredArray.length-1-i].toUpperCase()){
-              result = true
-            }
-            else{
-              result = false
-              break
-            }
-          }
+  else {
+    for (let i = 0; i < strArray.length; i++) {
+      if (strArray[i] !== " ") {
+        filteredArray.push(strArray[i])
+      }
+    }
+
+    for (let i = 0; i < (filteredArray.length / 2); i++) {
+      if (filteredArray[i].toUpperCase() === filteredArray[filteredArray.length - 1 - i].toUpperCase()) {
+        result = true
+      }
+      else {
+        result = false
+        break
+      }
+    }
 
   }
-  
+
   return result
 }
 
@@ -420,16 +420,16 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
-function hammingDistance(str1, str2){
+function hammingDistance(str1, str2) {
   let str1Arr = str1.split("")
   let str2Arr = str2.split("")
   let dist = 0
-  if(str1Arr.length !== str2Arr.length){
+  if (str1Arr.length !== str2Arr.length) {
     return 'NaN'
   }
-  else{
-    for(let i = 0; i<str1Arr.length; i++){
-      if(str1Arr[i] !== str2Arr[i]){
+  else {
+    for (let i = 0; i < str1Arr.length; i++) {
+      if (str1Arr[i] !== str2Arr[i]) {
         dist++
       }
     }
@@ -462,18 +462,18 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
-function mumble(str){
+function mumble(str) {
   let strArray = str.split("")
   let resultString = ""
-  for(let i=0; i<strArray.length; i++){
-    if(i !== strArray.length-1){
-      for(let j = 0; j<= i; j++){
+  for (let i = 0; i < strArray.length; i++) {
+    if (i !== strArray.length - 1) {
+      for (let j = 0; j <= i; j++) {
         resultString += strArray[i]
       }
-      resultString+='-'
+      resultString += '-'
     }
     else {
-      for(let j = 0; j<= i; j++){
+      for (let j = 0; j <= i; j++) {
         resultString += strArray[i]
       }
     }
@@ -502,15 +502,15 @@ fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
 fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
-function fromPairs(nestedArr){
+function fromPairs(nestedArr) {
   let returnObject = {}
-  for(let i=0; i<nestedArr.length; i++){
+  for (let i = 0; i < nestedArr.length; i++) {
     returnObject[nestedArr[i][0]] = nestedArr[i][1]
   }
   return returnObject
 }
-console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
-console.log(fromPairs([ ['name', 'Sam'], ['age', 24], ['name', 'Sally'] ]))
+console.log(fromPairs([['a', 1], ['b', 2], ['c', 3]]))
+console.log(fromPairs([['name', 'Sam'], ['age', 24], ['name', 'Sally']]))
 
 
 
@@ -532,13 +532,13 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
-function mergeObjects(){
+function mergeObjects() {
   let finalObj = arguments[0]
-  for(let arg = 0; arg<arguments.length; ++arg){
+  for (let arg = 0; arg < arguments.length; ++arg) {
     let keysToAdd = Object.keys(arguments[arg])
     let valuesToAdd = Object.values(arguments[arg])
 
-    for(let i=0; i<keysToAdd.length; i++){
+    for (let i = 0; i < keysToAdd.length; i++) {
       finalObj[keysToAdd[i]] = valuesToAdd[i]
     }
 
@@ -546,9 +546,9 @@ function mergeObjects(){
   return finalObj
 }
 
-console.log(mergeObjects({}, {a: 1}))
-console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}))
-console.log(mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}))
+console.log(mergeObjects({}, { a: 1 }))
+console.log(mergeObjects({ a: 1, b: 2, c: 3 }, { d: 4 }))
+console.log(mergeObjects({ a: 1, b: 2, c: 3 }, { d: 4 }, { b: 22, d: 44 }))
 
 
 
@@ -586,10 +586,10 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
-function findHighestPriced(objArr){
-  let highestPriceObj = {sku:'', price:0}
-  objArr.forEach(el=>{
-    if(highestPriceObj.price<el['price']){
+function findHighestPriced(objArr) {
+  let highestPriceObj = { sku: '', price: 0 }
+  objArr.forEach(el => {
+    if (highestPriceObj.price < el['price']) {
       highestPriceObj.sku = el.sku
       highestPriceObj.price = el.price
     }
@@ -636,20 +636,20 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
-function mapArray(arr, func){
+function mapArray(arr, func) {
   let result = []
-  arr.map((el, idx)=>{
+  arr.map((el, idx) => {
     result.push(func(el, idx))
   })
   return result
 }
-console.log(mapArray( [1, 2, 3], function(n) {
+console.log(mapArray([1, 2, 3], function (n) {
   return n * 2;
-} ))
+}))
 
-console.log(mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
+console.log(mapArray(['rose', 'tulip', 'daisy'], function (f, i) {
   return `${i + 1} - ${f}`;
-} ))
+}))
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
@@ -685,22 +685,22 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-function reduceArray(arr, func, acc){
-  arr.forEach((el, idx)=>{
-    acc= func(acc, el, idx)      
+function reduceArray(arr, func, acc) {
+  arr.forEach((el, idx) => {
+    acc = func(acc, el, idx)
   })
   return acc
 }
-console.log(reduceArray( [1, 2, 3], function(acc, n) {
+console.log(reduceArray([1, 2, 3], function (acc, n) {
   return acc + n;
 }, 0))
-console.log(reduceArray( [1, 2, 3], function(acc, n, i) {
+console.log(reduceArray([1, 2, 3], function (acc, n, i) {
   return acc + n + i;
 }, 0))
-console.log(reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
+console.log(reduceArray(['Yes', 'No', 'Yes', 'Maybe'], function (acc, v) {
   acc[v] = acc[v] ? acc[v] + 1 : 1;
   return acc;
-}, {} ))
+}, {}))
 
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
@@ -729,16 +729,16 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 let result = []
-function flatten(arr){
-  if(!Array.isArray(arr))result.push(arr)
+function flatten(arr) {
+  if (!Array.isArray(arr)) result.push(arr)
   else
-  arr.forEach(el=>{
-    flatten(el)
-  })
+    arr.forEach(el => {
+      flatten(el)
+    })
   return result
 }
 // console.log(flatten( [1, [2, 3]] ))
-console.log(flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] ))
+console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']]))
 
 
 
@@ -761,13 +761,13 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-function isPrime(num){
-  
-  if(num === 1) return false
-  else if(num === 2) return true
-  else{
-    for(let i=2; i<num; i++){
-      if(num % i === 0) return false
+function isPrime(num) {
+
+  if (num === 1) return false
+  else if (num === 2) return true
+  else {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) return false
     }
     return true
   }
@@ -804,25 +804,25 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-function primeFactors(num){
-  if(num <= 1 || !Number.isInteger(num)){
+function primeFactors(num) {
+  if (num <= 1 || !Number.isInteger(num)) {
     return []
   }
-  else{
+  else {
     let divisor = 2
     let factors = []
     let pFactors = []
-    while(num >= 2){
-      if(num % divisor == 0){
+    while (num >= 2) {
+      if (num % divisor == 0) {
         factors.push(divisor)
-        num = num/divisor
+        num = num / divisor
       }
-      else{
+      else {
         divisor++
       }
-      
+
     }
-    factors.forEach(n=>{if(isPrime(n)){pFactors.push(n)}})
+    factors.forEach(n => { if (isPrime(n)) { pFactors.push(n) } })
     return pFactors
   }
 }
@@ -856,18 +856,18 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
-function intersection(arr1, arr2){
+function intersection(arr1, arr2) {
   let result = []
-  for(let idx1=0; idx1<arr1.length; idx1++){
-    for(let idx2=0; idx2<arr2.length; idx2++){
-      if(arr1[idx1]===arr2[idx2]){
+  for (let idx1 = 0; idx1 < arr1.length; idx1++) {
+    for (let idx2 = 0; idx2 < arr2.length; idx2++) {
+      if (arr1[idx1] === arr2[idx2]) {
         result.push(arr1[idx1])
         arr2.pop(idx2)
         break
-      }     
-      
+      }
+
     }
-    
+
   }
   return result
 }
@@ -898,32 +898,46 @@ balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
-function balancedBrackets(str){
+function balancedBrackets(str) {
   let strArray = str.split("")
   const openBrackets = ['(', '[', '{']
   const closeBrackets = [')', ']', '}']
-  
   let result = false
-  strArray.forEach((x, i) => {
-    if(openBrackets.includes(x)){
-      if(closeBrackets.includes(strArray[i+1])){
-        if(openBrackets.indexOf(x) === closeBrackets.indexOf(strArray[i+1])){
-          result = true
-        }
-        else{
-          result= false        
-        }
+  function brackets(strArray) {
+    if(strArray.length % 2 === 0){
+      for (let i = 0; i < strArray.length; i++) {
+        if (openBrackets.includes(strArray[i])) {
+          if (i !== strArray.length - 1) {
+            if (closeBrackets.includes(strArray[i + 1])) {
+              if (openBrackets.indexOf(strArray[i]) === closeBrackets.indexOf(strArray[i + 1])) {
+                result = true
+                strArray.splice(i, 2)
+                brackets(strArray)
+              }
+              else {
+                result = false
+                break
+              }
+            }
+          } else {
+            result = false
+            break
+          }
+        }       
       }
+    } else {
+      result = false
     }
-  })
+  }  
+  brackets(strArray)
   return result
 }
 
-console.log(balancedBrackets( '()' )) // => true
-console.log(balancedBrackets( '(]' )) // => false
-console.log(balancedBrackets( '[{}]' )) // => true
-console.log(balancedBrackets( '[(])' )) // => false
-console.log(balancedBrackets( '[({}[])]' )) // => true
+console.log(balancedBrackets('()')) // => true
+console.log(balancedBrackets('(]')) // => false
+console.log(balancedBrackets('[{}]')) // => true
+console.log(balancedBrackets('[(])')) // => false
+console.log(balancedBrackets('[({}[])]')) // => true
 
 
 /*-----------------------------------------------------------------
