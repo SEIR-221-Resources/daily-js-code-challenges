@@ -970,7 +970,35 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
+const isWinningTicket = (ticket) => {
+  for (let i = 0; i<ticket.length; i++){
+    let nestedArray = ticket[i];
+    let string = nestedArray[0]
+    let code = nestedArray[1]
+    let found = false
 
+    for (let j = 0; j< string.length; j++){
+      let charCode = string.charCodeAt(j)
+
+      if (charCode === code){
+        found = true
+        break;
+      }
+    }
+
+    if(!found){
+      return false
+    }
+
+  }
+  return true;
+
+}
+
+console.log(isWinningTicket( [ ['ABC', 65] ] ))
+console.log(isWinningTicket( [ ['ABC', 999], ['XY', 89] ] ) )
+console.log(isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ))
+console.log(isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ))
 
 
 
