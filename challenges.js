@@ -707,28 +707,47 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 // Your solution for 21-primeFactors here:
 
 function primeFactors(n) {
-  // if n is les than 2 or is not an integer, return an empty array
-  if (n < 2 || !Number.isInteger(n)) return []
-  primeArr = []
-  for (let i = 2; i < n; i++) {
-    if (Number.isInteger(n / i)) {
-      primeArr.push(i)
+
+  // declaring empty array to hold the factors in
+  var factors = [];
+  // if n is less than 2 or is not an integer, return an empty array
+  if (n < 2 || !Number.isInteger(n)) return factors;
+  
+  // function to help find next prime to divide by...
+  function isPrime(n) {
+    if (n < 2 || !Number.isInteger(n)) return false;
+    for (var i = 2; i <= n / 2; i++) {
+      if (Number.isInteger(n / i)) return false;
+    }
+    return true;
+  }
+  
+  var prime = 2;  // start with smallest prime
+
+  // while n is not prime
+  while (!isPrime(n)) {
+    // if n divided by the current smallest prime number is an integer
+    if (Number.isInteger(n / prime)) {
+      // add the current smallest prime to the factors array (first factor found)
+      factors.push(prime);
+      // update n to be n divided by the current smallest prime number
+      n = n / prime;
+    }
+    // otherwise...
+    else {
+      // add 1 to the current smallest prime number
+      prime++;
+      // checks if adding 1 made the current smallest prime into the next prime numbe. If it didnt, then keep adding 1 until its prime
+      while (!isPrime(prime)) prime++;
     }
   }
-
-  // once I have the array with all the factors, iterate over that array and check if each element is prime
-  // if number is prime, check next number in array
-  // if number is not prime, split into prime numbers and push those numbers into the original array
-  // once all factors have been reduced to only prime factors, remove duplicates
-  // then, multiple all the elements within the array and divide n by that number
-  // finally, push that quotient into the prime factors array
-
-  // if there are no elements in the array, push n into the array 
-  if (primeArr.length === 0) primeArr.push(n)
-  return primeArr
+  // if n is prime, add it to the factors array
+  factors.push(n);
+  // return the factors array
+  return factors;
 }
 
-// console.log(primeFactors(105))
+console.log(primeFactors(200))
 
 /*-----------------------------------------------------------------
 Challenge: 22-intersection
@@ -764,7 +783,7 @@ function intersection(arr1, arr2) {
   return newArr
 }
 
-console.log(intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]))
+// console.log(intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]))
 
 /*-----------------------------------------------------------------
 Challenge: 23-balancedBrackets
@@ -785,10 +804,35 @@ balancedBrackets( '(]' ) // => false
 balancedBrackets( '[{}]' ) // => true
 balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
+
+
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
 
+const brackets = {
+  '{': '}',
+  '[': ']',
+  '(': ')'
+}
 
+function balancedBrackets(str) {
+  arr = str.split('')
+
+  // for loop that iterates over the array with all of the bracket elements
+
+  for (let i=0; i < arr.length; i++) {
+    // checks each element, if its a left element, continues and checks the next one
+    
+  }
+  // if it encounters a right element, it checks the preceding element for a match
+  // if it is a match, removes both left and right elements fro the array
+  // continues checking as above until there are no more elements within the array
+  // returns true if resulting array has 0 length
+
+  return newStr
+}
+
+console.log(balancedBrackets('[{}]'))
 
 
 
