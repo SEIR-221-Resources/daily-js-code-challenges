@@ -747,7 +747,7 @@ function primeFactors(n) {
   return factors;
 }
 
-console.log(primeFactors(200))
+// console.log(primeFactors(200))
 
 /*-----------------------------------------------------------------
 Challenge: 22-intersection
@@ -810,29 +810,40 @@ balancedBrackets( '[({}[])]' ) // => true
 // Your solution for 23-balancedBrackets here:
 
 const brackets = {
-  '{': '}',
-  '[': ']',
-  '(': ')'
+  '}': '{',
+  ']': '[',
+  ')': '('
 }
 
 function balancedBrackets(str) {
+  // converts string to an array with each element holding a bracket
   arr = str.split('')
-
   // for loop that iterates over the array with all of the bracket elements
-
-  for (let i=0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     // checks each element, if its a left element, continues and checks the next one
-    
+    if (arr[i] === '}' || arr[i] === ']' || arr[i] === ')') {
+      // if it encounters a right element, it checks the preceding element for a match
+      if (arr[i - 1] === brackets[arr[i]]) {
+        // if it is a match, removes both left and right elements from the array
+        arr.splice(i - 1, 2)
+        // joins the updated array into a new string
+        newStr = arr.join('')
+        // passes the new string to the function recursively, and continues checking the array until there are no more elements left
+        balancedBrackets(newStr)
+      }
+      // if there is no match, its identified as an unbalanced bracket and returns false
+      else {
+        return false
+      }
+    }
   }
-  // if it encounters a right element, it checks the preceding element for a match
-  // if it is a match, removes both left and right elements fro the array
-  // continues checking as above until there are no more elements within the array
-  // returns true if resulting array has 0 length
-
-  return newStr
+  // returns true if resulting array has 0 length and the recursive loop has been broken out of, meaning that all of the bracket pairs were matching in the original string
+  return true
 }
 
-console.log(balancedBrackets('[{}]'))
+console.log(balancedBrackets('(]'))
+
+// console.log(brackets['{'])
 
 
 
