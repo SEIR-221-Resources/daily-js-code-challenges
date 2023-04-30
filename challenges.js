@@ -841,9 +841,7 @@ function balancedBrackets(str) {
   return true
 }
 
-console.log(balancedBrackets('(]'))
-
-// console.log(brackets['{'])
+// console.log(balancedBrackets('(]'))
 
 
 
@@ -873,7 +871,29 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
+function isWinningTicket(arr) {
+  // declare an array to hold the found elements of the search
+  checkArr = []
+  // for each nested array within the original array
+  for (subArr of arr) {
+    // for each character within the 1st element of each nested array (ie the string element)
+    for (char of subArr[0]) {
+      // if the character code for that character is equal to the number in the 2nd element of the sub array (ie the number element)
+      if (String.fromCharCode(subArr[1]) === char) {
+        // push the character into the found elements array
+        checkArr.push(char)
+        // as soon as a matching character is found, break out of the loop and check the next string element within the next nested array
+        break
+      }
+    }
+  }
+  // return true if the length of the found elements array is equal to the length of the argument array (ie each nested array included a character that matched the character code for that nested array)
+  if (checkArr.length !== arr.length) {
+    return false
+  } else return true
+}
 
+console.log(isWinningTicket([ ['ABC', 66], ['dddd', 15], ['Hello', 108] ]))
 
 
 
