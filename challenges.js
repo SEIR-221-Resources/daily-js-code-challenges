@@ -702,6 +702,37 @@ balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
+const brackets = {
+  '}': '{',
+  ']': '[',
+  ')': '('
+}
+
+function balancedBrackets(str) {
+  // converts string to an array with each element holding a bracket
+  arr = str.split('')
+  // for loop that iterates over the array with all of the bracket elements
+  for (let i = 0; i < arr.length; i++) {
+    // checks each element, if its a left element, continues and checks the next one
+    if (arr[i] === '}' || arr[i] === ']' || arr[i] === ')') {
+      // if it encounters a right element, it checks the preceding element for a match
+      if (arr[i - 1] === brackets[arr[i]]) {
+        // if it is a match, removes both left and right elements from the array
+        arr.splice(i - 1, 2)
+        // joins the updated array into a new string
+        newStr = arr.join('')
+        // passes the new string to the function recursively, and continues checking the array until there are no more elements left
+        balancedBrackets(newStr)
+      }
+      // if there is no match, its identified as an unbalanced bracket and returns false
+      else {
+        return false
+      }
+    }
+  }
+  // returns true if resulting array has 0 length and the recursive loop has been broken out of, meaning that all of the bracket pairs were matching in the original string
+  return true
+}
 
 /*-----------------------------------------------------------------
 Challenge: 24-isWinningTicket
@@ -728,6 +759,29 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
+function isWinningTicket(arr) {
+  // declare an array to hold the found elements of the search
+  checkArr = []
+  // for each nested array within the original array
+  for (subArr of arr) {
+    // for each character within the 1st element of each nested array (ie the string element)
+    for (char of subArr[0]) {
+      // if the character code for that character is equal to the number in the 2nd element of the sub array (ie the number element)
+      if (String.fromCharCode(subArr[1]) === char) {
+        // push the character into the found elements array
+        checkArr.push(char)
+        // as soon as a matching character is found, break out of the loop and check the next string element within the next nested array
+        break
+      }
+    }
+  }
+  // return true if the length of the found elements array is equal to the length of the argument array (ie each nested array included a character that matched the character code for that nested array)
+  if (checkArr.length !== arr.length) {
+    return false
+  } else return true
+}
+
+console.log(isWinningTicket([ ['ABC', 66], ['dddd', 15], ['Hello', 108] ]))
 
 /*-----------------------------------------------------------------
 Challenge: 25-getNumForIP
