@@ -893,7 +893,7 @@ function isWinningTicket(arr) {
   } else return true
 }
 
-console.log(isWinningTicket([ ['ABC', 66], ['dddd', 15], ['Hello', 108] ]))
+// console.log(isWinningTicket([ ['ABC', 66], ['dddd', 15], ['Hello', 108] ]))
 
 
 
@@ -923,7 +923,23 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 
+function getNumForIP(str) {
+  // split the string into an array containing each of the period separated integers
+  arr = str.split(".")
+  // declare a result variable
+  result = 0
+  // declare an array to hold the exponent values
+  expArr = [3, 2, 1, 0]
+  // Iterate over the array and multiply each element by 256 to the power of n where n is descending from 3 - 0
+  for (let i = 0; i < 4; i++) {
+    // Add all of those products together to get the final result
+    result += arr[i] * (256 ** expArr[i])
+  }
+  // return the final result
+  return result
+}
 
+console.log(getNumForIP('0.0.0.1'))
 
 
 
