@@ -744,7 +744,7 @@ balancedBrackets( '[({}[])]' ) // => true
 
 function balancedBrackets(str) {
   const openers = [ '(', '[', '{' ]
-  let stack = []
+  const stack = []
   for (let bracket of str) {
     if (openers.includes(bracket)) {
       stack.push(bracket)
