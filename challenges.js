@@ -706,7 +706,7 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 function isPrime(int) {
-  if (!Number.isInteger(int)){
+  if (!Number.isInteger(int)) {
     return false
   }
   if (int <= 1) {
@@ -754,18 +754,18 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-function primeFactors(int){
+function primeFactors(int) {
   let primeArray = []
-  if(!Number.isInteger(int) || int <= 1){
-    return(primeArray)
+  if (!Number.isInteger(int) || int <= 1) {
+    return (primeArray)
   }
   //for (let i = 2; i < int; i++){
-// if (Number.isInteger(n / i){
+  // if (Number.isInteger(n / i){
   // primeArray.push
-// })
+  // })
   // }
-  else if(int)
-  return(primeArray)
+  else if (int)
+    return (primeArray)
 }
 
 
@@ -798,19 +798,19 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
-function intersection(arr1, arr2){
+function intersection(arr1, arr2) {
   let newArray = []
-  if (arr1.length === 0 || arr2.length === 0){
+  if (arr1.length === 0 || arr2.length === 0) {
     return newArray
-}
-for (i=0; i<arr1.length-1; i++){
-  for (let j = 0; j <arr2.length-1; j++){
-    if (arr1[i] === arr2[j]){
-      newArray.push(arr1[i])
+  }
+  for (i = 0; i < arr1.length - 1; i++) {
+    for (let j = 0; j < arr2.length - 1; j++) {
+      if (arr1[i] === arr2[j]) {
+        newArray.push(arr1[i])
+      }
     }
   }
-}
-return newArray
+  return newArray
 }
 
 
@@ -837,9 +837,45 @@ balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
+// const leftBrackets = {
+//   '0': '{',
+//   '1': '(',
+//   '2': '['
+// }
 
+// const rightBrackets = {
+//   '0': '}',
+//   '1': ')',
+//   '2': ']'
+// }
 
+// function balancedBrackets(str){
+//   const brackets = {
+//     '(':')',
+//     '[':']',
+//     '{':'}'
+//   }
+// // loop that iterates over the array with all bracket elements
+// // checks each element for pairs
+// // checks for left element continues
+// // yeets pairs next to each other
+// // checks remaining elements
+//   for(i=0; i<str.length; i++){
+//     if(x){
+//       return true
+//     }
+//     else{
+//       return false
+//     }
+//   }
 
+// }
+
+// console.log(balancedBrackets( '()' )) // => true
+// console.log(balancedBrackets( '(]' )) // => false
+// console.log(balancedBrackets( '[{}]' )) // => true
+// console.log(balancedBrackets( '[(])' )) // => false
+// console.log(balancedBrackets( '[({}[])]' )) // => true
 
 
 /*-----------------------------------------------------------------
@@ -867,7 +903,23 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
+// function isWinningTicket(arr){
+//   for(i=0; i<arr.length; i++){
+//     let nestedArr = arr[i];
+//     let nestedArrToString = String.fromCharCode(arr[0])
+//     console.log(nestedArrToString)
+//   }
+//   console.log(arr)
 
+//   console.log(arrToString)
+//   if(arrToString === arr[1]){
+//     return true
+//   }else{
+//     return false
+// }
+// }
+
+// console.log("Winning ticket", isWinningTicket( [ ['ABC', 65] ] )) // => true)
 
 
 
@@ -898,8 +950,30 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 
+function getNumForIP(str) {
+  splitString = str.split('.')
+  // console.log("here is my split string", splitString)
+  let total = 0
+  let powerOf = 0
+  for (let i = splitString.length - 1; i >= 0; i--) {
+    total += splitString[i] * (256 ** powerOf)
 
+    // console.log("trying to figure this out", ipString)
+    powerOf++
+    // console.log(total, "this is the total so far")
+    // console.log(total)
+  }
+  return (total)
+}
+// end of string after third . === num * (256**0)
+// after 2nd . === num * (256**1)
+// after 1st . === num * (256**2)
+// first num === num * (256**3)
 
+console.log(getNumForIP('0.0.0.1')) // => 1
+console.log(getNumForIP('0.0.2.0')) // => 512
+console.log(getNumForIP('192.156.99.15')) // => 3231474447
+console.log(getNumForIP('10.0.0.1')) // => 167772161
 
 
 /*-----------------------------------------------------------------
