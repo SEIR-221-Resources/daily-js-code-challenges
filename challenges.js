@@ -860,7 +860,15 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
+function isWinningTicket(arr){
+  let output = false;
 
+  arr.forEach(nestArr => {
+    for(let i=0;i<nestArr[0].length;i++){
+      if(nestArr[0].charCodeAt(i) == nestArr[1]) output = true;
+    }
+  })
+}
 
 
 
@@ -891,7 +899,7 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 function getNumForIP(str){
-  let nums = str.split('.').map((s)=> Number(s) )
+  let nums = str.split('.').map((s)=> Number(s))
   let n = 4;
 
   return nums.reduce((acc, currVal) => 
