@@ -1029,13 +1029,16 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 function getNumForIP(ip){
-  let chunks= ip.split('.').reverse();
+  let chunks= ip.split('.');
   let sum = 0
 
+  expArr= [3, 2, 1, 0]
   console.log(chunks, "<---- here are our chunks ")
-  chunks.forEach(function(chunk, idx){
-    sum += parseInt(chunk) * 256 ** idx
-  })
+  for(let i =0; i<4; i++){
+    sum += chunks[i]* (256 ** expArr[i])
+  }
+
+
   return sum
 //I watched a youtube video on this because the way the problem is loaded kind of broke my brain, i did not realize this was the solution provided in the solutions
 
