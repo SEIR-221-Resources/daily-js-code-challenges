@@ -815,7 +815,22 @@ balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
+class Stack {
+  constructor(){
+    this.stack = []
+  }
 
+  push(item){
+    this.stack.push(item)
+  }
+
+  pop(){
+    this.stack.pop()
+  }
+}
+
+let openers = ['(','{','{'];
+let closers = [')', '}','}'];
 
 
 
@@ -875,9 +890,16 @@ getNumForIP( '192.156.99.15' ) // => 3231474447
 getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
+function getNumForIP(str){
+  let strNums = str.split('.');
+  let nums = strNums.map((s)=> Number(s) )
+  let n = 4;
+  
+  return nums.reduce((acc, currVal) => 
+    acc + (currVal*(256**--n)), 0)
+}
 
-
-
+console.log(getNumForIP( '192.156.99.15' ))
 
 
 /*-----------------------------------------------------------------
