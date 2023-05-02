@@ -1064,9 +1064,33 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
 
+function toCamelCase(str){
+  let result = ""
+  strArray = []
+  if(str.includes('-')){
+    strArray = str.split("-")
+  }else if(str.includes('_')) {
+    strArray = str.split("_")
+  }else {
+    return str
+  }
+  strArray.forEach((e, idx)=>{
+    if(idx > 0){
+      let camel = e.charAt(0)
+      result += camel.toUpperCase()
+      result += e.slice(1,)
+    }else{
+      result += e
+    }
+  })
+  return result
+}
 
-
-
+console.log(toCamelCase( 'sei' ))
+console.log(toCamelCase( 'sei-rocks' ))
+console.log(toCamelCase( 'banana_Turkey_potato' ))
+console.log(toCamelCase( 'Mama-mia' ))
+console.log(toCamelCase( 'A_b_c' ))
 
 /*-----------------------------------------------------------------
 Challenge: 27-countTheBits
