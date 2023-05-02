@@ -933,11 +933,11 @@ function balancedBrackets(str) {
   return result
 }
 
-console.log(balancedBrackets('()')) // => true
-console.log(balancedBrackets('(]')) // => false
-console.log(balancedBrackets('[{}]')) // => true
-console.log(balancedBrackets('[(])')) // => false
-console.log(balancedBrackets('[({}[])]')) // => true
+// console.log(balancedBrackets('()')) // => true
+// console.log(balancedBrackets('(]')) // => false
+// console.log(balancedBrackets('[{}]')) // => true
+// console.log(balancedBrackets('[(])')) // => false
+// console.log(balancedBrackets('[({}[])]')) // => true
 
 
 /*-----------------------------------------------------------------
@@ -966,8 +966,35 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
+function isWinningTicket(arr) {
+  let resultArray = []
+  let finalArray = []
+  arr.forEach(el => {
+    el[0].split("").forEach(e => {
+      
+      if (e.charCodeAt() === el[1]) {
+        resultArray.push(true)
+      } else {
+        resultArray.push(false)
+      }
+    })
+    
+    if(resultArray.includes(true)){
+      finalArray.push(true)
+    } else {
+      finalArray.push(false)
+    }
+    resultArray = []
+  })
+  if(finalArray.includes(false)){
+    return false
+  } else { return true }
+}
 
-
+console.log(isWinningTicket([['ABC', 65]]))
+console.log(isWinningTicket([['ABC', 999], ['XY', 89]]))
+console.log(isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) )
+console.log(isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) )
 
 
 /*-----------------------------------------------------------------
@@ -995,10 +1022,22 @@ getNumForIP( '192.156.99.15' ) // => 3231474447
 getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
+function getNumForIP(str){
+  let num = 0
+  let strArray = str.split(".")
+  let len = strArray.length-1
+  strArray.forEach((e, idx)=>{
+    num += parseInt(e)*(256**len)
+    len--
+  })
+  return num
+}
 
 
-
-
+console.log(getNumForIP( '0.0.0.1' ))
+console.log(getNumForIP( '0.0.2.0' ))
+console.log(getNumForIP( '192.156.99.15' ))
+console.log(getNumForIP( '10.0.0.1' ))
 
 /*-----------------------------------------------------------------
 Challenge: 26-toCamelCase
