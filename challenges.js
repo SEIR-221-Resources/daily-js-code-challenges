@@ -827,8 +827,12 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 
-
-
+function getNumForIP(str) {
+  return str.split('.')
+    .map(n => parseInt(n))
+    .reverse()
+    .reduce((acc, num, idx) => acc + (num * 256 ** idx), 0)
+}
 
 
 /*-----------------------------------------------------------------
