@@ -829,9 +829,8 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 
 function getNumForIP(str) {
   return str.split('.')
-    .map(n => parseInt(n))
     .reverse()
-    .reduce((acc, num, idx) => acc + (num * 256 ** idx), 0)
+    .reduce((acc, num, idx) => acc + (parseInt(num) * 256 ** idx), 0)
 }
 
 
@@ -860,8 +859,18 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
 
-
-
+function toCamelCase(str) {
+  let camelCase = str[0]
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === '_' || str[i - 1] === '-') {
+      camelCase += str[i].toUpperCase()
+    }
+    else if (str[i] !== '_' && str[i] !== '-') {
+      camelCase += str[i]
+    }
+  }
+  return camelCase
+}
 
 
 /*-----------------------------------------------------------------
