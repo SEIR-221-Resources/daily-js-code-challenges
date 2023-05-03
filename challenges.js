@@ -899,8 +899,14 @@ countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
 
-
-
+function countTheBits(int) {
+  let count = 0
+  const binary = int.toString(2)
+  for (let bit of binary) {
+    if (bit === '1') count ++
+  }
+  return count
+}
 
 
 /*-----------------------------------------------------------------
