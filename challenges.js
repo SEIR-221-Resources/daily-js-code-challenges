@@ -317,7 +317,9 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
-
+// function formatWithPadding(int, str, num){
+// return()
+// }
 
 
 
@@ -723,13 +725,6 @@ function isPrime(int) {
   return true
 }
 
-
-console.log(isPrime(9))
-console.log(isPrime(2)) //=> true
-console.log(isPrime(3)) //=> true
-console.log(isPrime(4)) //=> false
-console.log(isPrime(29)) //=> true
-console.log(isPrime(200)) //=> false
 /*-----------------------------------------------------------------
 Challenge: 21-primeFactors
 
@@ -769,7 +764,7 @@ function primeFactors(int) {
 }
 
 
-console.log(primeFactors(2)) //=> [2]
+console.log("prime factors", primeFactors(2)) //=> [2]
 console.log(primeFactors(3)) //=> [3]
 console.log(primeFactors(4)) //=> [2, 2]
 console.log(primeFactors(18)) //=> [2, 3, 3]
@@ -849,27 +844,27 @@ balancedBrackets( '[({}[])]' ) // => true
 //   '2': ']'
 // }
 
-// function balancedBrackets(str){
-//   const brackets = {
-//     '(':')',
-//     '[':']',
-//     '{':'}'
-//   }
-// // loop that iterates over the array with all bracket elements
-// // checks each element for pairs
-// // checks for left element continues
-// // yeets pairs next to each other
-// // checks remaining elements
-//   for(i=0; i<str.length; i++){
-//     if(x){
-//       return true
-//     }
-//     else{
-//       return false
-//     }
-//   }
+function balancedBrackets(str){
+  const brackets = {
+    '(':')',
+    '[':']',
+    '{':'}'
+  }
+// loop that iterates over the array with all bracket elements
+// checks each element for pairs
+// checks for left element continues
+// yeets pairs next to each other
+// checks remaining elements
+  for(i=0; i<str.length; i++){
+    if(x){
+      return true
+    }
+    else{
+      return false
+    }
+  }
 
-// }
+}
 
 // console.log(balancedBrackets( '()' )) // => true
 // console.log(balancedBrackets( '(]' )) // => false
@@ -903,21 +898,22 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
-// function isWinningTicket(arr){
-//   for(i=0; i<arr.length; i++){
-//     let nestedArr = arr[i];
-//     let nestedArrToString = String.fromCharCode(arr[0])
-//     console.log(nestedArrToString)
-//   }
-//   console.log(arr)
 
-//   console.log(arrToString)
-//   if(arrToString === arr[1]){
-//     return true
-//   }else{
-//     return false
-// }
-// }
+function isWinningTicket(arr){
+  for(i=0; i<arr.length; i++){
+    let nestedArr = arr[i];
+    let nestedArrToString = String.fromCharCode(arr[0])
+    console.log(nestedArrToString)
+  }
+  console.log(arr)
+
+  console.log(arrToString)
+  if(arrToString === arr[1]){
+    return true
+  }else{
+    return false
+}
+}
 
 // console.log("Winning ticket", isWinningTicket( [ ['ABC', 65] ] )) // => true)
 
@@ -970,11 +966,6 @@ function getNumForIP(str) {
 // after 1st . === num * (256**2)
 // first num === num * (256**3)
 
-console.log(getNumForIP('0.0.0.1')) // => 1
-console.log(getNumForIP('0.0.2.0')) // => 512
-console.log(getNumForIP('192.156.99.15')) // => 3231474447
-console.log(getNumForIP('10.0.0.1')) // => 167772161
-
 
 /*-----------------------------------------------------------------
 Challenge: 26-toCamelCase
@@ -1000,11 +991,30 @@ toCamelCase( 'Mama-mia' ) // => 'MamaMia'
 toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
+function toCamelCase (str){
+  if (!str.includes('_') && !str.includes('-')){
+    return str
+  }
+  let newString = str
+  for (i=0; i<str.length; i++){
+    if(str[i] === '-' || str[i] === '_'){
+      newString = str[i+1].toUpperCase()
+      newString = str[i].replace('-', '')
+    }
+    return (newString)
+  }
+  //remove _ and -
+  //string needs to be camel cased
+  
+}
 
 
 
-
-
+console.log(toCamelCase( 'sei' )) // => 'sei'
+console.log(toCamelCase( 'sei-rocks' )) // => 'seiRocks'
+console.log(toCamelCase( 'banana_Turkey_potato' )) // => 'bananaTurkeyPotato'
+console.log(toCamelCase( 'Mama-mia' )) // => 'MamaMia'
+console.log(toCamelCase( 'A_b_c' )) // => 'ABC'
 /*-----------------------------------------------------------------
 Challenge: 27-countTheBits
 
@@ -1030,10 +1040,20 @@ countTheBits( 255 ) //=> 8
 countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
+function countTheBits(int){
+  binary = int.toString(2)
+  bits = 0
+  for (let i = 0; i<binary.length; i++){
+    console.log(binary[i])
+    if(binary[i] == 1)
+    bits++
+  }
+
+  return bits
+}
 
 
-
-
+console.log(countTheBits(13))
 
 /*-----------------------------------------------------------------
 Challenge: 28-gridTrip
