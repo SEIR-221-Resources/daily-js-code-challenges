@@ -963,8 +963,10 @@ countTheBits( 255 ) //=> 8
 countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
-
-
+function countTheBits(int){
+    let bin = (int >>> 0).toString(2)
+    return (bin.split('').filter((num)=>num==1).length)
+}
 
 
 
@@ -991,7 +993,13 @@ gridTrip( [5, 10], 'D5L15U2' ) //-> [2, -5]
 gridTrip( [-22, 100], 'L2L15D50U1D9') //=> [-80, 83]
 -----------------------------------------------------------------*/
 // Your solution for 28-gridTrip here:
+function gridTrip(twoIntArr, moves){
+  let x = twoIntArr[1];
+  let y = twoIntArr[0];
 
+
+
+}
 
 
 
