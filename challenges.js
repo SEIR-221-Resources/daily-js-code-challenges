@@ -1077,7 +1077,15 @@ toCamelCase( 'Mama-mia' ) // => 'MamaMia'
 toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
-
+function toCamelCase(str) {
+  return str.replace(/[_-]\w/g, function(match) {
+    return match.charAt(1).toUpperCase();
+  });
+}
+console.log(toCamelCase( 'sei' ))
+console.log(toCamelCase( 'sei-rocks' ))
+console.log(toCamelCase( 'banana_Turkey_potato' ))
+console.log(toCamelCase( 'Mama-mia' ))
 
 
 
@@ -1107,6 +1115,20 @@ countTheBits( 255 ) //=> 8
 countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
+function countTheBits(int){
+  binary=int.toString(2)
+ count = 0
+ for (let i=0; i< binary.length; i++){
+  if(binary[i] == 1) count++
+ }
+ return count
+
+}
+console.log(countTheBits( 0 ))
+console.log(countTheBits( 13 ))
+console.log(countTheBits( 256 ))
+console.log(countTheBits( 255))
+console.log(countTheBits( 65535))
 
 
 
