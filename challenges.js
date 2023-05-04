@@ -939,7 +939,7 @@ function getNumForIP(str) {
   return result
 }
 
-console.log(getNumForIP('0.0.0.1'))
+// console.log(getNumForIP('0.0.0.1'))
 
 
 
@@ -998,7 +998,21 @@ countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
 
+function countTheBits(int) {
+  binary = int.toString(2)
+  count = 0
 
+  for (let i=0; i < binary.length; i++) {
+    if (binary[i] == 1) {
+      // console.log(binary[i])
+      count++
+    }
+  }
+  
+  return count
+}
+
+console.log(countTheBits(65535))
 
 
 
