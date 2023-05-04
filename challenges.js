@@ -63,7 +63,7 @@ addTwoNumbers('Hello', 5) //=> NaN
 function addTwoNumbers(num1, num2) {
   if (typeof num1 === 'number' && typeof num2 === 'number') {
     return num1 + num2;
-  } else {return NaN};
+  } else { return NaN };
 }
 
 
@@ -149,12 +149,12 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder(num1, num2 ) {
-  if ( num2 === 0 ) {
+function computeRemainder(num1, num2) {
+  if (num2 === 0) {
     return Infinity
-} else {
-  return num1 - (Math.floor(num1/num2) * num2)
- }
+  } else {
+    return num1 - (Math.floor(num1 / num2) * num2)
+  }
 }
 
 
@@ -178,15 +178,15 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-function range(num1,num2) {
+function range(num1, num2) {
   if (num1 > num2) {
     return "First arguent must be less than second."
   }
   const arrayOfNumbers = []
   for (let i = num1; i < num2; i++) {
-  arrayOfNumbers.push(i)
-}
-return arrayOfNumbers
+    arrayOfNumbers.push(i)
+  }
+  return arrayOfNumbers
 }
 
 
@@ -207,12 +207,12 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-function reverseUpcaseString (str){
+function reverseUpcaseString(str) {
   let arr = str.split("")
   let array = arr.reverse("")
   let joinArray = array.join("").toUpperCase()
   return joinArray
-  
+
 }
 //console.log(reverseUpcaseString('camp'))
 
@@ -263,13 +263,13 @@ function charCount(str) {
   const count = {}
   for (let i = 0; i < str.length; i++) {
     const character = str.charAt(i)
-      if (count[character]) {
-        count[character]++;
+    if (count[character]) {
+      count[character]++;
     } else {
       count[character] = 1;
-      }
-      }
-    return count
+    }
+  }
+  return count
 }
 // console.log(charCount("hello"))
 
@@ -321,11 +321,11 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-function isPalindrome(str){
+function isPalindrome(str) {
   let output = false
-  let reverse = str.split('').reverse().filter(c=>c!==" ").join('').toLowerCase()
-  let forward = str.split('').filter(c=>c!==" ").join('').toLowerCase()
-  if (reverse === str){
+  let reverse = str.split('').reverse().filter(c => c !== " ").join('').toLowerCase()
+  let forward = str.split('').filter(c => c !== " ").join('').toLowerCase()
+  if (reverse === str) {
     return true
   }
   return output
@@ -380,10 +380,10 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-function mumble(str){
+function mumble(str) {
   let output = []
-  for (let i =0; i<str.length;i++){
-    output.push(str[i].repeat(i+1))
+  for (let i = 0; i < str.length; i++) {
+    output.push(str[i].repeat(i + 1))
   }
   return output.join('-')
 }
@@ -408,13 +408,13 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-function fromPairs(){
+function fromPairs() {
   //create an object from an array of nested arrays
   let output = {}
   arr.forEach(el => {
-    output[ el[0] ] = el[1]
+    output[el[0]] = el[1]
   })
-  
+
   return output
 }
 
@@ -477,16 +477,16 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
-function findHighestPriced(arr){
-//return highest priced object form array
-let highestPrice = arr[0].price
-for (let i =0; i<arr.length; i++) {
-  if (arr[i].price > highestPrice){
-    console.log('current:', arr[0].price)
-    console.log('highest:', highestPrice)
+function findHighestPriced(arr) {
+  //return highest priced object form array
+  let highestPrice = arr[0].price
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].price > highestPrice) {
+      console.log('current:', arr[0].price)
+      console.log('highest:', highestPrice)
 
+    }
   }
-}
 
 
 }
@@ -591,8 +591,8 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 
 function flatten(arr) {
   var holder = []
-  for(let i = 0; i < arr.length; i++){
-    if(Array.isArray(arr[i])){
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
       console.log(arr[1])
       holder = holder.concat(flatten(arr[1]))
 
@@ -630,9 +630,9 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
-function isPrime(num){
-  for (let i = 2; i < num; i++ ){
-    if (num % i === 0){
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
       return false
     }
   }
@@ -680,8 +680,8 @@ function primeFactors(num) {
   let array = []
   if (num <= 1) return array
   let divisor = 2
-  while ( num >= 2 ) {
-    if (num % divisor === 0){
+  while (num >= 2) {
+    if (num % divisor === 0) {
       array.push(divisor)
       num = num / divisor
     } else divisor++
@@ -716,22 +716,22 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
-function intersection(arr1,arr2){
+function intersection(arr1, arr2) {
   // can contain a mixture of strings, numbers and booleans
   // return a NEW array all elements in common
   // return empty if no elements in common
   // do not mutate
   const outputArr = []
-  for (let i = 0; i < arr1.length; i++){
-    for (let j = 0; j < arr2.length; j++){
-      if (arr1[i] === arr2[j]){
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
         outputArr.push([arr1[i]])
-        arr2.splice(j,i)
+        arr2.splice(j, i)
         break
       }
     }
   }
- return outputArr
+  return outputArr
 }
 
 // intersection([1, 'a', 1, true, 1, 1], [true, 1, 'b', 1])
@@ -790,7 +790,15 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
-
+function isWinningTicket(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let charNum = String.fromCharCode(arr[i][1])
+    if (!arr[i][0].includes(charNum)) {
+      return false
+    }
+  }
+  return true
+}
 
 
 
@@ -820,7 +828,18 @@ getNumForIP( '192.156.99.15' ) // => 3231474447
 getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
+function getNumForIP(str) {
+  const numbers = str.split('.').map(n => parseInt(n))
+  let newNumber = 0
+  let multiplier = 3
+  numbers.forEach((num, idx) => {
+    newNumber += (num * 256 ** multiplier)
+    multiplier--
+  })
+  return newNumber
+}
 
+getNumForIP('192.156.99.15')
 
 
 
@@ -849,10 +868,27 @@ toCamelCase( 'Mama-mia' ) // => 'MamaMia'
 toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
+function toCamelCase(str) {
+  if (!str.includes('_') && !str.includes('-')) {
+    return str
+  }
+  
+  let output = " "
+  for( let i = 0; i<str.length; i++){
+    if(str[i] === '_' || str[i] === '-'){
+      i++
+      output += str[i].toUpperCase()
+    }else{
+      output += str[i]
+    }
+  }
+  // console.log(output)
+  return output
+}
 
-
-
-
+console.log(toCamelCase('abc'))
+console.log(toCamelCase('Mama_mia'))
+console.log(toCamelCase('Mama-mia'))
 
 /*-----------------------------------------------------------------
 Challenge: 27-countTheBits
