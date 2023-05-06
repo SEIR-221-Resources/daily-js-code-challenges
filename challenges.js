@@ -860,10 +860,11 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 // Your solution for 26-toCamelCase here:
 
 function toCamelCase(str) {
-  let camelCase = str[0]
-  for (let i = 1; i < str.length; i++) {
-    if (str[i - 1] === '_' || str[i - 1] === '-') {
-      camelCase += str[i].toUpperCase()
+  let camelCase = ''
+  for (let i = 0; i < str.length; i++) {
+    if ((str[i - 1] === '_' || str[i - 1] === '-') &&
+      str[i] !== '_' && str[i] !== '-') {
+        camelCase += str[i].toUpperCase()
     }
     else if (str[i] !== '_' && str[i] !== '-') {
       camelCase += str[i]
