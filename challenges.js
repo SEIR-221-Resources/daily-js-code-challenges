@@ -563,9 +563,9 @@ function mapArray(arr, cb) {
   return newArr;
 }
 
-console.log(mapArray( [1, 2, 3], function(n) {
-  return n * 2;
-} ))
+// console.log(mapArray( [1, 2, 3], function(n) {
+//   return n * 2;
+// } ))
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
 
@@ -654,7 +654,7 @@ function flatten(arr){
   return result
 }
 
-console.log(flatten( [1, [2, 3]] ))
+// console.log(flatten( [1, [2, 3]] ))
 
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
@@ -712,7 +712,21 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-
+function primeFactors(n) {
+  let primeArray = []
+  if (n < 2 || !Number.isInteger(n)) return primeArray
+  let divisor = 2
+  while (n >= divisor * divisor) {
+    if(Number.isInteger(n/divisor)){
+      primeArray.push(divisor)
+      n = n / divisor
+    } else {
+      divisor++
+    }
+  }
+  primeArray.push(n)
+  return primeArray
+}
 
 
 
@@ -737,7 +751,16 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
-
+function intersection(arr1,arr2) {
+  let interArray=[]
+  if(arr1.length === 0 || arr2.length === 0) return interArray
+  for(let j = 0; j<arr2.length -1; j++){
+    if(arr1[i] === arr[j]){
+      interArray.push(arr[1])
+    }
+  }
+  return interArray
+}
 
 
 
@@ -762,7 +785,22 @@ balancedBrackets( '[(])' ) // => false
 balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
-
+const brackets = {
+  '{': '}',
+  '[': ']',
+  '(': ')'
+}
+function balancedBrackets(str) {
+  newStr = str.split('')
+  // for loop that iterates over the array with all of the bracket elements
+  // checks each element, if its a left element, continues and check the next one
+  // if it encounters a right element, it checks the preceding element for a match
+  // if it is a match, removes both left and right elements fro the array
+  // continues checking as above until there are no more elements within the array
+  // returns true if resulting array has 0 length
+  return newStr
+}
+// console.log(balancedBrackets('[{}]'))
 
 
 
@@ -792,7 +830,27 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
-
+function isWinningTicket(arr) {
+  // declare an array to hold the found elements of the search
+  checkArr = []
+  // for each nested array within the original array
+  for (subArr of arr) {
+    // for each character within the 1st element of each nested array (ie the string element)
+    for (char of subArr[0]) {
+      // if the character code for that character is equal to the number in the 2nd element of the sub array (ie the number element)
+      if (String.fromCharCode(subArr[1]) === char) {
+        // push the character into the found elements array
+        checkArr.push(char)
+        // as soon as a matching character is found, break out of the loop and check the next string element within the next nested array
+        break
+      }
+    }
+  }
+  // return true if the length of the found elements array is equal to the length of the argument array (ie each nested array included a character that matched the character code for that nested array)
+  if (checkArr.length !== arr.length) {
+    return false
+  } else return true
+}
 
 
 
@@ -823,9 +881,21 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 
+function getNumForIP(str) {
+  splitString = str.split('.')
+  // console.log("here is my split string", splitString)
+  let total = 0
+  let powerOf = 0
+  for (let i = splitString.length - 1; i >= 0; i--) {
+    total += splitString[i] * (256 ** powerOf)
 
-
-
+    // console.log("trying to figure this out", ipString)
+    powerOf++
+    // console.log(total, "this is the total so far")
+    // console.log(total)
+  }
+  return (total)
+}
 
 /*-----------------------------------------------------------------
 Challenge: 26-toCamelCase
@@ -882,7 +952,17 @@ countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
 
+function countTheBits(int){
+  binary = int.toString(2)
+  count = 0
 
+  for(let i = 0; i< binary.length; i++) {
+    if(binary[i] == 1) {
+      count++
+    }
+  }
+  return count
+}
 
 
 
