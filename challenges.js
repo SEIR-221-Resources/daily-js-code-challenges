@@ -754,13 +754,24 @@ function primeFactors(int) {
   if (!Number.isInteger(int) || int <= 1) {
     return (primeArray)
   }
+  let divisor = 2
+  while (int >= divisor * divisor){
+    if (Number.isInteger(int/divisor)){
+      primeArray.push(divisor)
+      int = int/divisor
+    }else {
+      divisor++
+    }
+  }
+  primeArray.push(int)
+  return primeArray
   //for (let i = 2; i < int; i++){
   // if (Number.isInteger(n / i){
   // primeArray.push
   // })
   // }
-  else if (int)
-    return (primeArray)
+  // else if (int)
+  //   return (primeArray)
 }
 
 
