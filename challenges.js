@@ -13,9 +13,9 @@ sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
 
-function sayHello() {
-  return 'Hello!'
-}
+// function sayHello() {
+//   return 'Hello!'
+// }
 
 
 /*-----------------------------------------------------------------
@@ -34,10 +34,10 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(number) {
-  return number + 1;
-}
-addOne(5);
+// function addOne(number) {
+//   return number + 1;
+// }
+// addOne(5);
 
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -60,14 +60,14 @@ addTwoNumbers('Hello', 5) //=> NaN
 // Your solution for 02-addTwoNumbers here:
 
 
-function addTwoNumbers(num1, num2) {
-  if ( num1 !== '' || num2 !== '') {
-    return NaN;
-  }
-  return num1 + num2;
-}
+// function addTwoNumbers(num1, num2) {
+//   if ( num1 !== '' || num2 !== '') {
+//     return NaN;
+//   }
+//   return num1 + num2;
+// }
 
-addTwoNumbers(2, 3);
+// addTwoNumbers(2, 3);
 
 
 /*-----------------------------------------------------------------
@@ -88,6 +88,18 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
+
+// function sumNumbers(arr) {
+//   if(arr.length === 0) {
+//       return 0;
+//   } else {
+//       let sum = 0;
+//       for(let i = 0; i < arr.length; i++) {
+//           sum += arr[i];
+//       }
+//       return sum;
+//   }
+// }
 
 
 
@@ -112,6 +124,17 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+// function addList(...args) {
+//   if(args.length === 0) {
+//       return 0;
+//   } else {
+//       let sum = 0;
+//       for(let i = 0; i < args.length; i++) {
+//           sum += args[i];
+//       }
+//       return sum;
+//   }
+// }
 
 
 
@@ -136,6 +159,16 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+// function computeRemainder(num1, num2) {
+//   if(num2 === 0) {
+//       return Infinity;
+//   } else {
+//       while(num1 >= num2) {
+//           num1 = num1 - num2;
+//       }
+//       return num1;
+//   }
+// }
 
 
 
@@ -159,6 +192,16 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+// function range(start, end) {
+//   if(start > end) {
+//       return "First argument must be less than second";
+//   }
+//   let arr = [];
+//   for(let i = start; i < end; i++) {
+//       arr.push(i);
+//   }
+//   return arr;
+// }
 
 
 
@@ -178,6 +221,10 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+// function reverseUpcaseString(str) {
+//   let reversed = str.split('').reverse().join('');
+//   return reversed.toUpperCase();
+// }
 
 
 
@@ -199,6 +246,13 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+// function removeEnds(str) {
+//   if(str.length < 3) {
+//       return "";
+//   } else {
+//       return str.substring(1, str.length - 1);
+//   }
+// }
 
 
 
@@ -222,6 +276,16 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+// function charCount(str) {
+//   return str.split('').reduce(function(count, char) {
+//     if (char in count) {
+//       count[char]++;
+//     } else {
+//       count[char] = 1;
+//     }
+//     return count;
+//   }, {});
+// }
 
 
 
@@ -248,7 +312,14 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-
+// function formatWithPadding(number, character, length) {
+//   let numStr = number.toString();
+//   if(numStr.length >= length) {
+//       return numStr;
+//   } else {
+//       return character.repeat(length - numStr.length) + numStr;
+//   }
+// }
 
 
 
@@ -273,9 +344,18 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
-
-
-
+// function isPalindrome(str) {
+//   const cleanedStr = str.replace(/\s+/g, '').toLowerCase()
+//   if (cleanedStr.length <= 1) {
+//     return true;
+//   }
+//   for (let i = 0; i < cleanedStr.length / 2; i++) {
+//     if (cleanedStr[i] !== cleanedStr[cleanedStr.length - 1 - i]){
+//       return false
+//     }
+//   }
+// return true
+// }
 
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
@@ -298,8 +378,14 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
-
-
+// function hammingDistance(str, idx) {
+//   if (str.length !== idx.length) return NaN;
+//   var count = 0;
+//   for (var i = 0; i < str.length; i++) {
+//     if (str.charAt(i) !== idx.charAt(i)) count++;
+//   }
+//   return count;
+// }
 
 
 
@@ -311,7 +397,8 @@ Difficulty: Intermediate
 Prompt:
 
 - Write a function called mumble that accepts a single string argument.
-- The function should return a string that has each character repeated the number of times according to its position within the string arg.  In addition, each repeated section of characters should be separated by a hyphen (-).
+- The function should return a string that has each character repeated the number of times according to its position within the string arg.  
+  In addition, each repeated section of characters should be separated by a hyphen (-).
 - Examples describe it best..
 
 Examples:
@@ -323,7 +410,13 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-
+// function mumble(str) {
+//   let result = '';
+//   for(let i = 0; i < str.length; i++) {
+//       result += (str[i].repeat(i + 1) + '-');
+//   }
+//   return result.slice(0, -1);  
+// }
 
 
 
@@ -335,7 +428,8 @@ Difficulty: Intermediate
 Prompt:
 
 - Write a function named fromPairs that creates an object from an array containing nested arrays.
-- Each nested array will have two elements representing key/value pairs used to create key/value pairs in an object to be returned by the function.
+- Each nested array will have two elements representing key/value pairs used to create 
+key/value pairs in an object to be returned by the function.
 - If a key appears in multiple pairs, the rightmost pair should overwrite previous the previous entry in the object.
 
 Examples:
@@ -345,6 +439,13 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+// function fromPairs(arr){
+//   let obj = {}
+//   for (let i = 0; i < arr.length; i++){  
+//     obj = [arr[i][0]] = arr[i][0]
+//   }
+//   return obj
+// }
 
 
 
@@ -367,6 +468,9 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+// function mergeObjects(...objects) {
+//   return Object.assign(...objects);
+// }
 
 
 
@@ -406,7 +510,20 @@ findHighestPriced([
 // Your solution for 16-findHighestPriced here:
 
 
-
+// function findHighestPriced(arr){
+//   let highestPrice = 0;
+//   let idx = 0
+//     arr.forEach(obj => {
+//       if (obj.price > highestPrice){
+//         highestPrice = obj.price
+//       }
+//     }) 
+//     let index = arr.findIndex(obj => {
+//       if (obj.price = highestPrice){
+//       }
+//     })
+//     return idx
+// }
 
 
 /*-----------------------------------------------------------------
@@ -437,6 +554,13 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 // Your solution for 17-mapArray here:
 
 
+// function mapArray(arr, callback) {
+//   let result = [];
+//   for(let i = 0; i < arr.length; i++) {
+//       result.push(callback(arr[i], i));
+//   }
+//   return result;
+// }
 
 
 
@@ -474,6 +598,13 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
+// function reduceArray(arr, callback, initial) {
+//   let accumulator = initial;
+//   for(let i = 0; i < arr.length; i++) {
+//       accumulator = callback(accumulator, arr[i], i);
+//   }
+//   return accumulator;
+// }
 
 
 
@@ -505,6 +636,17 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+// function flatten(arr) {
+//   let flatArray = [];
+//   for(let i = 0; i < arr.length; i++) {
+//       if(Array.isArray(arr[i])) {
+//           flatArray = flatArray.concat(flatten(arr[i]));
+//       } else {
+//           flatArray.push(arr[i]);
+//       }
+//   }
+//   return flatArray;
+// }
 
 
 
@@ -529,6 +671,17 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+// function isPrime(num) {
+//   if(num < 2) {
+//       return false;
+//   }
+//   for(let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+//       if(num % i === 0) {
+//           return false;
+//       }
+//   }
+//   return true;
+// }
 
 
 
@@ -545,6 +698,11 @@ Now that you have solved the last challenge of determining if a whole number is 
 - The prime factors of a whole number are the prime numbers that, when multiplied together, equals the whole number.
 - If the argument provided is not greater than 1, or not a whole number, then primeFactors should return an empty array.
 
+
+
+
+
+
 Examples:
 
 primeFactors(2) //=> [2]
@@ -557,6 +715,31 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
+// function primeFactors(num) {
+//   if (typeof num !== 'number' || !Number.isInteger(num) || num <= 1) {
+//     return [];
+//   }
+
+//   const factors = [];
+
+//   while (num % 2 === 0) {
+//     factors.push(2);
+//     num /= 2;
+//   }
+
+//   for (let i = 3; i * i <= num; i += 2) {
+//     while (num % i === 0) {
+//       factors.push(i);
+//       num /= i;
+//     }
+//   }
+
+//   if (num > 2) {
+//     factors.push(num);
+//   }
+
+//   return factors;
+// }
 
 
 
