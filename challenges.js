@@ -934,8 +934,27 @@ gridTrip( [-22, 100], 'L2L15D50U1D9') //=> [-80, 83]
 -----------------------------------------------------------------*/
 // Your solution for 28-gridTrip here:
 
-
-
+function gridTrip(arr, str) {
+    const regex = /[A-Z]\d+/g
+    let regexArr = str.match(regex)
+    console.log(regexArr)
+    let x = arr[0]
+    let y = arr[1]
+    for (let exp of regexArr) {
+        const direction = exp[0]
+        const quantity = parseInt(exp.slice(1))
+        if (direction === 'U') {
+            x += quantity
+        } else if (direction === 'D') {
+            x -= quantity
+        } else if (direction === 'R') {
+            y += quantity
+        } else {
+            y -= quantity
+        }
+    }
+    return [x, y]
+}
 
 
 /*-----------------------------------------------------------------
