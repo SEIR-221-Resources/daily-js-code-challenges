@@ -953,7 +953,7 @@ Prompt:
 
 Hint:
 
-- An efficient solution can leverage the the fact that the integers in the array are sorted.
+- An efficient solution can leverage the fact that the integers in the array are sorted.
 
 Examples:
 
