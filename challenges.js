@@ -1026,7 +1026,7 @@ function getNumForIP(str){
   let num = 0
   let strArray = str.split(".")
   let len = strArray.length-1
-  strArray.forEach((e, idx)=>{
+  strArray.forEach(e=>{
     num += parseInt(e)*(256**len)
     len--
   })
@@ -1117,8 +1117,32 @@ countTheBits( 255 ) //=> 8
 countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
+function countTheBits(num){
+  let bin = ""
+  let result = 0
+  let rem = 0
+  
+    while(num > 1){
+      rem = Math.trunc(num%2)
+      bin += String(rem)
+      num = num/2
+    }   
+  
+  if(num === 0){
+    bin += '0'
+  }else if (num === 1){
+    bin += '1'
+  }
+  
+  result = bin.split("1").length-1
+  return result
+}
 
-
+console.log(countTheBits( 0 ))
+console.log(countTheBits( 13 ))
+console.log(countTheBits( 256 ))
+console.log(countTheBits( 255 ))
+console.log(countTheBits( 65535 ))
 
 
 
@@ -1146,10 +1170,50 @@ gridTrip( [-22, 100], 'L2L15D50U1D9') //=> [-80, 83]
 -----------------------------------------------------------------*/
 // Your solution for 28-gridTrip here:
 
+function gridTrip(arr, str){
+  let strArr = str.split("")
+  let startX = arr[0]
+  let startY = arr[1]
+  let charArr=[]
+  let intArr = []
+  let direction = true
+  strArr.forEach(ch=>{
+    if(ch==='U' || ch==='D' || ch==='L' || ch==='R'){
+      charArr.push(ch)   
+      direction = false   
+    }
+    else{
+      if(direction === false){
+        intArr.push(ch)
+        direction = true
+      }
+      else{
+        let last = intArr.pop()
+        last += ch
+        intArr.push(last)
+        direction = true
+      }
+    }
+  })
+  for(let i=0; i<charArr.length; i++){
+    if(charArr[i]==='U'){
+      startX += parseInt(intArr[i])
+    } else if(charArr[i] === 'D'){
+      startX -= parseInt(intArr[i])
+    }else if(charArr[i] === 'L'){
+      startY -= parseInt(intArr[i])
+    }else if(charArr[i] === 'R'){
+      startY += parseInt(intArr[i])
+    }
+  }
+  let newArray = [startX, startY]
+  console.log(newArray)
+  
+}
 
-
-
-
+gridTrip( [0, 0], 'U2R1' )
+gridTrip( [5, 10], 'D5L15U2' )
+gridTrip( [-22, 100], 'L2L15D50U1D9')
 /*-----------------------------------------------------------------
 Challenge: 29-addChecker
 
@@ -1175,8 +1239,20 @@ addChecker( [10, 15, 16, 22], 32 ) // => true
 addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 29-addChecker here:
-
-
+function addChecker(arr, int){
+  for(let i=0; i<arr.length; i++){
+    for(let j=1; j<arr.length; j++){
+      if(arr[i]+arr[j]===int){
+        return true
+      }
+    }
+  }
+  return false
+}
+console.log(addChecker( [1, 2], 3 ))
+console.log(addChecker( [-3, 2], 9 ))
+console.log(addChecker( [10, 15, 16, 22], 32 ))
+console.log(addChecker( [10, 15, 16, 22], 19 ))
 
 
 
@@ -1208,4 +1284,35 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
 
+function totalTaskTime(arr, int){
+  let subarray = []
+  let time = 0
+  for(let i=0; i<int; i++){
+    subarray.push(arr[i])
+  }
+  if(arr.length === 0 ){
+    return 0
+  } 
+  else if(arr.length === int ){
+    subarray = subarray.sort(function(a, b){return a - b})
+    return subarray[subarray.length-1]
+  }
+  else{
+    while(int<arr.length){
+      subarray = subarray.sort(function(a, b){return a - b})
+      let min= subarray[0]
+      min+=arr[int]
+      int++
+      subarray[0] = min
+    }
 
+  }
+  subarray = subarray.sort(function(a, b){return a - b})
+  return subarray[subarray.length-1]
+}
+ console.log(totalTaskTime( [], 1 ))
+ console.log(totalTaskTime( [4, 2, 5], 1 ))
+ console.log(totalTaskTime( [5, 8], 2 ))
+ console.log(totalTaskTime( [4, 2, 10], 2 ))
+ console.log(totalTaskTime( [2, 2, 3, 3, 4, 4], 2 ))
+ console.log(totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ))
