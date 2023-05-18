@@ -1022,4 +1022,16 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
 
-
+function totalTaskTime(arr, int) {
+    const currentTasks = arr.splice(0, int).sort()
+    for (let i = 0; i < arr.length; i++) {
+        currentTasks[0] += arr[i]
+        currentTasks.sort((a, b) => a - b)
+    }
+    let longestTask = 0
+    for (let task of currentTasks) {
+        if (task > longestTask) {
+            longestTask = task
+        }
+    } return longestTask
+}
