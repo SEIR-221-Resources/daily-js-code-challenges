@@ -937,12 +937,11 @@ gridTrip( [-22, 100], 'L2L15D50U1D9') //=> [-80, 83]
 function gridTrip(arr, str) {
     const regex = /[A-Z]\d+/g
     let regexArr = str.match(regex)
-    console.log(regexArr)
     let x = arr[0]
     let y = arr[1]
-    for (let exp of regexArr) {
-        const direction = exp[0]
-        const quantity = parseInt(exp.slice(1))
+    for (let move of regexArr) {
+        const direction = move[0]
+        const quantity = parseInt(move.slice(1))
         if (direction === 'U') {
             x += quantity
         } else if (direction === 'D') {
@@ -983,8 +982,16 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 29-addChecker here:
 
-
-
+function addChecker(arr, int) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === int) {
+                return true
+            }
+        }
+    }
+    return false
+}
 
 
 /*-----------------------------------------------------------------
