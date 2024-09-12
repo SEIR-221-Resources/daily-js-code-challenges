@@ -34,6 +34,9 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne(n) {
+  return n + 1;
+}
 
 
 
@@ -57,6 +60,11 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
+function addTwoNumbers(num1, num2) {
+  if (typeof num1 === 'number' && typeof num2 === 'number') {
+    return num1 + num2;
+  } else { return NaN };
+}
 
 
 
@@ -81,6 +89,14 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 
+function sumNumbers(num) {
+  const sum = 0
+  for (let i = 0; i < num.length; i++) {
+    sum = sum + num[i]
+  }
+  return sum;
+}
+
 
 
 
@@ -102,7 +118,13 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-
+function addList() {
+  let sum = 0
+  for (let i = 0; i < arguments.length; i++) {
+    sum = sum + arguments[i]
+  }
+  return sum;
+}
 
 
 
@@ -127,7 +149,13 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-
+function computeRemainder(num1, num2) {
+  if (num2 === 0) {
+    return Infinity
+  } else {
+    return num1 - (Math.floor(num1 / num2) * num2)
+  }
+}
 
 
 
@@ -150,6 +178,16 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2) {
+  if (num1 > num2) {
+    return "First arguent must be less than second."
+  }
+  const arrayOfNumbers = []
+  for (let i = num1; i < num2; i++) {
+    arrayOfNumbers.push(i)
+  }
+  return arrayOfNumbers
+}
 
 
 
@@ -169,9 +207,14 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+function reverseUpcaseString(str) {
+  let arr = str.split("")
+  let array = arr.reverse("")
+  let joinArray = array.join("").toUpperCase()
+  return joinArray
 
-
-
+}
+//console.log(reverseUpcaseString('camp'))
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -190,8 +233,12 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(str) {
+  if (str.length < 3) return ""
+  return str.substr(1, str.length - 2);
 
-
+}
+// console.log(removeEnds('fart'))
 
 
 /*-----------------------------------------------------------------
@@ -204,7 +251,7 @@ Prompt:
 - Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
 - The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
 - Upper and lower case characters should be counted separately.
-- Space characters should be count too.
+- Space characters should be counted too.
 
 Examples:
 
@@ -212,8 +259,19 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-
-
+function charCount(str) {
+  const count = {}
+  for (let i = 0; i < str.length; i++) {
+    const character = str.charAt(i)
+    if (count[character]) {
+      count[character]++;
+    } else {
+      count[character] = 1;
+    }
+  }
+  return count
+}
+// console.log(charCount("hello"))
 
 
 
@@ -263,7 +321,15 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-
+function isPalindrome(str) {
+  let output = false
+  let reverse = str.split('').reverse().filter(c => c !== " ").join('').toLowerCase()
+  let forward = str.split('').filter(c => c !== " ").join('').toLowerCase()
+  if (reverse === str) {
+    return true
+  }
+  return output
+}
 
 
 
@@ -314,7 +380,13 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-
+function mumble(str) {
+  let output = []
+  for (let i = 0; i < str.length; i++) {
+    output.push(str[i].repeat(i + 1))
+  }
+  return output.join('-')
+}
 
 
 
@@ -336,6 +408,15 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
+function fromPairs() {
+  //create an object from an array of nested arrays
+  let output = {}
+  arr.forEach(el => {
+    output[el[0]] = el[1]
+  })
+
+  return output
+}
 
 
 
@@ -396,9 +477,21 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(arr) {
+  //return highest priced object form array
+  let highestPrice = arr[0].price
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].price > highestPrice) {
+      console.log('current:', arr[0].price)
+      console.log('highest:', highestPrice)
+
+    }
+  }
 
 
+}
 
+//console.log(findHighestPrice)
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -496,7 +589,24 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+function flatten(arr) {
+  var holder = []
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      console.log(arr[1])
+      holder = holder.concat(flatten(arr[1]))
 
+    } else {
+      holder.push(arr[i])
+      //console.log(holder)
+
+    }
+  }
+  return holder
+}
+// possibly use while loop
+// can use recursion
+// flatten( [1, [2, 3]] )
 
 
 
@@ -520,7 +630,16 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false
+    }
+  }
+  return true
+}
 
+// isPrime(21)
 
 
 
@@ -547,7 +666,31 @@ primeFactors(105) //=> [3, 5, 7]
 primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
+// function isPrime(num){
+//   for (let i = 2; i < num; i++ ){
+//     if (num % i === 0){
+//       console.log(num)
+//       return false
+//     }
+//   }
+//   return true
+// }
 
+function primeFactors(num) {
+  let array = []
+  if (num <= 1) return array
+  let divisor = 2
+  while (num >= 2) {
+    if (num % divisor === 0) {
+      array.push(divisor)
+      num = num / divisor
+    } else divisor++
+  }
+  return array
+}
+
+
+// primeFactors(29)
 
 
 
@@ -573,6 +716,25 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
+function intersection(arr1, arr2) {
+  // can contain a mixture of strings, numbers and booleans
+  // return a NEW array all elements in common
+  // return empty if no elements in common
+  // do not mutate
+  const outputArr = []
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        outputArr.push([arr1[i]])
+        arr2.splice(j, i)
+        break
+      }
+    }
+  }
+  return outputArr
+}
+
+// intersection([1, 'a', 1, true, 1, 1], [true, 1, 'b', 1])
 
 
 
@@ -628,7 +790,15 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
-
+function isWinningTicket(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let charNum = String.fromCharCode(arr[i][1])
+    if (!arr[i][0].includes(charNum)) {
+      return false
+    }
+  }
+  return true
+}
 
 
 
@@ -658,7 +828,18 @@ getNumForIP( '192.156.99.15' ) // => 3231474447
 getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
+function getNumForIP(str) {
+  const numbers = str.split('.').map(n => parseInt(n))
+  let newNumber = 0
+  let multiplier = 3
+  numbers.forEach((num, idx) => {
+    newNumber += (num * 256 ** multiplier)
+    multiplier--
+  })
+  return newNumber
+}
 
+getNumForIP('192.156.99.15')
 
 
 
@@ -687,10 +868,27 @@ toCamelCase( 'Mama-mia' ) // => 'MamaMia'
 toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
+function toCamelCase(str) {
+  if (!str.includes('_') && !str.includes('-')) {
+    return str
+  }
+  
+  let output = " "
+  for( let i = 0; i<str.length; i++){
+    if(str[i] === '_' || str[i] === '-'){
+      i++
+      output += str[i].toUpperCase()
+    }else{
+      output += str[i]
+    }
+  }
+  // console.log(output)
+  return output
+}
 
-
-
-
+console.log(toCamelCase('abc'))
+console.log(toCamelCase('Mama_mia'))
+console.log(toCamelCase('Mama-mia'))
 
 /*-----------------------------------------------------------------
 Challenge: 27-countTheBits
