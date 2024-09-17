@@ -89,7 +89,7 @@ sumNumbers([]) //=> 0
 /*--- okay solution ---*/
 function sumNumbers(nums) {
   var sum = 0;
-  for(var i = 0; i < nums.length; i++) {
+  for (var i = 0; i < nums.length; i++) {
     sum += nums[i];
   }
   return sum;
@@ -209,12 +209,12 @@ range(5,2) //=> "First argument must be less than second"
 
 function range(start, finish) {
   if (start > finish) return 'First argument must be less than second';
-  
+
   var range = [];
   for (var n = start; n < finish; n++) {
     range.push(n);
   }
-  
+
   return range;
 }
 
@@ -277,7 +277,7 @@ removeEnds('a'); //=> "" (empty string)
 /*--- Using for loop ---*/
 function removeEnds(str) {
   if (str.length < 3) return '';
-  var result= '';
+  var result = '';
   for (var i = 1; i < str.length - 1; i++) {
     result += str.charAt(i);
   }
@@ -510,7 +510,7 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 /*--- using forEach ---*/
 function fromPairs(arr) {
   var obj = {};
-  arr.forEach(function(kvArr) {
+  arr.forEach(function (kvArr) {
     obj[kvArr[0]] = kvArr[1];
   });
   return obj;
@@ -545,9 +545,9 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 
 /*--- Using ES2015's rest parameter syntax ---*/
 function mergeObjects(target, ...objects) {
-  objects.forEach(function(obj) {
+  objects.forEach(function (obj) {
     // using ES2015's 'for in' loop
-    for(var key in obj) {
+    for (var key in obj) {
       target[key] = obj[key];
     }
   });
@@ -596,7 +596,7 @@ findHighestPriced([
 function findHighestPriced(arr) {
   var highestPrice = 0;
   var resultObj;
-  arr.forEach(function(item) {
+  arr.forEach(function (item) {
     if (item.price > highestPrice) {
       highestPrice = item.price;
       resultObj = item;
@@ -640,8 +640,8 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 
 function mapArray(arr, cb) {
   var newArr = [];
-  arr.forEach(function(el, idx) {
-    newArr.push( cb(el, idx) );
+  arr.forEach(function (el, idx) {
+    newArr.push(cb(el, idx));
   });
   return newArr;
 }
@@ -683,7 +683,7 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 
 function reduceArray(arr, cb, initAcc) {
   var acc = initAcc;
-  arr.forEach(function(el, idx) {
+  arr.forEach(function (el, idx) {
     acc = cb(acc, el, idx);
   });
   return acc;
@@ -720,7 +720,7 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 /*--- Using recursion ---*/
 function flatten(arr) {
   var flatArr = [];
-  arr.forEach(function(elem) {
+  arr.forEach(function (elem) {
     // use the Array.isArray static method to test if an array
     if (Array.isArray(elem)) {
       flatArr = flatArr.concat(flatten(elem));
@@ -803,7 +803,7 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 function primeFactors(n) {
   var factors = [];
   if (n < 2 || !Number.isInteger(n)) return factors;
-  
+
   // function to help find next prime to divide by...
   function isPrime(n) {
     if (n < 2 || !Number.isInteger(n)) return false;
@@ -812,7 +812,7 @@ function primeFactors(n) {
     }
     return true;
   }
-  
+
   var prime = 2;  // start with smallest prime
   while (!isPrime(n)) {
     if (Number.isInteger(n / prime)) {
@@ -917,7 +917,7 @@ function balancedBrackets(str) {
   var stack = [];
   for (var i = 0; i < str.length; i++) {
     var b = str.charAt(i);
-    if ( '([{'.includes(b) ) {
+    if ('([{'.includes(b)) {
       // add opening brackets to the stack
       stack.push(b);
     } else {
@@ -975,7 +975,7 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 // Your solution for 24-isWinningTicket here:
 
 /* Naive for loops - :( */
-function isWinningTicket(ticket){
+function isWinningTicket(ticket) {
   var winner = true;
   for (var i = 0; i < ticket.length; i++) {
     var charFromNumber = String.fromCharCode(ticket[i][1]);
@@ -998,7 +998,7 @@ function isWinningTicket(ticket){
 // function isWinningTicket(ticket){
 //   return ticket.every(arr => arr[0].includes(String.fromCharCode(arr[1])));
 // }
-  
+
 
 /*-----------------------------------------------------------------
 Challenge: 25-getNumForIP
@@ -1030,8 +1030,8 @@ function getNumForIP(ip) {
   // reverse the chunks so that the we can use the index like 256**idx 
   var chunks = ip.split('.').reverse();
   var sum = 0;
-  chunks.forEach(function(chunk, idx) {
-    sum += parseInt(chunk) * 256**idx;
+  chunks.forEach(function (chunk, idx) {
+    sum += parseInt(chunk) * 256 ** idx;
   });
   return sum;
 }
@@ -1066,7 +1066,7 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 // Your solution for 26-toCamelCase here:
 
 function toCamelCase(str) {
-  return str.replace(/[_-]\w/g, function(match) {
+  return str.replace(/[_-]\w/g, function (match) {
     return match.charAt(1).toUpperCase();
   });
 }
@@ -1142,7 +1142,7 @@ function gridTrip(xyArr, moves) {
   // create result array with starting positions
   var result = [xyArr[0], xyArr[1]];
   // lookup object for result arr index and multipler for each dir char
-  const lookup = {'U': [0, 1], 'R': [1, 1], 'D': [0, -1], 'L': [1, -1]};
+  const lookup = { 'U': [0, 1], 'R': [1, 1], 'D': [0, -1], 'L': [1, -1] };
   var idx = 0;
   while (idx < moves.length) {
     // first char of the move string is the direction to be used to access the lookup object
@@ -1203,7 +1203,7 @@ function addChecker(nums, total) {
   var result = false;
   for (i = 0; i < nums.length - 1; i++) {
     for (j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === total) return true; 
+      if (nums[i] + nums[j] === total) return true;
     }
   }
   return result;
@@ -1253,7 +1253,7 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 
 function totalTaskTime(tasks, numThreads) {
   var time = 0, shortest, threads;
-  while(tasks.length > numThreads) {
+  while (tasks.length > numThreads) {
     // extract a task for each thread
     threads = tasks.splice(0, numThreads);
     // Find out the time for the task that will finish first.
